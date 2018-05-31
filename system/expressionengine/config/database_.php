@@ -3,10 +3,10 @@
 $active_group = 'expressionengine';
 $active_record = TRUE;
 
-$db['expressionengine']['hostname'] = 'localhost';
-$db['expressionengine']['username'] = 'adorama';
-$db['expressionengine']['password'] = 'adorama';
-$db['expressionengine']['database'] = 'adorama';
+$db['expressionengine']['hostname'] = 'xxxxxx';
+$db['expressionengine']['username'] = 'xxxxxx';
+$db['expressionengine']['password'] = 'xxxxxx';
+$db['expressionengine']['database'] = 'xxxxxx';
 $db['expressionengine']['dbdriver'] = 'mysqli';
 $db['expressionengine']['pconnect'] = FALSE;
 $db['expressionengine']['dbprefix'] = 'exp_';
