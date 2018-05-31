@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+        {meta}
+                {css}
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/skins/all.css" />
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            header .header-menu .navbar-title{display:none;}
+            .container.login {
+                margin-top: 45px;
+            }
+            .regis-field .cus-field {
+                padding: 0px !important;
+                font-size: 16px;
+                font-weight: lighter;
+            }
+        </style>
+         
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page register">
+	<section class="container">
+        <div class="container register">
+            <div class="row">
+                <div class="content">
+                    <div class="frm_cont_login col-centered col-md-6">
+                        <div class="">
+                            <div class="title_big">Create Account</div>
+                            <div class="title_small" style="">Hello there, You must be new around here!</div>
+                            <form id="register_member_form" method="post" action="/">
+                                <div class="hiddenFields" style="display: none">
+                                    <input type="hidden" name="ACT" value="7">
+                                    <input type="hidden" name="RET" value="{exp:session_variables:get name='return_page'}">
+                                    <input type="hidden" name="FROM" value="{exp:session_variables:get name='from_page'}">
+                                    <input type="hidden" name="site_id" value="1">
+                                    <input type="hidden" name="XID" value="{XID_HASH}">
+                                </div>
+                                <div class=" regis-form  " >
+                                    <div class='regis-field'>
+                                        <input type="text" name="firstname" id="firstname" value="{exp:session_variables:get name='firstname'}" placeholder="First name*" class="form-control cus-field" required>                                    
+                                    </div>
+                                    <div class='regis-field'>
+                                        <input type="text" name="lastname" id="lastname" value="{exp:session_variables:get name='lastname'}" placeholder="Last name*" class="form-control cus-field" required>                                    
+                                    </div>
+                                    <div class='regis-field'>
+                                        <input type="email" name="email" id="email" value="{exp:session_variables:get name='email'}" class="form-control cus-field" placeholder="Email Address *" required>                                    
+                                    </div>
+                                    <div class='regis-field'>
+                                        <input type="text" name="username" id="username" value="{exp:session_variables:get name='username'}" class="form-control cus-field" placeholder="Username*" required>
+                                    </div>
+                                    <div class='regis-field'>
+                                        <input type="password" name="password" id="password" value="" placeholder="Password*" class="form-control cus-field" required>                                    
+                                    </div>
+                                    <div class='regis-field'>
+                                        <input type="password" name="password_confirm" id="confirmpassword" value="" placeholder="Confirm Password*" class="form-control cus-field" required>                                    
+                                    </div>
+                                    <div class='regis-field col-md-12'>
+                                        <input type="checkbox" name="accept_terms" value="y" class="chekc" id="agreement"><label style="margin-left:10px;" for="agreement"> I'm agree with the agreement terms</label>                       
+                                    </div>
+                                    <button onclick="if (validate_form()) this.form.submit();" value='register' type="submit" class="btn btn-circle marg btn-regis" style="margin-left:0px;margin: 30px !Important">Create Account</button>
+                                </div>
+                            </form>
+<!--                            <div class="field-cont">
+                                <h4 style="margin: 0">Register with</h4>
+                                {exp:social_login:form popup="yes" no_email_return="register"}
+                                {providers}
+                                <li class="social-login col-md-6 col-xs-6">
+                                    <input style="display: none" name="provider" type="radio" value="{provider_name}" id="{provider_name}_button" onchange="$('#social_login_form').submit();">
+                                    <label for="{provider_name}_button"  class="medsos"><img width="100%" src="{theme_url}images/{provider_title}.png" title="Log in using {provider_title}"/></label>
+                                </li>
+                                {/providers}
+                                {/exp:social_login:form}
+                            </div>-->
+                            <a href="/login" class="text1">Already have an account?</a>
+                            
+                        </div>
+            </div>
+        </div>
+	</section>
+
+    </div>
+    {embed=assets/footer}
+        {js}
+        <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/icheck.min.js"></script>
+        <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/jquery.validate.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 $('.chekc').iCheck({
+                    checkboxClass: 'icheckbox_square',
+                    radioClass: 'iradio_square',
+                    increaseArea: '20%' // optional
+                  });
+            });
+    </script>
+    <script>
+        var password = document.getElementById("password"),
+          confirm_password = document.getElementById("confirmpassword");
+
+        function validatePassword() {
+          if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+        
+        function validate_form(){
+            return true;
+        }
+        
+    </script>
+</body>
+</html>

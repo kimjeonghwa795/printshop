@@ -1,0 +1,12 @@
+<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<script src="{theme_url}js/vendor/jquery.ui.widget.js"></script>
+<script src="{theme_url}js/upload/tmpl.min.js"></script>
+
+
+<script src="{theme_url}js/imagesloaded.pkgd.min.js"></script>
+<!-- The main application script -->
+<script src="{theme_url}js/hammer.min.js"></script>
+<script src="{theme_url}js/fluidbox.js"></script>
+<script src="{theme_url}js/cropper.min.js"></script>
+
+

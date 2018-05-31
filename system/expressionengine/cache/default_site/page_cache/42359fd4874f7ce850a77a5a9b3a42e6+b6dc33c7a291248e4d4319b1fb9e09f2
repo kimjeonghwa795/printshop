@@ -1,0 +1,97 @@
+a:3:{s:4:"time";i:1527673564;s:3:"ttl";i:0;s:4:"data";s:4501:"{!-- ra:000000001435a6410000565168b5c71d --}<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+        {meta}
+                {css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            .page{overflow: hidden}
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+<div class="page border">
+	<section class="min-height">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+                    <form action="/" method="POST" novalidate>
+                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                        <input type="hidden" name="ACT" value="95" />
+                        <input type="hidden" name="var" value="quantity" />
+                        <input type="hidden" name="quantity" value="8" />
+                        <input type="hidden" name="next" value="/instagram" />
+					<div class="title-cont storyline">Select a quantity</div>
+					<div class="border-style">
+                        <div class="qty-options">
+                    <label class="qty-item" for="qty1">
+                               
+                               
+                               
+                                <input type='radio' name="quantity" value="8" required id="qty1"/>
+                                <div class="qty-number box-round">8</div>
+                                <div class="qty-price">
+                                        <label class="lbl-size">IDR 33.000</label>
+                                </div>						
+                            </label><label class="qty-item" for="qty2">
+                            <div class="border1"></div>   
+                               
+                               
+                                <input type='radio' name="quantity" value="16" required id="qty2"/>
+                                <div class="qty-number box-round">16</div>
+                                <div class="qty-price">
+                                        <label class="lbl-size">IDR 55.000</label>
+                                </div>						
+                            </label><label class="qty-item" for="qty3">
+                            <div class="border1"></div>   
+                            <div class="border2"></div>   
+                               
+                                <input type='radio' name="quantity" value="24" required id="qty3"/>
+                                <div class="qty-number box-round">24</div>
+                                <div class="qty-price">
+                                        <label class="lbl-size">IDR 70.000</label>
+                                </div>						
+                            </label><label class="qty-item" for="qty4">
+                            <div class="border1"></div>   
+                            <div class="border2"></div>   
+                            <div class="border3"></div>   
+                                <input type='radio' name="quantity" value="48" required id="qty4"/>
+                                <div class="qty-number box-round">48</div>
+                                <div class="qty-price">
+                                        <label class="lbl-size">IDR 120.000</label>
+                                </div>						
+                            </label>
+                        </div>
+					</div>
+					<div class="button-back marg">
+						<a  href="javascript:history.back();" class="btn btn-circle invert" style="padding:10px 45px">Back</a>
+						<button type="submit" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+                    </form>
+				</div>
+			</div>
+		</div>
+	</section>
+    <div class="alert"><div>Please select one above</div></div>
+{js}
+<script type="text/javascript">
+	$('.qty-item').click(function(){
+//            $('[name=quantity]').removeAttr('checked');
+            $(this).addClass('active');
+            $('.qty-item').not($(this)).removeClass('active');
+//            $('[name=quantity]', this).attr('checked','checked');
+	});
+        $('button.btn').click(function(){
+            if(!$('.qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){$('.alert').removeClass('active');}, 1500);
+
+            }else{$(this).submit();}
+        })
+</script>
+</body>
+</html>";}

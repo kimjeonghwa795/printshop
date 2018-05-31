@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+        {meta}
+                {css}
+        <style>
+            html{overflow: hidden}
+            section .qty-options .qty-item .box-cus-width {
+                width: 94px !important;
+                text-decoration: none;
+                padding-left: 0;
+            }
+            .marg.mobile.footer-button a {
+                border: none;
+                background: transparent;
+                color: #fac730;
+                font-size: 24px;
+                margin-top: 6px;
+            }
+            .hidden{display: none;}
+            @media (max-width: 414px){
+                .button-back.marg {
+                    display: block !important;
+                }
+                .button-back.marg button{
+                    margin-left: 0;
+                }
+            }
+            
+        </style>
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">     
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+	<section class="page classic size">
+		<div class="container">
+			<div class="row select" id="size">
+				<div class="content sucess select-size">
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+                                                        <a href="#small">
+							<label class="qty-item" id="qty1">                                                                
+								<div class="qty-number box-round box-cus-width">S</div>
+								<div class="qty-price">
+									<label class="lbl-size">Small</label>
+									<label class="lbl-size">2R & 3R</label>
+								</div>
+                                                        </label>
+                                                        </a>
+                                                        <a href="#medium">
+							<label class="qty-item" id="qty2">
+                                                        
+								<div class="qty-number box-round box-cus-width">M</div>
+								<div class="qty-price">
+									<label class="lbl-size">Medium</label>
+									<label class="lbl-size">4R, 5R & 6R</label>
+								</div>
+							</label>
+                                                        </a>
+                                                        <a href="#large">
+                                                        <label class="qty-item" id="qty3">                                                                
+								<div class="qty-number box-round box-cus-width">L</div>
+								<div class="qty-price">
+									<label class="lbl-size">Large</label>
+									<label class="lbl-size">10R & 10Rs</label>
+								</div>
+							</label>
+                                                        </a>
+						</div>	
+				</div>
+                                <div class="button-back marg">
+                                        <!--<a href="/classic" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>-->
+                                        <a class="btn btn-circle invert size-next" style="padding:10px 45px">Next</a>
+                                </div>
+			</div>
+                        <div class="row select hidden next" id="small">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="var" value="size" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="next" value="/classic/quantity" />
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+							<label class="qty-item" id="qty1">
+                                                                <input type='radio' name="size"  value="02" required/>
+                                                                <input type='radio' name="label"  value="2R (5.6cm x 8.9cm)"/>
+								<div class="qty-number box-round box-cus-width" style="height: 80px;">2R</div>
+								<div class="qty-price">
+									<label class="lbl-size">5.6cm x 8.9cm</label> 
+								</div>
+                                                        </label>
+							<label class="qty-item" id="qty2">
+                                                                <input type='radio' name="size"  value="03" required/>
+                                                                <input type='radio' name="label"  value="3R (8.8cm x 12.7cm)"/>
+								<div class="qty-number box-round box-cus-width">3R</div>
+								<div class="qty-price">
+									<label class="lbl-size">8.8cm x 12.7cm</label>
+								</div>
+							</label>
+						</div>	
+				</div>
+					<div class="button-back marg">
+						<a href="size" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+						<button type="submit" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+                                    </form>
+				</div>
+			</div>
+                        <div class="row select hidden next" id="medium">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="var" value="size" />
+                                        <input type="hidden" name="next" value="/classic/quantity" />
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+							<label class="qty-item" id="qty1">
+                                                                <input type='radio' name="size"  value="04" required/>
+                                                                <input type='radio' name="label"  value="4R (10.2cm x 15.2cm)"/>
+								<div class="qty-number box-round box-cus-width" style="height: 80px;">4R</div>
+								<div class="qty-price">
+									<label class="lbl-size">10.2cm x 15.2cm</label>
+								</div>
+                                                        </label>
+							<label class="qty-item" id="qty2">
+                                                                <input type='radio' name="size"  value="05" required/>
+                                                                <input type='radio' name="label"  value="5R (10.2cm x 15.2cm)"/>
+								<div class="qty-number box-round box-cus-width">5R</div>
+								<div class="qty-price">
+									<label class="lbl-size">12.7cm x 17.7cm</label>
+								</div>
+							</label>
+                                                        <label class="qty-item" id="qty3">
+                                                                <input type='radio' name="size"  value="06" required/>
+                                                                <input type='radio' name="label"  value="6R (15.2cm x 20.3cm)"/>
+								<div class="qty-number box-round box-cus-width" style="height: 115px;width: 115px !important;">6R</div>
+								<div class="qty-price">
+									<label class="lbl-size">15.2cm x 20.3cm</label>
+								</div>
+                                                        </label>
+						</div>	
+				</div>
+					<div class="button-back marg">
+						<a href="size" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+						<button type="submit" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+                                    </form>
+				</div>
+			</div>
+                        <div class="row select hidden next" id="large">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="var" value="size" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="next" value="/classic/quantity" />
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+							<label class="qty-item" id="qty1">
+                                                                <input type='radio' name="size"  value="10" required/>
+                                                                <input type='radio' name="label"  value="10R (20.3cm x 25.4cm)"/>
+								<div class="qty-number box-round box-cus-width" style="height: 115px;width: 115px !important">10R</div>
+								<div class="qty-price">
+									<label class="lbl-size">20.3cm x 25.4cm</label>
+								</div>
+                                                        </label>
+							<label class="qty-item" id="qty2">
+                                                                <input type='radio' name="size"  value="11" required/>
+                                                                <input type='radio' name="label"  value="10Rs (20.3cm x 30.2cm)"/>
+								<div class="qty-number box-round box-cus-width" style="height: 130px;width: 130px !important;">10Rs</div>
+								<div class="qty-price">
+									<label class="lbl-size">20.3cm x 30.2cm</label>
+								</div>
+							</label>
+						</div>	
+				</div>
+					<div class="button-back marg">
+						<a href="size" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+                                                <button type="submit" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+                                    </form>
+				</div>
+			</div>
+		</div>
+	</section>
+        <div class="alert"><div>Please select one above</div></div>
+        {js}
+        <script>
+        $(document).ready(function(){
+            removeHash();
+            if(window.location.hash) {
+                var hash = window.location.hash;
+                $('.row.select').hide();
+                $(hash).show();
+            }
+
+            $(".size-next").click(function(){
+                if(!$('.qty-item').hasClass('active')){
+                    
+                    $('.alert').addClass('active')
+                    setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+
+                }else{
+                    var hash = window.location.hash;
+                    $('#size .select-size').hide();
+                    console.log($(''+hash+'.row.select').removeClass('hidden'));
+                    console.log(hash)
+                }
+            });
+            
+            $(document).on("click",".row.select.active .back-btns",function() {
+                location.reload();
+                removeHash();
+            });
+
+             function removeHash() { 
+                history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+            }
+            $('.row.select.next button.btn').click(function(){
+                if(!$('.row.select.next .qty-item').hasClass('active')){
+                    $('.alert').addClass('active')
+                    setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+
+                }else{
+                    $(this).submit();
+                }
+            })
+        });
+        
+        $('.qty-item').click(function(){
+            $(this).addClass('active');
+            $('.qty-item').not($(this)).removeClass('active');
+	});
+        $('input:radio').change(function(e){            
+            $(this).siblings('input:radio').prop('checked',$(this).prop('checked'));            
+        });
+        
+        var clasic_size= {
+            small : [ {value:02, label:'2R',text:'5.6cm x 8.9cm'},{value:03, label:'3R',text:'8.8cm x 12.7cm'}  ],
+            medium : [ {value:04, label:'4R',text:'5.6cm x 8.9cm'},{value:05, label:'5R',text:'8.8cm x 12.7cm'} ,{value:06, label:'6R',text:'8.8cm x 12.7cm'}  ],
+            large : [ {value:10, label:'10R',text:'5.6cm x 8.9cm'},{value:11, label:'10Rs',text:'8.8cm x 12.7cm'}  ],
+        };
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!--script type="text/javascript" src="/themes/javascript/compressed/jquery/jquery.js"></script-->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/jquery.unveil.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/jquery-validate.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/adorama.js"></script>

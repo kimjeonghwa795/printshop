@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+        {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">     
+        <style>
+            section .qty-options .qty-item .box-cus-width {
+                width: 94px !important;
+                text-decoration: none;
+                padding-left: 0;
+            }
+        </style>
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+	<section class="page classic size">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="var" value="size" />
+
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+							<label class="qty-item" id="qty1">
+                                                                <input type='radio' name="size"  value="2R"/>
+								<div class="qty-number box-round box-cus-width">2R</div>
+								<div class="qty-price">
+									<label class="lbl-size">5.6cm x 8.9cm</label>
+								</div>
+                                                        </label>
+							<label class="qty-item" id="qty2">
+                                                                <input type='radio' name="size"  value="3R"/>
+								<div class="qty-number box-round box-cus-width">3R</div>
+								<div class="qty-price">
+									<label class="lbl-size">8.8cm x 12.7cm</label>
+								</div>
+							</label>
+						</div>	
+				</div>
+					<div class="button-back marg">
+						<a href="size" class="btn btn-circle invert" style="padding:10px 45px">Back</a>
+						<a href="quantity" class="btn btn-circle invert" style="padding:10px 45px">Next</a>
+					</div>
+                                        <div class="button-back marg mobile footer-button">
+                                            <button href="classic_size.html" >Back</button>
+                                            <button href="photoprint_quantity.html" >Next</button>
+                                        </div>
+                                    </form>
+				</div>
+			</div>
+		</div>
+	</section>
+        {js}
+        <script>
+        $('.qty-item').click(function(){
+            $(this).addClass('active');
+            $('.qty-item').not($(this)).removeClass('active');
+	});
+        </script>
+</body>
+</html>

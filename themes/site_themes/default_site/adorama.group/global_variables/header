@@ -1,0 +1,35 @@
+<header>    
+    <div class="header-top {flash_class}">{flash_message}</div>
+    <div class="header-menu bg-white">
+            <nav class="navbar navbar-default">
+                    <div class="container">
+                            <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <i class="fa fa-align-justify black"></i>
+                                    </button>
+                                    <a class="navbar-brand logo" href="{site_url}"><img src="{theme_url}images/logo2.png" class="img-responsive logo"></a>
+                                    <span class="navbar-title">{exp:session_variables:get name='layout_name'}asdad</span>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav pull-right">
+                                            <li><a href="{site_url}products">Shop All</a></li>
+                                            <li><a href="{site_url}about">About</a></li>
+                                            <li><a href="{site_url}cart">Cart(0)</a></li>
+                                    </ul>
+<!--                                    <div >
+                                        {if logged_in}
+                                          <a href="{path='member/profile'}">Edit your profile</a><br>
+                                          <a href="{path='member/memberlist'}">View the Memberlist</a><br>
+                                          <a href="{path='logout'}">Log Out</a>
+                                        {/if}
+                                        {if logged_out}
+                                          Are you a member? Please <a href="{path='member/login'}">log-in</a>.<br>
+                                          Not a member? <a href="{path='member/register'}">Register</a>.<br>
+                                          Have you <a href="{path='member/forgot'}">forgotten your password</a>?
+                                        {/if}
+                                    </div> -->
+                            </div>
+                    </div>
+            </nav>
+    </div>
+</header>

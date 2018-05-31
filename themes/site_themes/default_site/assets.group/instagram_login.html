@@ -1,0 +1,20 @@
+<div class="content sucess">
+    <div class="title-cont bold black f42">Connect your account</div>
+    <div class="text-center"><img src="/themes/site_themes/default_site/assets.group/images/instagram-icon.png"></div>
+    <div class="text-center">
+        <p>To get started make your order you'll have to connect with your Instagram account</p>
+    </div>                                    
+    <div class="button-back marg">
+        <div class="button-back marg">            
+            {exp:social_login:form id="instagram_login" return="/instagram" provider="instagram"}
+			<input type="hidden" name="anon" value="1"/>
+            <input style="display: none" name="provider" type="radio" value="instagram" id="instagram_button" onchange="this.form.submit();">
+            <label for="instagram_button" class="instagram-btn btn btn-circle invert" style="margin-left:0;">Connect</label>
+            {/exp:social_login:form}             
+            <!--<a href="#" id="submitbutton" class="" style="margin-left:0;">Connect</a>-->
+        </div>
+    </div>
+</div>
+<style>.more-btn,.noresults{display:none;}
+.row.layout .album-title {display:none}
+</style>

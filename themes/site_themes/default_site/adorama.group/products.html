@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PrintShop Adorama</title>
+        {meta}
+         {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+            section.bg-white.catalog {
+                /*display: none;*/
+             }
+            .page.products{
+                padding-top: 40px;
+            }
+            .product:hover .overlay { display: block}
+            .product .overlay {
+                display: none;
+                position: absolute;
+                top: 0;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                padding: 16px;
+/*                max-width: 460px; 
+                left: 48px;*/
+                font-size: 14px;
+                height: 352px;
+            }
+            .product .overlay p:nth-child(2) {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .product .overlay p:first-child {
+                font-size: 20px !Important;
+            }
+            
+            .pricing{
+                position: absolute;
+                bottom: 0;
+            }
+            section .feature .box1:nth-last-child(even) {
+                 margin-right: 8px; 
+            }
+        </style>
+    </head>
+    <body>
+         {embed=assets/header}
+        <div class="page products">
+        {embed=adorama/shop_filter}
+        <div class="box-shadow-form">      
+        <section class="bg-white">
+            <div class="container" style="padding-top: 13px;">
+                <div class="row">
+                    <div class="feature clearfix">
+                        <div class="col-md-12 col-centered">
+                            {exp:brilliant_retail:catalog url_title='{segment_2}'} 
+                            {results}                            
+                                <div class="box1">
+                                    {form_open}
+									{!--if ! next--}
+									<input type="hidden" name="next" value="/product/{url}"/>
+									{!--/if--}
+                                    <a href="{exp:brilliant_retail:path src='product/{url}'}">
+                                        <img src='/media/{image_thumb}' class="img-responsive"/>
+                                    </a>
+                                    <div class='desc'> 
+                                        
+                                        <div class='title pull-left'>
+                                            <span>{title}</span>
+                                            <div class=''>
+                                                <p class='price'>Start from {price_html}</p>
+                                            </div>
+                                        </div>
+                                        <button class='btn btn-circle pull-right' >
+										Let's Create
+										</button>
+                                    </div>
+                                    {form_close}
+                                </div>                            
+                            {/results}
+                            
+                            
+                            {/exp:brilliant_retail:catalog}
+                            {exp:brilliant_retail:category url_title='accessories'}
+                            <div class="box2" style="display: none;">
+                                <a href="{template_path}/{url_title}"><label>{title}</label>
+                                <img src="/media/images/{image}" class="img-responsive"></a>
+                            </div>
+                            {/exp:brilliant_retail:category}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        {embed=assets/subscribe}
+        <div class="prod">
+        </div>
+
+
+        </div>
+        </div>
+	{embed=assets/footer}
+    
+        {js}
+
+    <script>
+        $('#dropdownMenu1').on('click',function(){
+            $(this).closest('.dropdown-toggler').toggleClass('active');
+        });
+        
+        $('.be-friend').hide();
+    </script>
+    </body>
+</html>

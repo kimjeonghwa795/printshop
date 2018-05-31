@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PrintShop Adorama</title>
+        <link rel="stylesheet" href="{theme_url}css/slick.css" type="text/css"/>
+        <link rel="stylesheet" href="{theme_url}css/slick-theme.css" type="text/css"/>
+        {meta} 
+        {css}
+    </head>
+    <body class="no-header-top">
+        {embed=assets/header}
+        <form action='/' method="POST" id='arrangeform'>
+            <input type="hidden" name='ACT' value='95'/>
+            <input type="hidden" name='XID' value="{XID_HASH}"/>            
+            <input type="hidden" name='var' value="title"/>            
+            <input type="hidden" name='sku' value="{exp:session_variables:get name='layout' key='sku'}"/>            
+            <input type="hidden" name='add_to_cart' value="true"/>
+            <input type="hidden" name='cart_id' value="{exp:session_variables:get name='cart_id'}"/>            
+            <input type="hidden" name='item_id' value="{exp:session_variables:get name='layout' key='item_id'}"/>
+            <input type="hidden" name='next' value="/cart"/>
+        <div class="page">
+        <section class="photobooks arrange">
+            <div class="container">
+                <div class="row">
+                    <div class="content sucess">
+                        <div class="title-cont black" style="text-align:left">Review your photobook before ordering</div>
+                        <div class="spine">
+                            <div>
+                                <input name='title' value="{exp:session_variables:get name='layout' key='title'}" onchange='this.nextSibling.nextSibling.value=this.value'/>
+                                <input name='label' type='hidden' value="{exp:session_variables:get name='layout' key='title'}"/>
+                            </div>
+                            <label>Spine</label>
+                                <a href="#" onclick="$('#edit_modal').modal()" class="btn btn-circle invert">Edit</a>
+                        </div>
+                        <div class="review-book">
+                        {exp:query sql="SELECT *,left(file,instr(file,'.')-1) as id FROM exp_photoprints WHERE item_id = ?  and sequence > 0 ORDER BY sequence " params="{segment:item_id}" }							
+                            <div>
+                                <div class="photobook-item">                                    
+									<img src="/?ACT=122&file={file}&crop={crop_data}&dir={segment:item_id}&ar=1" class="img-responsive"/>
+                                    <input type='hidden' name='positions[{sequence}]' value='{file}' />
+                                    <input type='hidden' name='crop_data[{sequence}]' value='{crop_data}' />
+                                    <input type='hidden' name='metas[{sequence}]' value='{meta}' />
+                                </div>
+                                <label>Page {count}</label>
+                            </div>							
+                        {/exp:query}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        <footer>
+            <div class="bg-black">
+              <div class="container">
+                <div class="row">
+                  <div class="padd clearfix">
+                    <div class="col-md-6 col-xs-12"><a href="/arrange/{segment:item_id}" class="lbl-footer pull-right" style="float: left !important;font-size: 28px;font-weight: bold;"><i class="fa fa-arrow-left" style="margin-right: 20px;"></i>Rearange Photos</a></div>
+                    <div class="col-md-6 col-xs-12"><a href="javascript:$('#arrangeform').submit();" class="lbl-footer pull-right " style="float: right !important;font-size: 28px;font-weight: bold;">Order Books<i class="fa fa-arrow-right" style="margin-left: 20px;"></i></a></div>
+                    
+                    <!--<div class="col-md-8 col-xs-12 align-center"><a id="sh-footer" class="left up">Show Footer <i class="fa fa-caret-down careD"></i></a></div>-->						
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </form>
+        <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="Edit">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Edit Title</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name='title' id="title_prompt" style="width:100%;text-align: center"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary save">Save changes</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+        {js}
+        <script type="text/javascript" src="{theme_url}js/slick.min.js"></script>
+        <script>
+$(document).ready(function(){
+
+var maxlength = $('input[name=sku]').val() == 'pb1000' ? 26:34;
+$('input[name=title]').attr('maxlength',maxlength);
+if ($("[name='metas[0]']").length) {
+		var json = JSON.parse($("[name='metas[0]']").val()) || {} ;
+		$('input[name=title]').val(json.title || '');
+	}
+	$('input[name=title]').change(function(){
+		var json = JSON.parse($("[name='metas[0]']").val()) || {} ;
+		json.title = this.value;
+		$("[name='metas[0]']").val(JSON.stringify(json));        
+	});
+	$('.photobook-item img').each(function(i,img){
+		if(img.naturalHeight > img.naturalWidth) {
+			$(img).width( img.naturalWidth / img.naturalHeight * 324).css('margin',' 0  auto') ;		
+		} 
+	});
+            function equalGrids(){
+                equalGrid = $('section .photoitem').width();
+                $('section .photoitem').height(equalGrid);
+                $('section .photoitem > .overlay > span').css('line-height',equalGrid +'px');
+                /*for footer stay on bottom*/
+                defContentHeight = $(window).innerHeight() - 110;
+                if ($('footer').siblings('section').height() < defContentHeight){
+                    $('footer').addClass('stayBottom');
+                }
+                else if($('footer').siblings('section').height() > defContentHeight){
+                    $('footer').removeClass('stayBottom');
+                }
+            }
+            
+            $('#edit_modal .btn.save').click(function(){                
+                $('.spine input').val($('#title_prompt').val());
+                $('#edit_modal').modal('hide');
+                return true;
+            });
+            
+            $('.spine input').on('change',function(){$('#edit_modal input').val(this.value);});
+
+            $(window).on('resize',equalGrids);
+  		$('.review-book').slick({
+    		infinite: false,
+                width: '100%',
+  			slidesToShow: 2,
+  			slidesToScroll: 2,
+  			 responsive: [
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 2
+			      }
+			    }] 
+  		});
+        $('#sh-foot').click(function(e){
+            $('.footer-toggle').slideToggle();
+            if($(this).hasClass('up')){
+            $(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+            }else{
+            $(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+            }
+            $('html, body').animate({
+                scrollTop: $(document).height()
+                }, 2000);
+            e.preventDefault();
+        });
+});
+        </script>
+    </body>
+</html>

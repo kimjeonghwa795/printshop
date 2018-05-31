@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{site_name}</title>
+
+ {meta}
+
+        {css}
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+<style>
+    .img-cont.story.paddbottom {
+        padding-top: 16px;
+    }
+</style>
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page about">
+        <section class="bg-green">
+            <div class="container">
+                <div class="row">
+					{if lang == "bahasa"}
+					<div class="title-cont story storyline"><span style="font-size:30px;">jkandskjaj</span><br><br><span class="black sub-title">Greetings!</span> <br>
+                        <p class="lbl">Meet Print Shop, an online photo printing service that helps you print your awesome photos easily and fast right from your smartphone, computer, Facebook, or Instagram. </p>
+                        <p class="lbl padd-top">Well, just like most of us, you might have more time snapping pictures but too busy to print and pick them up, not to mention the awful traffic out there. That’s how the original idea of Print Shop came up to our head: to help people turn their moments of magic into something real with no headache and no hassle.</p>
+                    </div>
+					{if:else}
+                    <div class="title-cont story storyline"><span style="font-size:30px;">Your Awesome Photos Start Here</span><br><br><span class="black sub-title">Greetings!</span> <br>
+                        <p class="lbl">Meet Print Shop, an online photo printing service that helps you print your awesome photos easily and fast right from your smartphone, computer, Facebook, or Instagram. </p>
+                        <p class="lbl padd-top">Well, just like most of us, you might have more time snapping pictures but too busy to print and pick them up, not to mention the awful traffic out there. That’s how the original idea of Print Shop came up to our head: to help people turn their moments of magic into something real with no headache and no hassle.</p>
+                    </div>
+					{/if}
+                </div>
+            </div>
+	</section>
+        <section>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story paddbottom">
+                        <img src="{theme_url}images/svg/Aboutus1.svg" class="img-responsive" />
+                    </div>
+                    <div class="title-cont storyline black">
+                        <!--<span class="black sub-title">And then... </span>-->
+                        <!--<br>-->
+                        <p class="lbl">Behind this cool website are a bunch of our fantastic buddies who’re so excited to help you make the best of your photos and deliver them with smile right to your doorstep.</p>
+                        <p class="lbl padd-top">Long story short, all of the excitements you find here were humbly started in 1991 by Adorama as a small photographic lab in Kemang, South Jakarta, that today has been growing into an offset and digital photography solutions with 7 branches spread across the town. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-pink">
+                <div class="container">
+                    <div class="title-cont story storyline black"><span class="black sub-title">Wow, that’s something that we are still deeply proud of!</span><br>
+                        <p class="lbl">Simply put, we don’t just print your photos, but also the cheerful faces of your loved ones so you can share your happiness easily in a fun and interesting way. Because just like you, we believe that life should be enjoyed and celebrated.</p>
+                        <span class="black sub-title">Say cheese!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story" style="padding-top: 16px;padding-bottom: 85px;">
+                        <img src="{theme_url}images/svg/Aboutus2.svg" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+	</section>
+    </div>
+    {embed=assets/footer}
+        {js}
+</body>
+</html>

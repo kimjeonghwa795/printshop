@@ -1,0 +1,72 @@
+{if logged_in}
+   {redirect="/"}
+{/if}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+
+        {meta}        
+	{exp:minimee:css queue="head_css"}        
+            {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <style>
+            header .header-menu .navbar-title{display:none;}
+              
+        </style>
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        {head_js}
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page register">
+	<section >
+        <div class="container login">
+            <div class="row">
+                <div class="content">
+                    <div class="frm_cont_login clearfix col-centered col-md-6">
+                        <div class="">
+                            <div class="title_big">Account Log In</div>
+                            <div class="title_small">Hello there, we have not seen you in a while!</div>
+                            <div class="frm_login">
+                                {exp:member:login_form return='{current_url}'} 
+                                <form>
+                                    <div class="field-cont">
+                                        <input type="text" name="username" value="" class="form-control cus-field" placeholder="email*" required>
+                                    </div>
+                                    <div class="field-cont">
+                                        <input type="password" name="password" value="" class="form-control cus-field" placeholder="password*" required>
+                                    </div>
+                                    
+                                    
+<!--                                    {if auto_login}
+                                        <div class="field-cont">
+                                            <input type="checkbox" name="auto_login" value="1" class="chekc" id="cek"><label for="cek">Auto-login on future visits</label>
+                                        </div>
+                                        
+                                    {/if}-->
+                                    <div class="field-cont" style="margin: 30px;">
+                                        <input type="submit" name="submit" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                                    </div>
+                                </form>
+                                {/exp:member:login_form}
+                                    <a href="/register" class="text1" style="margin-left:0px;">Don't have an account?</a>                                    
+                                    <a href="/forgot" class="text1" style="margin-left:0px;display: block;margin-top: 16px;">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+	</section>
+
+    </div>
+    {embed=assets/footer}
+    {exp:minimee:js queue="foot_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"}  
+</body>
+</html>

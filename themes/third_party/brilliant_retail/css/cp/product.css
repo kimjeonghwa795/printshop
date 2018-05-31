@@ -1,0 +1,285 @@
+/* Validation Error */
+
+div#error {
+	border: 1px #FA7777 solid;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #FAEDED;
+}
+
+div#error label.error {
+	display: block;
+}
+
+/* Search */
+
+.br_product_search{
+	margin: 3px 8px 0;
+	background: url(../../images/bg_fieldtype_search.png) repeat-x transparent;
+	float: none;
+	width: 216px;
+	height: 25px;
+}
+
+.br_product_search input[type='text']{
+	background: transparent;
+	margin-left: 20px;
+	border: none;
+	height: 18px;
+	font-size: 12px;
+}
+
+/* Product Edit */
+
+.product_edit {
+	border: 	#CCC solid;
+	border-width: 1px;
+	background:	#F4F6F6;
+	clear: both;
+}
+
+.product_edit tr th {
+	background:		url(../../images/bg_fieldtype.jpg) repeat-x #F4F6F6;
+	border-bottom: 	1px #CCC solid;
+	color:			#666;
+	padding: 		8px 10px 6px;
+	text-align: 	left;
+}
+
+.product_edit td {
+	vertical-align: top;
+	text-align: left;
+	padding: 8px 10px;
+	border-top: none;
+	border-left: none;
+	border-bottom: 1px #E7E7E7 solid;
+	border-right: 1px #E7E7E7 solid;
+	background: #FFF;
+}
+
+.product_edit td:last-child
+{
+	border-right:none;
+}
+
+.product_edit td textarea {
+	height: 150px;
+}
+
+/* Move Row Handles */
+
+#sel_attribute td.move_attr_row,  
+#price_table td.move_price_row,
+#sale_price_table td.move_sale_price_row,
+#optionTable td.move_option_row,
+.product_edit td.move_image_row, 
+.product_edit .move_related_row,
+#config_selected td.move_config_row,
+#optionTable table.product_edit td.move_drop_option_row {
+	border-right: none;
+	text-align: center;
+	cursor: move;
+	padding-right: 0;
+}
+
+/* Custom Attributes */
+
+#attributeContainer {
+	display: none;
+}
+
+#attributeContainer label {
+	float:left;
+	width:50px;
+	font-weight: bold;
+}
+
+#attributeOptions {
+	float: left;
+}
+#addCustomAttribute {
+	float: left;
+	cursor: pointer;
+	background: url(../../images/btn-add.png) top left no-repeat;
+	width: 100px;
+	height: 19px;
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 25px;
+	padding-top: 6px;
+	color: #666;
+}
+#optionSelect,
+#optionCancel
+{
+	margin: 3px 0 3px 7px;
+}
+
+/* Images & Downloads */
+
+#download_browse_button, 
+#img_browse_button,
+#s3_import_button {
+	float:			left;
+	cursor: 		pointer;
+	background:		url(../../images/btn-browse.png) top left no-repeat;
+	height:			24px;
+	font-size: 		12px;
+	font-weight: 	bold;
+	padding-left:	25px;
+	padding-top: 	6px;
+	color: 			#666;
+}
+#download_browse_button, 
+#s3_import_button {
+	width:			80px;
+}
+
+#img_browse_button {
+	width:			130px;
+}
+
+
+
+#download_add_button, 
+#img_upload_button {
+	float: left;
+	margin-right: 5px;
+}
+
+#showDownloadProgress, 
+#showprogress {
+	display: none;
+	margin-left: 215px;
+	position: absolute;
+	margin-top: 5px;
+}	
+
+/* Category Tab */
+
+
+#product_category_tree li {
+    list-style-type: none;
+	padding: 7px 0 0 10px;
+	margin: auto;
+}
+#product_category_tree ul {
+	display:none;
+}
+#product_category_tree li span {
+    list-style-type: none;
+	padding: 0 4px;
+	margin: auto;
+}
+
+#product_category_tree li span.anchor {
+	height: 	20px;
+	cursor: 	default;
+	position: 	relative;
+	top: 		0px;
+	left: 		0px;
+	cursor: 	pointer;
+}
+
+#product_category_tree li span.cat_disabled {
+	color: #CCC;
+}
+
+#product_category_tree li span.anchor_collapse {
+	background: url(../../images/d.gif) -1px -3px no-repeat;
+}
+
+#product_category_tree li span.anchor_expand {
+	background:	url(../../images/d.gif) -19px -3px no-repeat;
+}
+
+#product_category_tree li span.anchor_empty {
+	height: 	20px;
+	cursor: 	default;
+	position: 	relative;
+	top: 		0px;
+	left: 		0px;
+	cursor: 	pointer;
+}
+
+/* Subtypes */
+
+#sub_hold_br_type .subtypes {
+	display: none;
+	margin-top: 15px;
+}
+
+#configurableCreate a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+/* Configurable Product */ 
+
+.asmContainer {
+	/* container that surrounds entire asmSelect widget */
+}
+
+.asmSelect {
+	/* the newly created regular 'select' */
+	display: inline; 
+	margin-top:5px;
+}
+
+.asmOptionDisabled {
+	/* disabled options in new select */
+	color: #999; 
+}
+
+.asmHighlight {
+	/* the highlight span */
+	padding: 0;
+	margin: 0 0 0 1em;
+}
+
+.asmList {
+	/* html list that contains selected items */
+	margin: 10px 0; 
+	position: relative;
+	display: block;
+	padding-left: 0; 
+	list-style: none; 
+}
+
+.asmListItem {
+	/* li item from the html list above */
+	position: relative; 
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+	background: #E7E7E7;
+	border: 1px solid #bbb; 
+	width: 100%; 
+	margin: 0 0 -1px 0; 
+	line-height: 1em;
+}
+
+.asmListItem:hover {
+	background-color: #e5e5e5;
+}
+
+.asmListItemLabel {
+	/* this is a span that surrounds the text in the item, except for the remove link */
+	padding: 5px; 
+	display: block;
+}
+
+.asmListSortable .asmListItemLabel {
+	cursor: move; 
+}
+
+.asmListItemRemove {
+	/* the remove link in each list item */
+	position: absolute;
+	right: 0; 
+	top: 0;
+	padding: 3px; 
+}

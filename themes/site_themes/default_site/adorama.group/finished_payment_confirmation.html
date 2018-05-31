@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+         {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/style.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/font-awesome/css/font-awesome.min.css">
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+	{embed=assets/header}
+<div class="page">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+					<div class="title-cont bold f42">You are champ! </div>
+					<img src="{theme_url}images/finished-pay.png" class="img-responsive img-centered">
+					<div class="desc-img" style="text-align: center;" >
+						Awesome your order is being processed and will be shipped to your soon! 
+					</div>
+					<div class="button-back marg">
+						<a href="#" class="btn btn-circle pad-hop">Continue Shopping</a>
+					</div>
+					<label class="lbl-finished">Don't forget to confirm your payment if you choose bank transfer method use this <strong>Page</strong> or use the link that we sent you on your mail </label>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+        {exp:minimee:js queue="foot_js"}
+            {js}
+        {/exp:minimee:js}
+        {exp:minimee:display js="foot_js"}  
+<script>
+// $(document).ready(function() {
+//     $('.carousel').carousel({
+//       interval: 6000
+//     })
+//   });
+	$(document).ready(function(){
+		$('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 2000);
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="196px" height="196px" viewBox="0 0 196 196" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Group Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="98" cy="97.9734667" rx="97.6592899" ry="97.9734667"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Order-&amp;-Shipping-Information" sketch:type="MSArtboardGroup" transform="translate(-622.000000, -1334.000000)">
+            <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(622.000000, 1334.000000)">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#9F86AF" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <path d="M28.0278198,147.738695 L98.352603,181.090395 L98.352603,98.7666501 L28.0278198,65.4156621 L28.0278198,147.738695" id="Fill-1" fill="#FCD154" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M168.677386,147.738695 L98.352603,181.090395 L98.352603,98.7666501 L168.677386,65.4156621 L168.677386,147.738695" id="Fill-2" fill="#FDDE84" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M168.677386,65.4156621 L98.352603,34.9021469 L28.0278198,65.4156621 L98.352603,98.7666501 L168.677386,65.4156621 L279.626667,5.22666667" id="Fill-3" fill="#F8BF1A" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M118.035102,114.060043 C126.884325,103.093507 132.839196,109.440421 132.839196,109.440421 L135.306546,111.126229 L137.773895,107.454048 C137.773895,107.454048 142.708593,98.7701904 148.876965,98.9662184 C155.045338,99.1622464 159.766534,107.345251 153.598161,116.525703 C147.429788,125.706154 135.306545,143.274157 135.306545,143.274157 C125.860294,138.102107 118.035102,132.180461 118.035102,132.180461 C118.035102,132.180461 109.185879,125.026578 118.035102,114.060043 Z" id="Path-1233-Copy-3" fill="#FC554A" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M40.9417687,114.060043 C49.7909919,103.093507 55.7458631,109.440421 55.7458631,109.440421 L58.2132122,111.126229 L60.6805613,107.454048 C60.6805613,107.454048 65.6152592,98.7701904 71.7836321,98.9662184 C77.952005,99.1622464 82.6732004,107.345251 76.5048278,116.525703 C70.3364551,125.706154 58.2132122,143.274157 58.2132122,143.274157 C48.7669606,138.102107 40.9417687,132.180461 40.9417687,132.180461 C40.9417687,132.180461 32.0925455,125.026578 40.9417687,114.060043 Z" id="Path-1233-Copy-4" fill="#FC554A" sketch:type="MSShapeGroup" mask="url(#mask-2)">
+                    <g transform="translate(58.201008, 121.118553) scale(-1, 1) translate(-58.201008, -121.118553) "></g>
+                </path>
+                <path d="M98,35.28 L168.56,65.3333333 L197.306667,31.36 L124.133333,0 L98,35.28 Z" id="Path-1381" fill="#FDDE84" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M28.7466667,65.3333333 L98,99.3066667 L129.36,65.3333333 L54.88,30.0533333 L28.7466667,65.3333333 Z" id="Path-1381-Copy" fill="#FDDE84" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

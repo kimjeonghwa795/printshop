@@ -1,0 +1,11 @@
+<a class="hvr-bounce-to-bottom" href="{exp:brilliant_retail:path src='cart'}">Cart 
+   {if {exp:brilliant_retail:cart_items} }(<span class="cart_total">{exp:brilliant_retail:cart_items}</span>){/if}
+</a>
+{if {exp:brilliant_retail:cart_items} }
+<div class="nav-menu cart-menu">
+  <label>Total</label><br />
+  <span>{exp:brilliant_retail:cart_total}</span>
+  <a href="/cart">Review</a><br />
+  <a href="/checkout">Checkout</a>
+</div>
+{/if}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>                        
+<!--        <meta http-equiv="refresh" content="0; url={site_url}upload#instagram"/>-->
+
+        {meta}
+        {exp:minimee:css queue="head_css"}        
+            {css}        
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/instagram.css"/>
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/colorbox.css"/>
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        
+        <style>
+            .page{
+                min-height: calc(100vh - 138px);
+            }
+            .row.head {
+                padding: 5% 0;
+            }
+            .bg-white {
+                background: #fff;
+                min-height: calc(100vh - 372px);
+                padding: 16px 0;
+            }
+            .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+                color: #FF5445 !important;
+                cursor: default;
+                background-color: transparent;
+                border: none;
+                border-bottom-color: transparent;
+                font-family: gotham-medium;
+            }
+            .nav-tabs>li>a {
+                margin-right: 2px;
+                line-height: 1.42857143;
+                border: none;
+                border-radius: 4px 4px 0 0;
+                color: #333333;
+                font-size: 16px;
+                font-family: gotham-book;
+                letter-spacing: 0.5px;
+            }
+            .col-md-6{padding-left: 0 !Important;}
+            .nav-tabs>li>a:hover {
+                border-color: transparent;
+                color: #FF5445 !important;
+                border: none;
+                background: transparent;
+            }
+            .nav-tabs {
+                border-bottom: 1px solid #ddd;
+                border: none;
+            }
+            .nav-tabs>li:first-child > a {
+                padding-left: 0;
+            }
+            .nav-tabs>li    {
+                padding-top: 16px;
+            }
+            h4, .h4 {
+                font-size: 20px;
+            }
+            h5, .h5 {
+                font-size: 16px;
+            }
+            .nav>li>a:hover, .nav>li>a:focus {
+                text-decoration: none;
+                background-color: transparent;
+                outline: transparent;
+            }
+            #account .container {
+                width: 800px !important;
+            }
+            li.logins{display:none;}
+            div.tab-pane {
+                padding: 16px 0;
+            }
+            #profile.tab-pane {
+                padding-top: 0;
+            }
+            #address {
+                margin: 0;
+            }
+            #orders tr th {
+                text-align: center;
+                border-color: black;
+            }
+            #orders td {
+                color: black;
+                border-color: black;
+                padding: 10px 0px;
+            }
+            #orders a {
+                color: black !Important;
+            }
+            #orders {
+                font-family: gotham-medium;
+                text-align: center;
+            }
+            #orders tr th:first-child {
+                padding-left: 0;
+                text-align: left;
+            }
+            td.Canceled {
+                color: #fc554c !Important;
+            }
+            td.Pending {
+                color: #fac730 !Important;
+            }
+            td.Complete {
+                color: #49cf8a !important;
+            }
+            .no-order a {
+                color: #FE5445;
+            }
+            .no-order {
+                font-family: gotham-book;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                margin-top: 32px;
+            }
+            .no-order a {
+                font-family: gotham-medium;
+            }
+            .text1{
+                display: block;
+                padding: 4px 0;
+            }
+            #profile .content{display: none;}
+            #profile .content.active{display: block;}
+            #shipping .content{display: none;}
+            #shipping .content.active{display: block;}
+            .tabs-content {
+                padding: 8px 0;
+            }
+            .tabs-content .field-cont:first-child {
+                margin-top: 20px;
+            }
+            .tabs-content .cus-field {
+                padding-left: 0;
+                font-family: gotham-book;
+                font-size: 16px;
+            }
+            section .field-cont .text1 {
+                font-family: gotham-medium;
+                font-size: 16px;
+            }
+
+            section .field-cont .btn {
+                margin-left: 0;
+            }
+            section .field-cont a{
+                display: inline-block;
+                margin-left: 62px;
+            }
+            #shipping .col-md-6:first-child {
+                padding-left: 0;
+            }
+            #shipping .col-md-6 {
+                padding: 0 32px;
+            }
+            #shipping span {
+                font-family: gotham-book;
+                font-size: 12px;
+            }
+            #address a {
+                margin-top: 16px; 
+            }
+            .no-ship .btn {
+                margin-left: 0;
+            }
+
+            .no-ship {
+                max-width: 215px;
+                margin-top: 16px !important;
+            }
+            .no-ship span {
+                font-family: gotham-book;
+                font-size: 14px !important;
+                display: block;
+                margin: 32px 0 !Important;
+                margin-top: 16px !important;
+                height: 100px;
+            }
+        </style>
+        {embed="_assets/header"}
+        {head_js}
+</head>
+<body class="">
+{embed=assets/header}
+<div id="account" class="page account">
+<section class="container" style="padding-top: 36px;">
+    <div class="row wrapper head">
+        <div id="subject" > 
+            {exp:brilliant_retail:show_message}
+            <div class="container">
+                <h2>My Account</h2>
+                <div class='tab-header'>
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#order" aria-controls="order" role="tab" data-toggle="tab">Order History</a></li>
+                      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                      <li role="presentation"><a href="#shipping" aria-controls="shipping" role="tab" data-toggle="tab">Shipping & Billing</a></li>
+                      <!--<li role="presentation"><a href="#billing" aria-controls="billing" role="tab" data-toggle="tab">Billing</a></li>-->
+                      <li role="presentation"><a href="{path='logout'}">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</section>
+<section>
+    <div class="bg-white">
+        <div class="container">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="order">
+                <h4>Recent Order</h4>
+                {exp:brilliant_retail:customer_orders}
+                {if total_orders}
+                <table id="orders" cellspacing="0" class="table border"> 
+                     <thead>
+                         <tr>
+                             <th>Order</th>
+                             <th>Date</th>
+                             <th>Ship To</th>
+                             <th>Status</th>
+                             <th>Total</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {orders}
+                                <tr>
+                                    <td class="col1">
+                                            <a href="{exp:brilliant_retail:path src='customer/order_detail/{order_id}'}" onclick="return false;">{order_id}</a></td>
+                                    <td class="col2">
+                                            {created format="%n/%d/%y"}</td>
+                                    <td class="col3">
+                                            {address}
+                                                    {shipping_fname} {shipping_lname}
+                                            {/address}</td>
+                                    <td class="col4 {status}">
+                                            {status}</td>
+                                    <td class="col5" title='Paid : {paid}'>
+                                            {currency_marker} {total format="#.###,00"}
+                                           {if !paid }
+                                           <a  href='{payment_link}'><i class='fa fa-credit-card'></i></a>
+                                           {/if}
+                                           
+                                    </td>
+                                </tr>
+                        {/orders}
+
+                     </tbody>
+                </table> <!-- orders -->
+                {if:else}
+                <div class="no-order">
+                    <span>Aw snap! looks like you have not purchase anything from us!</span><br /><br />
+                    <span>You should check out our awesome collection of product</span><br />
+                    <span>In <a href="/">our store</a> so we can still be friends :)</span>
+                </div>
+                {/if}
+                {/exp:brilliant_retail:customer_orders}
+            </div>
+        {exp:brilliant_retail:customer_profile}
+        
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="content active account-detail" id="">
+                    <h4>Account Details</h4>
+                    <div class="tabs-content">
+                        <!--<img src="{theme}/images/profile-pic.jpg" alt="" />-->
+                        <h5 style="text-transform: capitalize;margin-bottom: 24px;">{br_fname} {br_lname}</h5>
+                        <a href="#" class="text1" toggle="update-info">Update Info</a>
+                        <a href="#" class="text1" toggle="change-password">Change Password</a>
+                    </div>
+                </div> 
+                <div class="content update-info edit" id="">
+                    <h4>Update Info</h4>
+                    <div class="tabs-content">
+                        {form_open}
+                        <div class="tabs-content col-md-6 col-xs-12">
+                            <div class="field-cont">
+                                <input type="text" name="br_fname" value="{br_fname}" class="form-control cus-field" placeholder="First Name*" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_lname" value="{br_lname}" class="form-control cus-field" placeholder="Last Name*" required>
+                            </div>
+                            <div class="field-cont" style="margin: 30px 0;">
+                                <input type="submit" name="" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                                <a href="#" class="text1 " toggle="account-detail" style="">Cancel</a>
+                            </div>
+                        </div>
+                        {form_close}
+                    </div>
+                </div> 
+                <div class="content change-password edit" id="">
+                    <h4>Change Password</h4>
+                    <div class="tabs-content col-md-6 col-xs-12">           
+                        {exp:freemember:change_password}
+                        <div class="field-cont">
+                            <input type="password" name="current_password" value="" class="form-control cus-field" placeholder="Current Password*" required>
+                        </div>
+                        <div class="field-cont">
+                            <input type="password" name="password" value="" class="form-control cus-field" placeholder="New Password*" required>
+                        </div>
+                        <div class="field-cont">
+                            <input type="password" name="password_confirm" value="" class="form-control cus-field" placeholder="New Password Again*" required>
+                        </div>
+                        <div class="field-cont" style="margin: 30px 0;">
+                            <input type="submit" name="" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                            <a href="#" class="text1" toggle="account-detail" style="margin-left:32px;display: inline-block;">Cancel</a>
+                        </div>                        
+                        {/exp:freemember:change_password}
+                    </div>
+                </div> 
+            </div>
+            <div role="tabpanel" class="tab-pane" id="shipping">
+                <div class="content active address " id="">
+                    <div class="col-md-6" style="padding-left: 0">
+                        <h4>Shipping Address</h4>
+                        <div class="tabs-content">
+                            {if br_shipping_address1}
+                            <h5 class="title">
+                                {br_shipping_fname} {br_shipping_lname}
+                            </h5>
+                            <span>
+                                {br_shipping_company}
+                                {br_shipping_address1}<br />
+                                {if '{br_shipping_address2}' != ''}{br_shipping_address2}<br />{/if}                            
+                                {br_shipping_district} - {br_shipping_city}<br />
+                                {br_shipping_state}<br />
+                                {br_shipping_zip}<br />
+                                {if '{br_shipping_phone}' != ''} <i class="fa fa-phone"></i> {br_shipping_phone} {/if}
+
+                            </span>
+                            
+                            {if:else}
+                                <div class="no-ship">
+                                    <span>Oh No! Looks like you have not add your address. Click on the button bellow to add your shipping address</span>                                    
+                                </div>
+                            {/if}
+                        </div>
+						<a href="#" class="btn btn-circle" toggle="edit-ship">Edit</a>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Billing Address</h4>
+                        <div class="tabs-content">
+                            
+                            {if br_billing_address1}
+                            <h5 class="title">
+                                {br_billing_fname} {br_billing_lname}
+                            </h5>
+                            <span>
+                                {br_billing_company}
+                                {br_billing_address1}<br />
+                                {if '{br_billing_address2}' != ''}{br_billing_address2}<br />{/if}
+                                {br_billing_district} - {br_billing_city}<br />
+                                {br_billing_state}<br />
+                                {br_billing_zip}<br />
+                                {if '{br_billing_phone}' != ''} <i class="fa fa-phone"></i>{br_billing_phone} {/if}
+                            </span>
+                            
+                            {if:else}
+                                <div class="no-ship">
+                                    <span>You have not associate a billing details to your account.<br /> Use the button bellow to add one!</span>                                    
+                                </div>
+                            {/if}
+                        </div>
+                        <a href="#" class="btn btn-circle" toggle="edit-bill" >Edit</a>
+                    </div>
+                </div>
+                
+                <div class="content edit-ship edit" id="edit-ship">
+                    <h4>Shipping Adress</h4>
+                    <div class="tabs-content form-contact" style="width:100%">
+                        {form_open}
+                        <div class="col-md-6" style="padding-left: 0">
+                            <div class="field-cont">
+                                <input type="text" name="br_shipping_fname" value="{br_shipping_fname}" class="form-control cus-field" placeholder="First Name *" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_shipping_address1" value="{br_shipping_address1}" class="form-control cus-field" placeholder="Address 1 *" required>
+                            </div>
+                            <div class="field-cont">                                
+                                {exp:brilliant_retail:countries name="br_shipping_country" id="br_shipping_country" class="form-control cus-field listinp required" value="" placeholder="Country *" required"}
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_shipping_city" value="{br_shipping_city}" class="form-control cus-field" placeholder="City *" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="tel" name="br_shipping_phone" value="{br_shipping_phone}" class="form-control cus-field" placeholder="Shipping Phone*" required>
+                            </div>							
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field-cont">
+                                <input type="text" name="br_shipping_lname" value="{br_shipping_lname}" class="form-control cus-field" placeholder="Last Name *" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_shipping_address2" value="{br_shipping_address2}" class="form-control cus-field" placeholder="Address 2 *" >
+                            </div>
+                            <div class="field-cont">                                
+								{exp:brilliant_retail:states name="br_shipping_state" id="br_shipping_state" class="form-control cus-field listinp required" value="" placeholder="Province *" required"}
+                            </div>
+							<div class="field-cont">                                
+								<input type="text" name="br_shipping_district" value="{br_shipping_district}" class="form-control cus-field" placeholder="Shipping Regency *" >
+                            </div>
+							
+                            <div class="field-cont">
+                                <input type="number" name="br_shipping_zip" value="{br_shipping_zip}" class="form-control cus-field" placeholder="Post Code" >
+                            </div>
+                        </div>
+                        <div class="field-cont col-md-12" style="margin: 30px 0;padding: 0">
+                            <input type="submit" name="" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                            <a href="#" class="text1" toggle="address" style="margin-left:32px;display: inline-block;">Cancel</a>
+                        </div>
+                        {form_close}
+                    </div>
+                </div>
+                
+                <div class="content edit-bill edit" id="edit-bill">
+                    <h4>Billing Address</h4>
+                    <div class="tabs-content form-contact" style="width:100%">
+                        {form_open}
+                        <div class="col-md-6 col-sm-12">
+                            <div class="field-cont">
+                                <input type="text" name="br_billing_fname" value="{br_billing_fname}" class="form-control cus-field" placeholder="First Name *" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_billing_address1" value="{br_billing_address1}" class="form-control cus-field" placeholder="Address 1 *" required>
+                            </div>
+                            <div class="field-cont">
+								{exp:brilliant_retail:countries name="br_billing_country" id="br_billing_country" class="form-control cus-field listinp required" value="" placeholder="Country *" required"}                                
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_billing_city" value="{br_billing_city}" class="form-control cus-field" placeholder="City *" required>                                
+                            </div>
+							<div class="field-cont">
+                                <input type="tel" name="br_billing_phone" value="{br_billing_phone}" class="form-control cus-field" placeholder="Billing Phone *" >
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="field-cont">
+                                <input type="text" name="br_billing_lname" value="{br_billing_lname}" class="form-control cus-field" placeholder="Last Name *" required>
+                            </div>
+                            <div class="field-cont">
+                                <input type="text" name="br_billing_address2" value="{br_billing_address2}" class="form-control cus-field" placeholder="Address 2 *" >
+                            </div>
+                            <div class="field-cont">
+								{exp:brilliant_retail:states name="br_billing_state" id="br_billing_state" class="form-control cus-field listinp required" value="" placeholder="Province *" required"}                                
+                            </div>
+                            <div class="field-cont">
+								<input type="text" name="br_billing_district" value="{br_billing_district}" class="form-control cus-field" placeholder="Billing Regency *" >
+                            </div>
+                            <div class="field-cont">
+                                <input type="number" name="br_billing_zip" value="{br_billing_zip}" class="form-control cus-field" placeholder="Post Code " >
+                            </div>
+                        </div>
+                        <div class="field-cont col-md-12" style="margin: 30px 0;padding: 0">
+                            <input type="submit" name="" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                            <a href="#" class="text1" toggle="address" style="margin-left:32px;display: inline-block;">Cancel</a>
+                        </div>
+                        {form_close}
+                    </div>
+                </div>
+            </div>        
+        {/exp:brilliant_retail:customer_profile}
+        </div> <!-- subject -->
+    </div>
+    </div>
+</section>
+</div> 
+{embed=assets/footer}
+{js}
+<script>
+    $(document).ready(function(){
+		$("#profile_edit").validate();
+        if (window.location.hash != '' ){$('.nav-tabs a[href="'+window.location.hash+'"]').click();}
+        removeHash();
+        $('#profile a').click(function(){
+            id = $(this).attr("toggle");
+            $('#profile .content').removeClass('active');
+            $('#profile .content.'+id).addClass('active')
+        })
+        $('#shipping a').click(function(){
+            id = $(this).attr("toggle");
+            $('#shipping .content').removeClass('active');
+            $('#shipping .content.'+id).addClass('active')
+        })
+    })
+    function removeHash() { 
+        history.pushState("", document.title, window.location.pathname
+        + window.location.search);
+    }
+    
+</script>
+</body>
+</html>

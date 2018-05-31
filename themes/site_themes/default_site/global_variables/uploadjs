@@ -1,0 +1,8 @@
+
+<script src="{site_url}themes/site_themes/default_site/js/upload/xtpl.min.js"></script>
+<script src="{site_url}themes/site_themes/default_site/js/upload/FileAPI.min.js"></script>
+<script src="{site_url}themes/site_themes/default_site/js/upload/FileAPI.html5.min.js"></script>
+<script src="{site_url}themes/site_themes/default_site/js/upload/jquery.fileapi.min.js"></script>
+
+<script src="{site_url}themes/site_themes/default_site/js/upload/upload.js"></script>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+ 	{meta}
+        {exp:minimee:css queue="head_css"}        
+            {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+</head>
+<body>
+{embed=assets/header}
+<div class="page payment">
+	<section class="min-height">
+		<div class="container">
+			<div class="row">
+				{exp:email:contact_form user_recipients="no" recipients="dliejardi@gmail.com" redirect="0"  return="/payment/success" charset="utf-8"}
+				<input type="hidden" name="allow_html" value="y"/>
+				<input type="hidden" name="subject" value="Payment Confirmation for order #{exp:session_variables:get name='order_id'}"/>
+				<input type="hidden" name="message" value="Payment Confirmation for order #{exp:session_variables:get name='order_id'} using "/>
+				<div class="title-cont paddtop65">Confirm Payment  <label class="lbl">Confirm the payment you made using this form and we will get back to you</label></div>
+				<div class="form-contact clearfix">					
+						<div class="contact-cont">
+							<div class="field-cont">
+								<input type="email" name="from" class="form-control cus-field" placeholder="Email Address *" required>
+							</div>
+							<div class="field-cont">
+								<input type="text" name="order"  value="{exp:session_variables:get name='order_id'}" class="form-control cus-field" placeholder="Order id *" required>
+							</div>
+							<div class="field-cont">
+								<select class="form-control cus-field" name="pay_to" required placeholder="Payment made to*">							
+									<option value="BCA">BCA</option>
+									<option value="Mandiri">Mandiri</option>									
+								</select>
+							</div>
+						</div>
+						<div class="contact-cont">
+							<div class="field-cont">
+								<input type="text" name="acct_name" class="form-control cus-field" placeholder="Account holder name * " required>
+							</div>
+							<div class="field-cont">
+								<input type="number" name="acct_num" class="form-control cus-field" placeholder="Account Number * " required>
+							</div>
+							<div class="field-cont">
+								<input type="text" name="transferdate" class="form-control cus-field" id="date" placeholder="Transferdate" readonly required>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="div-button">
+							<input type="submit"  class="btn btn-oval" value="Submit">
+						</div>
+						<label class="pull-right lbl-required">* required to fill</label>
+					{/exp:email:contact_form}
+				</div>
+			</div>
+		</div>
+	</section> 
+</div>
+{embed=assets/footer}
+{exp:minimee:js queue="foot_js"} 
+    {js} 
+{/exp:minimee:js}
+{exp:minimee:display js="foot_js"}  
+<script>
+$(document).ready(function() {
+	$('[name=transferdate]').datepicker({'dateFormat' : 'dd-mm-yy'});
+	$('input[name=order]').change(function(){ $('input[name=subject]').val("Payment Confirmation for order #" + $('[name=order]').val() ); });
+	$('input,select').change(function(){ $('input[name=message]').val(	
+		"Payment Confirmation for order <a href='//printshop.co.id/admin.php?D=cp&C=addons_modules&M=show_module_cp&module=brilliant_retail&method=order_detail&order_id="+$('[name=order]').val() +"'> <b>#" + $('[name=order]').val() + "</b></a><br/><br/>" +
+		"Payment made to: " + $('[name=pay_to]').val() +"<br/>" +
+		"Account Holder Name : " + $('[name=acct_name]').val() +"<br/>" +
+		"Account Number : " + $('[name=acct_num]').val() +"<br/>" +
+		"Transfer Date : " + $('[name=transferdate]').val() +"<br/>" +
+		"<br/><br/><br/>"		
+	); });
+});
+</script>
+</body>
+</html>

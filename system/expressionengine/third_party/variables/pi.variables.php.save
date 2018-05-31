@@ -1,0 +1,139 @@
+<?php if (! defined('BASEPATH')) exit('No direct script access');
+$plugin_info = array(
+	'pi_name' 			=> 	'Variables',
+	'pi_version' 		=>	'1.0',
+	'pi_author' 		=>	'Yorick Peterse',
+	'pi_author_url' 	=> 	'http://yorickpeterse.com/',
+	'pi_description' 	=> 	'The variables plugin gives the possibility to create variables (either static or dynamic) and use them later on. For example, the plugin can be used to generate canonical URLs, page titles, etc. ',
+	'pi_usage' 			=> 	Variables::usage()
+);
+
+class Variables{	
+	private $EE;
+	public function __construct()	{
+		$this->EE =& get_instance();		
+		// Create the cache array (if it doesn't exist)		
+		@session_start();
+		if (!isset($_SESSION['variables']) ) $_SESSION['variables'] = array();
+		
+	}
+	
+	public function __call($key, $args){
+		$this->EE->TMPL->tagparams['name'] = $key;
+		
+		if (isset($this->EE->TMPL->tagparams['value']) || ! empty($this->EE->TMPL->tagdata)){
+			return $this->set();
+		}
+		return $this->get();
+	}
+	
+	// ---------------------------------------------------------
+	
+	/**
+	 * Store a variable based on it's name
+	 *
+	 * @access public
+	 * @param string $name The name of the variable
+	 * @param string $value The variable's value
+	 * @param bool $append Append or create the data?
+	 * @return void
+	 */
+	public function set($append = FALSE){
+		$name 	= $this->EE->TMPL->fetch_param('name');
+		$value 	= $this->EE->TMPL->fetch_param('value');
+		if (!$value) $value = $this->EE->TMPL->tagdata;
+		// Both parameters are required
+		if ( !isset($name) OR !isset($value) ){
+			show_error('Variables: the following parameters are required: name, value.');
+		}		
+		// Store the variable
+		if ( $append === TRUE )		{
+			// Turn the value into a string in case it's empty
+			if ( !isset($_SESSION['variables'][$name]) ){
+				 $_SESSION['variables']['tmpl:'.$name] = '';
+			}
+			$_SESSION['variables']['tmpl:'.$name] .= $value;
+		}		else		{
+			$_SESSION['variables']['tmpl:'.$name] = $value;
+		}
+		
+	}
+	
+	// ---------------------------------------------------------
+	
+	/**
+	 * Get the value of the specified variable
+	 *
+	 * @access public
+	 * @param string $name The variable name
+	 * @param string $default The default value to return in case the variable doesn't exist
+	 * @return string
+	 */
+	public function get(){
+		$name 		= $this->EE->TMPL->fetch_param('name');
+		$default 	= $this->EE->TMPL->fetch_param('default');
+		if ( empty($name) ){
+			show_error('Variables: the name parameter is required.');
+		}
+		
+		if ( isset($_SESSION['variables']['tmpl:'.$name]) ){
+			return $_SESSION['variables']['tmpl:'.$name];
+		}else{
+			// Use the default value instead
+			if ( isset($default) ){
+				return $default;
+			}else{
+				show_error(sprintf('Variables: the "%s" variable does not exist.', $name));
+			}
+		}
+	}
+	
+	// ---------------------------------------------------------
+	
+	/**
+	 * Append the specified value to an already existing variable. This method is nothing more than a "reference" to the set method but with an extra parameter
+	 *
+	 * @access public
+	 * @param string $name The name of the variable
+	 * @param string $value The variable's value
+	 * @return void 
+	 */
+	public function append()
+	{
+		$this->set(TRUE);
+	}
+	
+	// ---------------------------------------------------------
+	
+	/**
+	 * Usage method
+	 *
+	 * @access public
+	 * @return mixed
+	 */
+	public static function usage()
+	{
+		ob_start();
+		?>
+The plugin has 3 possible methods: set, get and append. When creating variables (using either set or append) the following parameters are required: name, value and default.
+
+Methods
+- set: creates a new variable.
+- append: appends a value to an already existing variable. If the variable doesn't exist it will be created the first time this method is called.
+- get: retrieves a variable
+
+Parameters
+- name: the name of the variable
+- value: the value of the variable when creating a new variable or when appending data to an existing one
+- default: the default value to be used in case the retrieved variable was either empty or didn't exist
+		
+		
+		<?php
+		$buffer = ob_get_contents();
+		ob_end_clean();
+		
+		return $buffer;
+	}
+}
+// End of file pi.variables.php
+// Location: ./system/expressionengine/third_party/variables/pi.variables.php

@@ -1,0 +1,75 @@
+a:3:{s:4:"time";i:1527671407;s:3:"ttl";i:0;s:4:"data";s:3094:"{!-- ra:000000004220aef7000056510b860fc0 --}{!-- ra:000000004220aee6000056510b860fc0 --}{if logged_in}
+   {redirect="/"}
+{/if}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+
+        {meta}        
+	        
+            {css}
+        
+        {f4acc930e16260a7c8fcfd443f232ba1fb6b238e}
+        <style>
+            header .header-menu .navbar-title{display:none;}
+              
+        </style>
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        {head_js}
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page register">
+	<section >
+        <div class="container login">
+            <div class="row">
+                <div class="content">
+                    <div class="frm_cont_login clearfix col-centered col-md-6">
+                        <div class="">
+                            <div class="title_big">Account Log In</div>
+                            <div class="title_small">Hello there, we have not seen you in a while!</div>
+                            <div class="frm_login">
+                                <form method="post" action="http://printshop.co.id/"  >
+<div class='hiddenFields'>
+<input type="hidden" name="ACT" value="9" />
+<input type="hidden" name="RET" value="http://printshop.co.id/login" />
+<input type="hidden" name="site_id" value="1" />
+<input type="hidden" name="csrf_token" value="{csrf_token}" />
+</div>
+
+ 
+                                <form>
+                                    <div class="field-cont">
+                                        <input type="text" name="username" value="" class="form-control cus-field" placeholder="email*" required>
+                                    </div>
+                                    <div class="field-cont">
+                                        <input type="password" name="password" value="" class="form-control cus-field" placeholder="password*" required>
+                                    </div>
+                                    
+                                    
+<!--                                    {!-- ra:000000004220aefd000056510b860fc0 --}-->
+                                    <div class="field-cont" style="margin: 30px;">
+                                        <input type="submit" name="submit" value="Submit" class="btn btn-circle min-marg-top " id="submit"><label for="submit"></label>
+                                    </div>
+                                </form>
+                                </form>
+                                    <a href="/register" class="text1" style="margin-left:0px;">Don't have an account?</a>                                    
+                                    <a href="/forgot" class="text1" style="margin-left:0px;display: block;margin-top: 16px;">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+	</section>
+
+    </div>
+    {embed=assets/footer}
+    
+        {js}
+    
+    {a20e15154f8a539b2629871f4f1350cb09aeb845}  
+</body>
+</html>";}

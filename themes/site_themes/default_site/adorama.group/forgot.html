@@ -1,0 +1,88 @@
+{if logged_in}
+   {redirect="/"}
+{/if}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+
+         {exp:minimee:css queue="head_css"}        
+            {css}        
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/skins/all.css" />
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <style>
+            header .header-menu .navbar-title{display:none;}
+            
+        </style>
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        {head_js}
+</head>
+{if logged_in}
+{redirect='customer'}
+{/if}
+
+{embed="_assets/header"}
+<body>
+	{embed=assets/header}
+        <div class="page register">
+	<section >
+        <div class="container login">
+            <div class="row">
+                <div class="content">
+                    <div class="frm_cont_login clearfix col-centered col-md-6">
+                        <div class="">
+                            <div class="title_big">Forgot Pasword?</div>
+                            <div class="title_small">Enter your email and we'll send you reset instructions.</div>
+                            <div class="frm_login">
+                            <div id="login" class="">
+                                    <div class="wrapper">
+
+                                    {exp:brilliant_retail:show_message}
+
+                                    <div id="main" style="margin-top: 36px;">
+                                        {exp:brilliant_retail:forgot_password form_id="password_form"}
+                                        <div class="field-cont">
+                                            <input type="email" name="email" value="" class="form-control cus-field" placeholder="Email Address *" required>
+                                        </div>
+                                            <div class="clearboth"><!-- --></div>
+                                            <div class="field-cont" style="margin: 30px;">
+                                            <input type="submit" name="submit" value="Reset Password" class="btn btn-circle min-marg-top " id="submit"><label for="Submit"></label>
+                                        </div>
+                                        {/exp:brilliant_retail:forgot_password}
+                                    </div> <!-- main -->
+                                    <a href="/login" class="text1" style="margin-left:0px;">Cancel</a>                                    
+
+                                </div>
+                            </div> <!-- login -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+	</section>
+
+    </div>
+    {exp:brilliant_retail:js}
+            $(function(){
+                    $('#password_form').validate();
+            });
+    {/exp:brilliant_retail:js}
+
+    
+    {embed="_assets/footer"}
+    {embed=assets/footer}
+    {exp:minimee:js queue="foot_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"}  
+</body>
+</html>
+
+
+

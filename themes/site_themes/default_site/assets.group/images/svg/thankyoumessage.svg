@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="243px" height="180px" viewBox="0 0 243 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Group Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="89.2604676" cy="89.4275183" rx="89.2604676" ry="89.4275183"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Message-Sent-Sucessfull" sketch:type="MSArtboardGroup" transform="translate(-594.000000, -364.000000)">
+            <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(595.000000, 364.000000)">
+                <g id="Group" transform="translate(56.002500, 0.673419)">
+                    <mask id="mask-2" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#9884A4" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                </g>
+                <g id="Line-Copy-90-+-Line-Copy-97" transform="translate(120.906876, 150.426829) rotate(-180.000000) translate(-120.906876, -150.426829) translate(66.406876, 140.926829)" stroke="#FAD875" stroke-width="3" sketch:type="MSShapeGroup" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M108.554273,9.60479537 L0.873119235,9.60479531 L13.2245617,1" id="Line-Copy-90"></path>
+                    <path d="M108.554273,18.2095907 L0.873119235,18.2095907 L13.2245617,9.60479537" id="Line-Copy-97" transform="translate(54.713696, 13.907193) scale(1, -1) translate(-54.713696, -13.907193) "></path>
+                </g>
+                <g id="Line-Copy-90-+-Line-Copy-97-Copy" transform="translate(54.784068, 44.424556) rotate(-180.000000) translate(-54.784068, -44.424556) translate(0.284068, 35.424556)" stroke="#FAD875" stroke-width="3" sketch:type="MSShapeGroup" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M108.554273,8.60479537 L0.873119235,8.60479531 L13.2245617,0" id="Line-Copy-90"></path>
+                    <path d="M108.554273,17.2095907 L0.873119235,17.2095907 L13.2245617,8.60479537" id="Line-Copy-97" transform="translate(54.713696, 12.907193) scale(1, -1) translate(-54.713696, -12.907193) "></path>
+                </g>
+                <path d="M96.5067136,100.900579 L61.4223193,100.900579" id="Line-Copy-91" stroke="#FAD875" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M169.515965,31.1551789 L132.419046,31.1551788" id="Line-Copy-98" stroke="#FAD875" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M96.5067136,116.700978 L83.8817919,116.700978" id="Line-Copy-96" stroke="#FAD875" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M96.5067136,78.4408158 L83.8817919,78.4408158" id="Line-Copy-95" stroke="#FAD875" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <g id="Rectangle-284-Copy-+-Path-1232-Copy-+-Rectangle-284-Copy-+-Path-1232-Copy-+-Path-1233-Copy-3-+-Rectangle-284-Copy-+-Path-1232-+-Path-1233-Copy-2" transform="translate(111.284068, 43.595287)" sketch:type="MSShapeGroup">
+                    <g id="Rectangle-284-Copy-+-Path-1232-Copy" transform="translate(0.000000, 24.544715)">
+                        <rect id="Rectangle-284-Copy" fill="#C9F0B3" x="0" y="0" width="105.796494" height="63.2764228" rx="3"></rect>
+                        <path id="Path-1232" stroke="#B2B2B2" stroke-width="2" d=""></path>
+                    </g>
+                    <g id="Rectangle-284-Copy-+-Path-1232-Copy-+-Path-1233-Copy-3" transform="translate(11.224562, 14.113098)" fill="#FF9F00">
+                        <g id="Rectangle-284-Copy-+-Path-1232-Copy">
+                            <rect id="Rectangle-284-Copy" x="0" y="0" width="105.796494" height="63.2764228" rx="3"></rect>
+                        </g>
+                    </g>
+                    <g id="Rectangle-284-Copy-+-Path-1232-+-Path-1233-Copy-2" transform="translate(23.449123, 0.000000)">
+                        <g id="Rectangle-284-Copy-+-Path-1232" fill="#C6E5E8">
+                            <rect id="Rectangle-284-Copy" x="1" y="1" width="105.796494" height="63.2764228" rx="3"></rect>
+                        </g>
+                        <path d="M41.7388554,35.0790577 C41.7388554,35.0790577 35.5044457,28.1157519 41.7388555,23.304301 C47.9732653,18.4928502 52.1685609,24.1747143 52.1685609,24.1747143 L53.9068451,25.9155407 L55.6451293,24.1747143 C55.6451293,24.1747143 59.1216977,19.8226481 63.4674084,21.5634746 C67.8131191,23.304301 71.1392718,29.8565784 66.7935612,34.2086445 C62.4478506,38.5607106 53.9068451,46.8054572 53.9068451,46.8054572 C47.2518199,40.9737948 41.7388554,35.0790577 41.7388554,35.0790577 Z" id="Path-1233-Copy-2" fill="#FD6E65"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

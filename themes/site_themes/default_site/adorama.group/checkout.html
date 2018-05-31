@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrintShop Adorama</title>
+    {meta}
+    {exp:minimee:css queue="head_css"}
+        {css}
+    {/exp:minimee:css}    
+    {exp:minimee:css queue="head_css"}
+        <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/bootstrap-datepicker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/font-awesome/css/font-awesome.min.css"/>
+    {/exp:minimee:css}
+    {exp:minimee:display css="head_css"}
+    <style>        
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+        .w100 {width: 100%}
+        section .form-review .input-group input{width : 100%}
+        .error + span.input-group-btn.sub-group {
+            border-left: 0;
+            position: absolute;
+            right: 76px;
+            top: 0;
+        }
+        section .field-cont select {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+   {embed=assets/header}
+    <div class="page checkout">
+        {exp:brilliant_retail:checkout_form}
+        {form_open}        
+        <input type="hidden" name="currency" value="IDR" />
+        <section class="pay">
+            <div class="container bg-grey">
+                <div class="row ">
+                    <div class="form-review">
+                        <h3 class="title-cont mb40 " style="text-align: left" >Review & Pay</h3>
+                        {if "{exp:brilliant_retail:message_exists}" }
+                            <div class="alert alert-warning">
+                                {exp:brilliant_retail:show_message}
+                            </div>
+                        {/if}
+                        <div class="input-group col-md-6 col-xs-12">                                
+                                <input type="email" name="email" class="form-control sub-field" placeholder="Email Address" required value="{logged_in_email}" {if logged_in_email}readonly{/if} />
+                                <span class="input-group-btn sub-group">
+                                <button class="btn btn-default sub-button" style="margin-top: 0px" type="button">Submit</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="billing">            
+                <div class="bg-white ">
+                    <div class="row container">
+                        <div class="form-contact clearfix">
+                            <h3 class="mb40">Billing Address</h3>                            
+                            <div class="field-cont">
+                                <input	class="txtinp required form-control cus-field m50" 
+                                name="br_billing_fname"  placeholder="Firstname *" required id="br_billing_fname"  
+                                value="{exp:member:custom_profile_data}{br_billing_fname}{/exp:member:custom_profile_data}" type="text" />                                        
+                            </div>
+                            <div class="field-cont"> 
+                                <input	class="txtinp required form-control cus-field m50" 
+                                name="br_billing_lname"  placeholder="Lastname *" required id="br_billing_lname" 
+                                value="{exp:member:custom_profile_data}{br_billing_lname}{/exp:member:custom_profile_data}" type="text" />                                        
+                            </div>
+                            <div class="field-cont">
+                                <input	class="txtinp required form-control cus-field m50" 
+                                name="br_billing_address1"  placeholder="Address 1*" required id="br_billing_address1" 
+                                value="{exp:member:custom_profile_data}{br_billing_address1}{/exp:member:custom_profile_data}" type="text"  />                                        
+                                <input	class="txtinp form-control cus-field m50" style="margin-top: 16px"
+                                name="br_billing_address2"  placeholder="Address 2*" id="br_billing_address2" 
+                                value="{exp:member:custom_profile_data}{br_billing_address2}{/exp:member:custom_profile_data}" type="text" required/>                                        
+                            </div>
+                            
+                            <div class="field-cont billing country m50">
+                            {if logged_in}
+                                {exp:member:custom_profile_data}
+                                    {exp:brilliant_retail:countries name="br_billing_country" id="br_billing_country" class="required w100 form-control cus-field valid" value="{br_billing_country}"}
+                                {/exp:member:custom_profile_data}
+                            {if:else}
+                                {exp:brilliant_retail:countries name="br_billing_country" id="br_billing_country" class="required w100 form-control cus-field valid" value="ID"}
+                            {/if}    
+                            </div>
+
+                            <div class="field-cont billing state m50">                                    
+                                {if logged_in}
+                                    <input	class="txtinp  form-control cus-field state" 
+									name="br_billing_state"  placeholder="State *"  id="br_billing_state"
+									value="{exp:member:custom_profile_data}{br_billing_state}{/exp:member:custom_profile_data}" type="text" required/>							
+                                {if:else} 
+                                    {exp:brilliant_retail:states name="br_billing_state" id="br_billing_state" class="required w100 form-control cus-field valid state" value="ID" country_select="br_billing_country"}
+                                {/if}
+                            </div>
+                            <div class="field-cont city m50" style="display: inline-block;width: calc(100% - 120px);float:left;margin-right: 10px;">								
+								<input	class="txtinp  form-control cus-field city" 
+									name="br_billing_city"  placeholder="City *"  id="br_billing_city"
+									value="{exp:member:custom_profile_data}{br_billing_city}{/exp:member:custom_profile_data}" type="text" required/>							
+                            </div>
+                            <div class="field-cont m50 district" style="width:110px;display: inline-block">
+                                <input	class="txtinp  form-control cus-field " 
+                                name="br_billing_district"  placeholder="District *"  id="br_billing_district"
+                                value="{exp:member:custom_profile_data}{br_billing_district}{/exp:member:custom_profile_data}" type="text" required/>
+<!--                                        <input name="br_billing_country" id="br_billing_country" value="ID" type="hidden"/>-->
+                            </div>
+                            <div class="field-cont m50" style="width:110px;display: inline-block">
+                                <input	class="txtinp  form-control cus-field "  type="number" size="5"
+                                name="br_billing_zip"  placeholder="Post Code *"  id="br_billing_zip"
+                                value="{exp:member:custom_profile_data}{br_billing_zip}{/exp:member:custom_profile_data}" type="text" required/>
+<!--                                        <input name="br_billing_country" id="br_billing_country" value="ID" type="hidden"/>-->
+                            </div>
+                            
+                            
+                            <div class="field-cont"> 
+                                <input	class="txtinp required form-control cus-field m50" type="number" 
+                                name="br_billing_phone"  placeholder="Phone number *" required id="br_billing_phone" 
+                                value="{exp:member:custom_profile_data}{br_billing_phone}{/exp:member:custom_profile_data}" type="tel" />                                        
+                            </div>
+                            <div class="field-cont m50" style="font-size: 18px;font-weight: bold;">
+                                <input type="checkbox" name="gift" id="gift" onchange="$('#ship_same_address').val(!$(this).is(':checked'));$('#shipping_address_section').toggle($(this).val())"/> Send as a gift ?
+                                <input type="hidden" name="ship_same_address" id="ship_same_address" />
+                            </div>   
+                        </div>
+                    </div>
+                </div>            
+        </section>
+        <section id="shipping_address_section" style="display:none">
+            <div class="bg-white">
+                <div class="row container">
+                <div class="form-contact clearfix">                    
+						<h3 class="mb40">Shipping  Address</h3>                            
+                        <div class="field-cont">
+                            <input class="txtinp required form-control cus-field m50" 
+                            name="br_shipping_fname"  placeholder="Firstname *" required id="br_shipping_fname"
+                            value="{exp:member:custom_profile_data}{br_shipping_fname}{/exp:member:custom_profile_data}" type="text" />                                        
+                        </div>
+                        <div class="field-cont">
+                            <input class="txtinp required form-control cus-field m50" 
+                            name="br_shipping_lname"  placeholder="Lastname *" required id="br_shipping_lname"
+                            value="{exp:member:custom_profile_data}{br_shipping_lname}{/exp:member:custom_profile_data}" type="text" />                                        
+                        </div>
+                        <div class="field-cont">
+                            <input class="txtinp required form-control cus-field m50" 
+                            name="br_shipping_address1"  placeholder="Shipping  Address Street *" required id="br_shipping_address1"
+                            value="{exp:member:custom_profile_data}{br_shipping_address1}{/exp:member:custom_profile_data}" type="text" />                                        
+                        </div>
+                        <div class="field-cont">
+                            <input class="txtinp form-control cus-field m50" 
+                            name="br_shipping_address2"  placeholder="Shipping Address Street 2 *"  id="br_shipping_address2"
+                            value="{exp:member:custom_profile_data}{br_shipping_address2}{/exp:member:custom_profile_data}" type="text" />                                        
+                        </div>
+                        <div class="field-cont">
+                            <input class="txtinp required form-control cus-field m50" type="number" 
+								name="br_shipping_phone"  placeholder="Phone number" id="br_shipping_phone"  
+								value="{exp:member:custom_profile_data}{br_shipping_phone}{/exp:member:custom_profile_data}" type="tel" />                                        
+                        </div>						
+						<div class="field-cont  m50" style="width: calc(100% - 120px);display: inline-block;margin-right: 5px">
+                            <input name="br_shipping_country" id="br_shipping_country" value="ID" type="hidden"/>
+							{exp:brilliant_retail:states name="br_shipping_state" id="br_shipping_state" class="required w100 form-control cus-field valid state" value="{exp:member:custom_profile_data}{br_shipping_state}{/exp:member:custom_profile_data}" country_select="{exp:member:custom_profile_data}{br_shipping_country}{/exp:member:custom_profile_data}"}
+                        </div>
+                        <div class="field-cont city m50" style="width: calc(100% - 120px);display: inline-block;margin-right: 5px">
+                            <input class="city txtinp form-control cus-field " 
+                            name="br_shipping_city"  placeholder="Shipping  Address Regency *"  id="br_shipping_city" 
+                            value="{exp:member:custom_profile_data}{br_shipping_city}{/exp:member:custom_profile_data}" type="text" />
+                        </div>
+                        <div class="field-cont  m50" style="width: calc(100% - 120px);display: inline-block;margin-right: 5px">
+                            <input class="txtinp form-control cus-field " 
+                            name="br_shipping_district"  placeholder="Shipping  Address District *"  id="br_shipping_district" 
+                            value="{exp:member:custom_profile_data}{br_shipping_district}{/exp:member:custom_profile_data}" type="text" />
+                        </div>
+						
+                        <div class="field-cont m50" style="width:110px;display: inline-block">
+                            <input class="txtinp form-control cus-field " type="number" size="5"
+                            name="br_shipping_zip"  placeholder="Post Code *" id="br_shipping_zip"  
+                            value="{exp:member:custom_profile_data}{br_shipping_zip}{/exp:member:custom_profile_data}" type="text" />                                        
+                        </div>
+                    
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="secure">
+            <div class="container bg-grey">
+                <div class="row">
+                    <div class="form-contact">
+                        <h3 class="mb40">Secure Payment</h3>
+                        <h3 style="display:none"><a href="#">Change Method</a></h3>
+                        <div class="payment">
+                            <div class="text-center">
+                                {payment_options}
+                            </div>
+                            <div id="paymentform" style="margin: 16px auto;text-align: left;padding: 5px;">
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="place-order">
+                <div class="bg-white ">
+                    <div class="row container">
+                        <div class="form-contact clearfix review">
+                            <h3 class="mb40">Review & Place Order</h3>
+                            <div class="col-md-12" style="    border-bottom: 2px solid black;padding:0">
+                                <div class=" col-md-6" style="padding:0  15px 0 0;">
+                                    <div class="item-total">
+                                        <div class="field-cont" style="padding-top: 8px">
+                                            <label><span>{exp:brilliant_retail:cart_items}</span>  item</label>
+                                            <label class="pull-right">{exp:brilliant_retail:cart_total}</label>
+                                        </div>
+
+                                        <div class="field-cont">
+                                            <label>Shipping </label>                                            
+                                            <div id="shipping_options"  style="display:inline-block">
+                                                <div id="options">Enter your shipping information to display options. </div>
+                                            </div>                                                                                        
+                                            <div id="get_shipping_container">
+                                                <button class="btn" id="get_shipping_rates">Get Shipping Rates</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                <div class=" col-md-6 m0" style="padding:0 0 0 15px;">
+                                    <div class="field-cont" >                                        
+                                        {exp:brilliant_retail:promo_form}
+		                            <div class="input-group">
+		                            	<input class="form-control cus-field" name="coupon_code" value="{coupon_code}" type="text" placeholder="Enter Coupon Code * " />
+		                            </div>
+		                            <div class="clearboth"><!-- --></div>
+                                        {/exp:brilliant_retail:promo_form}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                                
+                                                           
+                                <div class="clearfix"></div>
+                                <div class="review" style="float:right">
+                                    <div class="totals">
+                                        <div class="total" >Total : <label id="total_container"> {exp:brilliant_retail:cart_total} </label> </div>
+                                        <button onclick="this.form.submit();" type="submit" class="btn btn-circle invert" string="Place Order">Place Order</button>
+
+<!--                                        <a class="btn btn-rounded" href="/payment/success">Place Order</a>-->
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>                
+        </section>
+       {/exp:brilliant_retail:checkout_form}       
+    </div>
+{embed=assets/footer}    
+
+    {exp:minimee:js queue="head_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="head_js"}     
+    
+    
+    {exp:minimee:js queue="foot_js"}
+        <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap-datepicker.min.js"></script>    
+        <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/jquery-validate.js"></script>
+        <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/icheck.min.js"></script>
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"} 
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        
+        var form = $('form');
+        form.on('keyup paste change','[name^="br_billing_"]',function(){            
+			$(this).parents('.form-contact').addClass('active');
+            if ($('#gift').attr('checked')) return;
+			
+            var name = $(this).attr('name').replace('_billing_','_shipping_');			
+			var val = this.type == 'select-one' ? $(this).find('option:selected').text() : $(this).val();
+            $('#'+name+'').val( val );            
+        });
+
+        form.on('keyup paste change','[name=br_billing_city], [name=br_shipping_city]',function(e){
+           $('#get_shipping_rates').click();
+//           //console.log('after get ship rate');
+        });
+        
+        form.on('change','.gateways [name=gateway]',function(e){
+            $('#paymentform').html('');
+            var payform = $(this).closest('.gateways').find('.payment_form');
+            $('#paymentform').html(payform.html());
+            payform.hide();
+            $('.bank-select').on('change',function(){
+                
+            });
+//            $('#shipping_instore input').attr('checked',false);
+            if ($(this).closest('.gateways')[0].id == 'gateway_payatstore') {
+                $('#shipping_instore input').attr('checked',true);
+            }
+ 
+            return false;
+        });
+        
+       
+        form.on('change','[name=shipping]',function(e){
+           _update_cart_totals()
+           return false;           
+       });
+       
+               
+                
+        $('.chekc').iCheck({
+           checkboxClass: 'icheckbox_square',
+           radioClass: 'iradio_square',
+           increaseArea: '20%' // optional
+         });        
+    });
+    </script>         
+    <script>
+        
+
+        
+    </script>
+</body>
+</html>

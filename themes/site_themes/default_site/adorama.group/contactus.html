@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+ 	{meta}        
+	{exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <style>
+            .contacts .bg-white {
+                padding: 15px 0;
+            }
+            section.contacts .content .desc1 {
+                 margin-top: 0; 
+            }
+            section.contacts .content {
+                margin: 40px 0px;
+            }
+            .contacts .row {
+                 padding: 0; 
+            }
+            .contacts textarea.form-control {
+                height: 134px;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: gotham-book;
+                padding: 0;
+            }
+            .contact textarea.form-control.cus-field{
+                height: 134px;
+                font-weight: bold;
+                font-size: 16px;
+                font-family: gotham-book;
+                resize: none;
+            }
+            section .btn-circle {
+                padding: 13px 34px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+</head>
+<body>
+	{embed=assets/header}
+<div class="page contact">
+	<section class="contacts">
+		<div class="container">
+			<div class="row">
+				<div class="content clearfix">
+					<div class="title-cont bold" style="font-size: 30px;margin: 32px 0;">Contact Us</div>
+					<div class="col-md-6 clearfix">
+						<div class="desc1" style="width: 250px;">
+							<div class="group">
+								<label style="font-size: 18px">Email</label>
+								<div>hello@printshop.id</div>
+							</div>
+							<div class="group">
+								<label style="font-size: 18px">Retail Shop</label>
+								<div class="bold">Menteng Central</div>
+                                                                <div>Jl. HOS Cokroamimoto No. 78 <br /> 021-2302002</div>
+                                                                
+                                                                <label class="bold">Plaza Indonesia</label>
+								<div>Plaza Indonesia LB C-30 <br /> 021-29923767</div>
+                                                                
+                                                                <label class="bold">Mall Taman Anggrek</label>
+								<div>Taman Anggrek UG-U 82B<br /> 021-5639286</div>
+                                                                
+                                                                <label class="bold">Plaza Senayan</label>
+								<div>Plaza Senayan Lt.5 (SOGO)<br /> 021-5725084</div>
+							</div>
+							<div class="group">
+								
+							</div>
+						</div>
+						<div class="desc1">
+                                                        <div class="group">
+								<label style="font-size: 18px">Phone Number</label>
+								<div>021-7192002</div>
+							</div>	
+							<div class="group" style="margin-bottom: 0;margin-top: 64px;">
+                                                            	<label class="bold" style="margin-top: 0;">Kemang</label>
+                                                                <div>Jl. Kemang Raya No.17 <br /> 021-7192002</div>
+							
+								<label class="bold" style="">Cikajang</label>
+								<div>Jl. Cikajang No.12 <br /> 021-7223780</div>
+                                                                
+                                                                <label class="bold">Grand Indonesia</label>
+								<div>Unit EM-LG-22 East Mall <br /> 021-23581277</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-12">
+						<div class="map ">
+							<iframe class="col-md-12 col-xs-12" width="600" height="380" frameborder="0" style="border:0;z-index: 10;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5063928019918!2d106.82593695009824!3d-6.1967196624103185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4229ffd9737%3A0x42a6500418d8f29a!2sJl.+HOS.+Cokroaminoto+No.80%2C+Menteng%2C+Kota+Jakarta+Pusat%2C+Daerah+Khusus+Ibukota+Jakarta!5e0!3m2!1sid!2sid!4v1461232890301" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="box-shadow-form">
+		<div class="bg-white ">
+			<div class="container">
+				<div class="row">
+					<div class="title-cont">Question Time ! <label class="lbl" style="margin-top: 4px;">Shoot us with all of your question by filling this enquiry form !</label></div>
+					<div class="form-contact clearfix">
+							{exp:email:contact_form user_recipients="no" recipients="novanxyz@gmail.com" redirect="0"  return="/contact" charset="utf-8"}
+
+							<div class="contact-cont">
+								<input type="hidden" name="subject"/>
+								<div class="field-cont">
+									<input type="text" name="firstname" class="form-control cus-field" placeholder="First Name *" required>
+								</div>
+								<div class="field-cont">
+									<input type="text" name="lastname" class="form-control cus-field" placeholder="Last Name *" required>
+								</div>
+								<div class="field-cont">
+									<input type="email" name="from" class="form-control cus-field" placeholder="Email *" required>
+								</div>
+							</div>
+							<div class="contact-cont">
+								<div class="field-cont">
+                                     <textarea  name="message" class="form-control cus-field" placeholder="Message" ></textarea>
+								</div>
+<!--								<div class="field-cont">
+									<input type="text" name="message2" class="form-control cus-field" placeholder="Message">
+								</div>-->
+							</div>
+							<div class="clearfix"></div>
+							<div class="div-button">
+								<button class=" btn btn-circle" type="submit" value='Submit Form'>Submit</button>
+							</div>
+							<label class="pull-right lbl-required" >* required to fill</label>
+							
+						{/exp:email:contact_form}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+    {js}
+<script>
+$(document).ready(function() {
+	$('input[name$=name]').change(function(){ $('input[name=subject]').val("Email from " + $('[name=firstname]').val() + " " + $('[name=lastname]').val() ); });
+});
+	
+	
+</script>
+</body>
+</html>

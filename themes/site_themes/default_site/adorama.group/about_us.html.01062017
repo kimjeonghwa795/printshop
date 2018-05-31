@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{site_name}</title>
+
+ {meta}
+
+        {css}
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+<style>
+    .img-cont.story.paddbottom {
+        padding-top: 16px;
+    }
+</style>
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page about">
+        <section class="bg-green">
+            <div class="container">
+                <div class="row">
+					{if lang == "bahasa"}
+					<div class="title-cont story storyline"><span style="font-size:30px;">Cetak Foto Seru dan Asik, Hanya di Print Shop</span><br><br><span class="black sub-title">Kamu suka berfoto-ria tapi terlalu sibuk untuk mencetaknya?</span> <br>
+                        <p class="lbl">Printshop hadir dengan layanan cetak cepat, simple dengan hasil berkualitas. Cukup lakukan klik dari smartphone atau PC mu maka hasil foto dari Facebook, Instagram ataupun koleksi foto di PC mu akan dapat segera menjadi foto- foto favorit yang siap menjadi koleksimu. </p>
+                        <p class="lbl padd-top">Karena, di balik website ini terdapat tim luar biasa yang selalu bersemangat memberikan layanan terbaik, sehingga setiap pemesanan kamu via website akan segera kami proses, mulai dari cetak hingga mengirimkannya ke depan pintu rumah kamu. </p>
+                    </div>
+					{if:else}
+                    <div class="title-cont story storyline"><span style="font-size:30px;">Your Awesome Photos Start Here</span><br><br><span class="black sub-title">Greetings!</span> <br>
+                        <p class="lbl">Meet Print Shop, an online photo printing service that helps you print your awesome photos easily and fast right from your smartphone, computer, Facebook, or Instagram. </p>
+                        <p class="lbl padd-top">Well, just like most of us, you might have more time snapping pictures but too busy to print and pick them up, not to mention the awful traffic out there. That’s how the original idea of Print Shop came up to our head: to help people turn their moments of magic into something real with no headache and no hassle.</p>
+                    </div>
+					{/if}
+                </div>
+            </div>
+	</section>
+        <section>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story paddbottom">
+                        <img src="{theme_url}images/svg/Aboutus1.svg" class="img-responsive" />
+                    </div>
+					{if lang == "bahasa"}
+                    <div class="title-cont storyline black">
+                        <!--<span class="black sub-title">And then... </span>-->
+                        <!--<br>-->
+                        <p class="lbl">Semua kehebatan ini dimulai secara sederhana oleh induk perusahaan kami, Adorama, pada tahun 1991. Berawal sebagai lab fotografi kecil di Kemang, Jakarta Selatan, Adorama kini telah menjelma menjadi layanan offset dan fotografi digital dengan 7 cabang di Jakarta. Wow!</p>
+                        <p class="lbl padd-top">Website Print Shop kami hadirkan untuk kamu-kamu yang suka membagi keceriaan melalui foto dengan cara-cara yang mengasyikan. Karena kami percaya, hidup itu harusnya dibuat lebih asik dan penuh selebrasi, setuju?</p>
+                    </div>
+					{if:else}
+					<div class="title-cont storyline black">
+                        <!--<span class="black sub-title">And then... </span>-->
+                        <!--<br>-->
+                        <p class="lbl">Behind this cool website are a bunch of our fantastic buddies who’re so excited to help you make the best of your photos and deliver them with smile right to your doorstep.</p>
+                        <p class="lbl padd-top">Long story short, all of the excitements you find here were humbly started in 1991 by Adorama as a small photographic lab in Kemang, South Jakarta, that today has been growing into an offset and digital photography solutions with 7 branches spread across the town. </p>
+                    </div>
+					{/if}
+                </div>
+            </div>
+            <div class="bg-pink">
+                <div class="container">
+				{if lang == "bahasa"}
+                    <div class="title-cont story storyline black"><span class="black sub-title">Wow, that’s something that we are still deeply proud of!</span><br>
+                        <p class="lbl">Website printshop kami hadirkan untuk kamu- kamu yang suka berbagi keceriaan dan mengabadikan setiap moment specialmu menjadi kumpulan foto yang selalu dikenang setiap waktu.Kami percaya setiap moment hidup tidak bisa terulang lagi, dengan Printshop, kamu bisa temukan cara asik mengabadikan moment itu dengan cara yang simple.</p>
+                        <span class="black sub-title">Say cheese!</span>
+                    </div>
+				{if:else}
+					<div class="title-cont story storyline black"><span class="black sub-title">Wow, that’s something that we are still deeply proud of!</span><br>
+                        <p class="lbl">Simply put, we don’t just print your photos, but also the cheerful faces of your loved ones so you can share your happiness easily in a fun and interesting way. Because just like you, we believe that life should be enjoyed and celebrated.</p>
+                        <span class="black sub-title">Say cheese!</span>
+                    </div>
+				{/if}
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story" style="padding-top: 16px;padding-bottom: 85px;">
+                        <img src="{theme_url}images/svg/Aboutus2.svg" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+	</section>
+    </div>
+    {embed=assets/footer}
+        {js}
+</body>
+</html>

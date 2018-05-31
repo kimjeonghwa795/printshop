@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+         {meta}
+            {css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            @media (max-width: 414px){
+                .page {
+                    min-height: calc(100vh - 146px);
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
+                footer .padd.clearfix div{width: auto !Important;padding-left: 0;}
+                a#sh-footer {
+                    font-size: 14px !Important;
+                }
+                footer .col-md-8.col-xs-6.align-center {
+                    float: right;
+                }
+                footer .padd.clearfix a, footer .padd.clearfix button {
+                    font-size: 14px !important;
+                } 
+            }
+        </style>
+</head>
+<body>
+	{embed=assets/header}
+<div class="page payment-success">
+    <section class="maincontent">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+					<div class="title-cont bold f42">You're a champ!</div>
+					<div class="img-mintop">
+						<img src="{theme_url}images/addcartconfirmation.png" class="img-responsive img-fix min-wid">
+					</div>
+						<div class='sub-title' style="text-align: center;font-size:24px">
+							{if exp:session_variables:order_id }
+								Thank you for your order, your order <b>{exp:session_variables:order_id}</b> is being processed and will be shipped to you soon!
+							{if:else}
+								Thank you for your order, your order <b>{segment_3}</b> is being processed and will be shipped to you soon!
+							{/if}
+						</div>
+						<div class="button-back">
+							<a href="/" class="btn btn-circle" style="margin-left:0px;">Continue Shopping</a>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+            {js}  
+</body>
+</html>

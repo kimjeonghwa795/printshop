@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 21</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-21" fill="#C6C6C6">
+            <g id="Group-17">
+                <g id="Group-8">
+                    <polygon id="Triangle-3" transform="translate(19.533160, 7.433309) rotate(125.000000) translate(-19.533160, -7.433309) " points="19.5331604 2.94737169 24.5175354 11.9192467 14.5487854 11.9192467"></polygon>
+                    <g id="Untitled-1" transform="translate(0.000000, 2.000000)">
+                        <path d="M20.182,19.765 C20.182,18.66 19.285,17.763 18.18,17.763 C17.777,17.763 17.403,17.885 17.088,18.09 L17.088,18.09 C15.704,19.249 13.915,19.938 11.969,19.938 C7.568,19.938 4,16.37 4,11.969 C4,7.568 7.568,4 11.969,4 C13.397,4 14.735,4.38 15.894,5.039 L18.106,1.707 C16.31,0.63 14.215,0 11.969,0 C5.358,0 0,5.358 0,11.969 C0,18.58 5.358,23.938 11.969,23.938 C14.716,23.938 17.238,23.002 19.257,21.447 C19.306,21.416 19.351,21.379 19.398,21.343 C19.422,21.323 19.448,21.307 19.472,21.287 L19.469,21.283 C19.901,20.916 20.182,20.376 20.182,19.765 L20.182,19.765 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

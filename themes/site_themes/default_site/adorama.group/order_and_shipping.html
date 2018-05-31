@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+ 	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        {meta}        
+        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/style.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/font-awesome/css/font-awesome.min.css">
+
+	{css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            section .desc{font-size: 20px;}
+            section .content .desc-content.tops {
+                margin-top: 65px;
+            }
+            section .content .desc-content {
+                margin-top: 0;
+            }
+        </style>
+</head>
+<body>
+	{embed=assets/header}
+<div class="page">
+        <section style="background: #edf3ea;">
+		<div class="container">
+			<div class="row">
+				<div class="content maxwidth8x" style="margin-top: 85px;">
+					<div class="desc-content">
+						<div class="title-cont bold">Shipping Information</div>
+						<div class="desc">Welcome to Printshop shipping information page. We will guide you through a series of short explanation (super short, promise) on how Printshop prepares your order.</div>
+					</div>
+					<div class="img-fixed">
+						<img src="{theme_url}images/order1.png" class="img-responsive img-fix top-pls resize">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="content maxwidth8x">
+						<div class="desc-content order-marg-top tops">
+							<div class="title-cont black">Receiving your order</div>
+							<div class="desc">At this point, we’ve received your order and will begin processing it soon—yay! However, before we can start the magic works, we need you to fulfill your order payment as soon as possible. Faster payment means faster order processing!</div>
+						</div>
+						<div class="img">
+							<img src="{theme_url}images/order2.png" class="img-responsive img">
+						</div>
+						<div class="desc-content">
+							<div class="title-cont black">Confirming your order payment</div>
+							<div class="desc">Don’t forget to confirm your order payment after you fulfill it. Once you’ve done, we will prepare your order right away! Simply click here to fill up the payment confirmation form or you can head down to the bottom of the page and click ‘Confirm payment’ under the footer. Fail to confirm your order in between the provided time might lead into an order cancelation.</div>
+						</div>
+						<div class="img">
+							<img src="{theme_url}images/order3.png" class="img-responsive img">
+						</div>
+						<div class="desc-content">
+							<div class="title-cont black">Preparing your order</div>
+							<div class="desc">Good news! We’re currently preparing your order. The production time for all photo prints, magnets and canvas will take 1-3 days, while photobook will take 7 days. After that, we will package them safely and nicely on our colorful boxes and envelopes, that we developed especially for you—yes you!</div>
+						</div>
+						<div class="img-fixed">
+							<img src="{theme_url}images/order4.png" class="img-responsive img-fix top-pls resize">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section style="background: #fdf2d5;">
+		<div class="container">
+			<div class="row">
+				<div class="content maxwidth8x">
+					<div class="desc-content padd-top">
+						<div class="title-cont bold black">Shipping your package</div>
+						<div class="desc">Let's get excited at this point—it’s the shipment time! To ensure the safety of your package, we partner up with JNE in delivering it. As the one of the largest and most reliable shipping partner, they ensure your package arriving safely in your home in no time. Wait for a little happy knock on your door, okay?</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+            {js} 
+<script>
+// $(document).ready(function() {
+//     $('.carousel').carousel({
+//       interval: 6000
+//     })
+//   });
+	$(document).ready(function(){
+		$('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 2000);
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>

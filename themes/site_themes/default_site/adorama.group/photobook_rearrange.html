@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>PrintShop Adorama</title>	  
+	{meta}
+        {exp:minimee:css queue="head_css"}        
+	{css}
+        {/exp:minimee:css}        
+        {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" href="/themes/site_themes/default_site/assets.group/css/jquery.fluidbox.css">
+            <link rel="stylesheet" href="/themes/site_themes/default_site/assets.group/css/cropper.min.css">
+            <link rel="stylesheet" href="/themes/site_themes/default_site/assets.group/css/upload.css">
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+            <link rel="stylesheet" href="/themes/site_themes/default_site/assets.group/css/tablet.css">
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;             }
+            
+            .photoprint .sel-file .delete_selection{
+                display: none;
+                font-size: 22px;
+                color: red; 
+            }
+            .photoprint .sel-file:hover .delete_selection{
+                display: block;
+            }
+            
+            
+            .arrange .sel-file .edit_selection { text-align:center}
+            .photobook .sel-file .delete_selection{
+                display: none;
+            }
+            
+            
+            .photoprint .sel-file input + label i{
+                display: none;
+            }
+            .photoprint .sel-file:hover input + label i{
+                display: none;
+            }
+            
+            
+            
+            .photobook .sel-file input[type="radio"]:checked  + label i { 
+                display: block;
+            }
+            .photobook .sel-file input[type="radio"]:checked  + label i:before  { 
+                content: "\f005";
+            }
+            .photobook .sel-file input + label i {
+                position: absolute;
+                font-size: 22px;
+                font-weight: lighter;
+                right: 8px;
+                top: 8px;
+                display: none;
+            }
+            .photobook .sel-file:hover input + label i {
+                display: block;
+            }
+            .preview{
+                position: absolute;
+                left: 0;
+            }
+            .cropper-crop-box ,.cropper-crop-box img{
+                -webkit-transition: width 1s,height 1s,top 1s,left 1s,margin 1s; 
+                    transition: width 1s,height 1s, top 1s, left 1s, margin 1s; 
+                    transition-timing-function: ease;
+            }
+            @media (max-width: 414px){
+                footer{display: none;}
+            }
+			.photobook .nopb {
+                display: none;
+            }
+            .photobook .pb {
+                display: block;
+            }
+            .pb {
+                display: none;
+            }
+
+        </style>
+</head>
+<body class="no-header-top">
+{embed=assets/header}
+    <form action='/' method='POST' id="arrangeform">
+    <div class='page arrange {exp:session_variables:get name="layout" key="layout_name"}' >
+    <section class="maincontents" id="upload">
+            <div class="container pre-settings {tmpl:sku}" >
+                    <input type="hidden" name='ACT' value='75'/>
+                    <input type="hidden" name='XID' value="{XID_HASH}"/>
+                    <input type="hidden" name='item_id' value="{segment:item_id}"/>
+                    <div class="row">
+                            {exp:photoprint:files item_id="{segment:item_id}"}                             
+                            <input type="hidden" name='owner_id' value="{owner_id}"/>
+                            <input type="hidden" name='sku' value="{layout_id}"/> 
+                            {if next }
+                                <input type="hidden" name='next' value="{next}"/>    
+                            {if:else}
+                                <input type="hidden" name='add_to_cart' value="1"/>
+                            {/if}                             
+                            
+                             
+                            {exp:variables:sku value="{layout_id}"}
+                            {cover}
+                            <div class="col-md-4 cover-selector" style="display:inline-block">
+                                    <input type="hidden" name='next' value="/review/{segment:item_id}"/>
+                                    <div class="title-cont storyline">Cover Selector</div>
+                                    <div class="selected-cover" style="">                                        
+										<img src="/?ACT=122&file={file}&crop={crop_data}&dir={segment:item_id}&ar={aspectratio}" data-file="{file}"  data-pos="0" data-id="{id}"/>
+                                        <input type='hidden' class="cover" name='positions[0]' value='{file}' />
+										<input type='hidden' class="crop" name='crop_data[{sequence}]' value='{crop_data}' />
+										<input type='hidden' class="meta" name='metas[{sequence}]' value='{meta}' />
+                                    </div>
+                                    <br>
+                                    <label class="lbl-cover">Click <i class="fa fa-star"></i> on thumbnail to select your cover</label>
+                                    <!--a class="btn btn-circle invert randomize" >Randomizer !</a-->
+                                    <div class="book-title">
+                                        <div class="title-cont storyline">Book Title</div>                                                
+                                        <input type="text" class="b-title form-control cus-field fl-top" name="title" placeholder="Type your title here *" value="" required maxlength="{if layout_id ^= 'pb10'}26{if:else}34{/if}">                                        
+                                    </div>
+                                    <!--<button style="margin: 8px 0;" class="btn btn-circle invert" name="continue" value="1" onclick="this.form.submit();">Print it!</button>-->
+
+                            </div>
+                            {/cover}
+                            <div class="{if layout_id ^= 'pb'}col-md-8{if:else}col-md-12{/if} img-con files">
+                                    <div class="box-margleft">
+                                            <div class="title-cont storyline" style="margin-left: 9px;">
+                                                <span style="display:none;"></span>
+                                                {if layout_id ^= 'pb'}
+                                                    <span>Drag and drop to re-arrange your photos</span>
+                                                {if:else}
+                                                    <span>Reorder of delete the selected photo</span>
+                                                {/if}
+                                                <!--<button class="btn btn-circle invert submit_button" name="continue" value="1" onclick="this.form.submit();">Print it!</button>-->
+                                            </div>
+                                            <div class="rearange-box layout layout_1"> 
+                                                    {if no_results}
+                                                        <div>You haven't select any file yet,
+                                                            <p>Please click <a href="/upload/">here</a> to select your files</p>    
+                                                        </div>
+                                                    {/if}
+                                                    <ul class="files" data-aspectratio="{aspectratio}">
+                                                    {results}                                                    
+                                                    <li class="tmpl sel-file ui-state-default col-xs-6" data-pos="{sequence}" data-id="{id}">
+                                                        <div class="overlay">
+                                                            <!--<a class="delete_selection" href="/?ACT=92&XID={XID_HASH}&seq={sequence}&file={file}&owner_id={owner_id}" onclick="return false;"><i class="fa fa-times"></i></a>-->
+                                                            <a class="edit_selection act-btn edit" onclick="return false;" href="{file}"><span style="color: #fff;font-size: 20px;margin: auto;">Review</span></a>
+
+                                                            <label class="star_selection" for="cover_{sequence}"><i class="fa fa-star-o" style="color: #f0cc29;position:absolute;"></i>
+                                                                <input type='radio' name='cover' id="cover_{sequence}" value="/working/{item_id}/{file}" />
+                                                            </label>                                                                    
+                                                        </div>
+                                                        <a class="preview" data-gallery>                                                                                                                                                                                                
+                                                            <img src="/?ACT=122&file={file}&crop={crop_data}&dir={segment:item_id}&ar={aspectratio}" class="selected-img" data-file="{file}"  data-pos="{sequence}" data-id="{id}"/>                                                            
+                                                            <input type='hidden' class="pos" name='positions[{sequence}]' value='{file}' />
+                                                            <input type='hidden' class="crop" name='crop_data[{sequence}]' value='{crop_data}' />
+                                                            <input type='hidden' class="meta" name='metas[{sequence}]' value='{meta}' />
+                                                        </a>                                                        
+                                                    </li>
+                                                    {/results}
+                                                    </ul>
+                            
+                                            </div>
+                                    </div>
+                            </div>
+                            {/exp:photoprint:files}
+                    </div>					
+            </div>
+    </section>
+
+    </div>
+<footer>
+    <div class="bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="padd clearfix">
+            <div class="col-md-6 col-xs-12"><a href="javascript:history.back();" class="lbl-footer pull-right" style="float: left !important;font-size: 28px;font-weight: bold;"><i class="fa fa-arrow-left" style="margin-right: 20px;"></i>Select Photos</a></div>
+            <div class="col-md-6 col-xs-12">
+                <button class="lbl-footer pull-right submit_button" name="continue" value="1" onclick="this.form.submit();" style="float: right !important;font-size: 28px;font-weight: bold;color:#face3d">                                                        
+                        Print it!
+                    <i class="fa fa-arrow-right" style="margin-left: 20px;"></i>                                                        
+                </button>
+            </div>                                        
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+<footer class="mobile">
+    <div class="bg-black">
+      <div class="container">
+        <div class="padd clearfix">
+          <div class=""><button href="#" class="lbl-footer pull-right submit_button" name="continue" value="1" onclick="this.form.submit();" style="float: none!important;font-weight: bold;width: 100%;border: none;background: transparent;color: #fac730;font-size: 24px !important;margin-top: 6px;padding-top: 5px !important;">Add to Cart</button></div>                                        
+        </div>
+      </div>
+    </div>
+</footer>
+</form>
+
+<form id="fileupload" action="/" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <input type="hidden" name="ACT" value="26" />
+        <input type="hidden" name="XID" value="{XID_HASH}" />                                
+        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000000" />                                
+        <input type="hidden" id="filecanvas"  name="filecanvas" style="position:absolute;opacity: 0">
+        <input type="hidden" id="filename"  name="filename" style="position:absolute;opacity: 0">
+    </fieldset>
+</form>
+{cropper_modal}
+{js}
+{upload_js}
+<script>
+$(document).ready(function(){
+    $.fn.random = function() {
+      return this.eq(Math.floor(Math.random() * this.length));
+    };     
+	var aR = $('ul.files').data('aspectratio');
+    $('li.tmpl .preview img').data('aspectRatio',aR);
+	
+    window.fixArView = function(li,fitImage){		        
+        var img = $('.preview img',li);
+        var aR = img.data('aspectRatio');        
+        var x = 0;
+        var y = 0;
+        if ( $('input.crop',li).val() ){
+            var crop = JSON.parse(atob($('input.crop',li).val()));
+            console.log(crop);
+            aR = crop.width / crop.height;            
+            x = crop.x ? 1/aR :0;
+            y = crop.y ? 1/aR :0;        
+            fitImage = false;
+        }
+/*        
+        var imgbox  = {width:img.width(),height: img.height(), top:0,left:0};
+        var iAr     = imgbox.width/imgbox.height;
+        var fitbox  = fit(imgbox,1/aR);
+        console.log("imgbox",iAr,imgbox,fitbox);
+*/        
+        
+        if ( aR > 1 ){
+            var w = (100/aR);
+            y = y ? y :-(100 -w)/2;                
+            $('.preview',li).css( {'height': (100/aR) + '%' , 'margin':  ((100-w)/2 ) +'% 0' });
+    		//if (fitImage) $('.preview img',li).css({'margin':  '0 ' + fitbox.left +'px ','width': fitbox.width + 'px'});
+            
+        }else{
+            var w = (100*aR);		
+            x = x ? x :-(100 -w)/2;            
+            $('.preview',li).css( { 'width': (100*aR) + '%' ,'height':'100%', 'margin': '0 ' + ((100-w)/2 ) +'%'});            
+            //if (fitImage) $('.preview img',li).css({'margin':  '' + fitbox.top +'px 0','height': fitbox.height + 'px'});
+        }
+    }
+    
+/*
+	window.fixArView = function(li,aR){		
+        if (aR == 1) return;
+        var Img =$('.preview img',li);
+        Img.css('clip',false);
+        
+//        if (Array.isArray(aR)){
+//            clip = 'rect(' + aR.join('px,')+ 'px' + ')';
+//            return Img.css({'clip': clip, 'position':'absolute'});
+//        }
+        
+        if ($('input.crop',li).val()){
+            if (aR> 1 )$('.preview',li).css('padding-top', (1-1/aR)/2 * 100+ '%' );
+            else{$('.preview',li).css('padding-left', (1-aR)/2 * 100+ '%' );}
+            return false;
+        }
+        
+        var h = $(li).height();
+        var w = $(li).width();
+        console.log(h,w);
+        var pad = h*(aR-1)/aR;
+        var top = pad/2, bottom = h - pad/2;
+        var rect = [top,w,bottom,0];
+        var clip = 'rect(' + rect.join('px,')+'px' + ')';
+        
+		if ( aR < 1 ){
+            aR = 1/aR;
+            pad = w*(aR-1)/aR;
+            top = pad/2, bottom = h - pad/2;
+            rect = [0,bottom,h,top];
+            clip = 'rect(' + rect.join('px,')+ 'px' + ')';
+		}	        
+        Img.css({'clip': clip, 'position':'absolute'});
+	}
+*/	
+	
+//	if ($("[name=sku]").val().startsWith('pb')){ $('.page').addClass('photobook');}
+//	if ($("[name=sku]").val().startsWith('mg')){ $('.page').addClass('magnet'); }
+//	if ($("[name=sku]").val().startsWith('cv')){ $('.page').addClass('canvas'); }
+//	if ($("[name=sku]").val().startsWith('cp')){ $('.page').addClass('classic'); }
+//	if ($("[name=sku]").val().startsWith('pp')){ $('.page').addClass('photoprint');  
+    
+    if ($("[name=sku]").val().startsWith('pp')){
+        $('button.submit_button').text('Select Back Print');  
+    }
+    
+	$('li.tmpl').each(function(i,li){fixArView(li,true);});
+	
+//    if ($("[name='metas[0]']").length ) {
+//		var json = JSON.parse($("[name='metas[0]']").val().replace(/\\"/g,'"')) || {} ; 
+//		$('input[name=title]').val(json.title || '');
+//	}
+    
+	$('input[name=title]').change(function(){
+		var json = JSON.parse($("[name='metas[0]']").val()) || {} ;
+		json.title = this.value;
+		$("[name='metas[0]']").val(JSON.stringify(json));
+	});
+        
+    function remap(ev,el){
+        $('.files li.sel-file').removeAttr('style');
+        $('.files li.sel-file').each(function(i,el){            
+            var pos = i+1;            
+            $('input[type=hidden]',el).each(function(ix,inp){
+            
+                if ( inp.name.substr(0,9) == 'positions' ) inp.name = 'positions[' + pos + ']';
+                if ( inp.name.substr(0,9) == 'crop_data' ) inp.name = 'crop_data[' + pos + ']';
+                if ( inp.name.substr(0,5) == 'metas' ) inp.name = 'metas[' + pos + ']';
+            });
+            $(el).attr('data-pos',pos );
+        });
+
+    };
+        
+    function randomize(to){
+        var files = $('.files li.sel-file');                
+        var t = Math.floor(Math.random() * (files.length -2)+1 );            
+        
+        var r = setInterval(function(){
+                    files.random().find(':radio').change();t--;
+                    if (!t) {
+                        clearInterval(r);
+                        $(':radio',to).attr('checked','checked').change();
+                    }
+                }
+                ,100);                                
+        return false;
+    }
+    $('.randomize').click(function(){randomize($('.files li.sel-file').random());});
+        
+    
+    $('ul.files').sortable({            
+            forcePlaceholderSize: false,
+            'stop':function(ev,ui){
+                remap(ev,this);
+            },
+    }).disableSelection();    
+    
+    $('input[name=cover]').change(function(){        
+		var parLi = $(this).parents('li');		
+        var canvas = $('.selected-cover canvas').get(0);
+        
+        $('.selected-cover img').attr('src', $('.preview img',parLi).attr('src') );
+		$("[name='positions[0]']").val($('input.pos',parLi).val() );
+		$("[name='metas[0]']").val($('input.meta',parLi).val() );        
+		$("[name='crop_data[0]']").val($('input.crop',parLi).val() );        
+    });
+    
+    
+    $('.delete_selection').on('click',function(e){
+        e.preventDefault();        
+        var self = this;
+        $.get(this.href,function(res){
+            if (res=='true'){
+                $(self).closest('li').remove();
+                remap();
+            }
+
+        });
+        return false;
+    });
+    
+    $('.star_selection').click(function(){        
+        $('.star_selection i').removeClass('fa-star').addClass('fa-star-o');        
+        $('i',this).removeClass('fa-star-o').addClass('fa-star');        
+//        var ck  = $('#' + $(this).attr('for'));                
+//        ck.prop('checked',!!true);        
+//        console.log(ck,ck.prop('checked'),$('[name=cover]').val());        
+        return true;
+    });
+});
+/*
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+*/
+</script>
+<script src="{theme_url}js/spinLoader.js"></script>
+<script src="{theme_url}js/js.cookie.js"></script>
+<script src="{theme_url}js/upload.js"></script>
+</body>
+</html>

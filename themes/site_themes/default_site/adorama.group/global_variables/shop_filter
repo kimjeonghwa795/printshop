@@ -1,0 +1,17 @@
+<section>
+    <div class="shop-filter">
+        <div class="dropdown">
+            <button class="btn btn-nostyle dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Everything
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Prints</a></li>
+                <li><a href="#">Photobook</a></li>
+                <li><a href="#">Framed Prints</a></li>
+                <li><a href="#">Accesories</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

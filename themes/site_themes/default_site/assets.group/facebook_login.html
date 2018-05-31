@@ -1,0 +1,19 @@
+<div class="content sucess">
+    <div class="title-cont bold black f42">Connect your account</div>
+    <div class="text-center"><img src="/themes/site_themes/default_site/assets.group/images/facebook-icon.png"></div>
+    <div class="text-center">
+        <p>To get started make your order you'll have to connect with your Facebook account</p>
+    </div>                                    
+    <div class="button-back marg">
+        <div class="button-back marg">            
+            {exp:social_login:form id="facebook_login" return="/facebook" provider="facebook"}
+			<input type="hidden" name="anon" value="1"/>
+<!--            <input style="display: none" name="provider" type="radio" value="facebook" id="facebook_button" onchange="this.form.submit();">-->
+            <button name="provider" value="facebook" for="facebook_button" class="instagram-btn btn btn-circle invert" style="margin-left:0;">Connect</button>
+            {/exp:social_login:form}             
+        </div>
+    </div>
+</div>
+<style>.more-btn,.noresults{display:none;}
+    .row.layout .album-title {display:none}
+</style>

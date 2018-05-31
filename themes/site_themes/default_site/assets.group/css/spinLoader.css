@@ -1,0 +1,258 @@
+/*
+To change this license header; choose License Headers in Project Properties.
+To change this template file; choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08 Des 15; 16:52:02
+    Author     : Vardion
+*/
+
+.loading-spin{
+    position: absolute;
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#c_shape {
+-webkit-animation: loader 1.5s linear infinite;
+        animation: loader 1.5s linear infinite;
+-webkit-transform-origin: 62.1px 60.3px;
+    -ms-transform-origin: 62.1px 60.3px;
+        transform-origin: 62.1px 60.3px;
+-webkit-animation-play-state: running!important;
+        animation-play-state: running!important;
+}
+@-webkit-keyframes loader {
+100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}
+}
+@keyframes loader {
+100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}
+}
+
+.loading-spin rect {
+-webkit-animation: none 1.5s linear infinite;
+        animation: none 1.5s linear infinite;
+display: inline-block;
+-webkit-animation-play-state: running!important;
+        animation-play-state: running!important;
+}
+.loading-spin rect:nth-child(1) {
+-webkit-animation-name: loader1;
+        animation-name: loader1;
+}
+.loading-spin rect:nth-child(2) {
+-webkit-animation-name: loader2;
+        animation-name: loader2;
+}
+.loading-spin rect:nth-child(3) {
+-webkit-animation-name: loader3;
+        animation-name: loader3;
+}
+.loading-spin rect:nth-child(4) {
+-webkit-animation-name: loader4;
+        animation-name: loader4;
+}
+.loading-spin rect:nth-child(5) {
+-webkit-animation-name: loader5;
+        animation-name: loader5;
+}
+
+
+@-webkit-keyframes loader1 {
+0% { fill: #3E2C53;}
+33.3333% { fill: #AC2B61;}
+66.6666% { fill: #F3E3B4;}
+}
+
+
+@keyframes loader1 {
+0% { fill: #3E2C53;}
+33.3333% { fill: #AC2B61;}
+66.6666% { fill: #F3E3B4;}
+}
+@-webkit-keyframes loader2 {
+0% { fill: #3F577A;}
+33.3333% { fill: #E33D5F;}
+66.6666% { fill: #BADCC8;}
+}
+@keyframes loader2 {
+0% { fill: #3F577A;}
+33.3333% { fill: #E33D5F;}
+66.6666% { fill: #BADCC8;}
+}
+@-webkit-keyframes loader3 {
+0% { fill: #4C8FA2;}
+33.3333% { fill: #EF7C5E;}
+66.6666% { fill: #7FC7BF;}
+}
+@keyframes loader3 {
+0% { fill: #4C8FA2;}
+33.3333% { fill: #EF7C5E;}
+66.6666% { fill: #7FC7BF;}
+}
+@-webkit-keyframes loader4 {
+0% { fill: #7BB594;}
+33.3333% { fill: #F9C65F;}
+66.6666% { fill: #EE7B73;}
+}
+@keyframes loader4 {
+0% { fill: #7BB594;}
+33.3333% { fill: #F9C65F;}
+66.6666% { fill: #EE7B73;}
+}
+@-webkit-keyframes loader5 {
+0% { fill: #DBD17F;}
+33.3333% { fill: #F5EF9E;}
+66.6666% { fill: #D4385F;}
+}
+@keyframes loader5 {
+0% { fill: #DBD17F;}
+33.3333% { fill: #F5EF9E;}
+66.6666% { fill: #D4385F;}
+}
+
+
+/*bar*/
+.loading-bar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 8px;
+  width: 100%;
+  background-color: #159756;
+  -webkit-animation: preloader-background linear 3.5s infinite;
+          animation: preloader-background linear 3.5s infinite;
+    z-index: 9999;
+}
+.loading-bar-wrapper::before, .loading-bar-wrapper::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 0;
+  height: 8px;
+  background: #afa;
+  -webkit-animation: preloader-front linear 3.5s infinite;
+          animation: preloader-front linear 3.5s infinite;
+  content: '';
+}
+.loading-bar-wrapper::before {
+  right: 50%;
+}
+.loading-bar-wrapper::after {
+  left: 50%;
+}
+
+@-webkit-keyframes preloader-background {
+  0%, 24.9% {
+    background-color: #159756;
+  }
+  25%, 49.9% {
+    background-color: #da4733;
+  }
+  50%, 74.9% {
+    background-color: #3b78e7;
+  }
+  75%, 100% {
+    background-color: #fdba2c;
+  }
+}
+
+@keyframes preloader-background {
+  0%, 24.9% {
+    background-color: #159756;
+  }
+  25%, 49.9% {
+    background-color: #da4733;
+  }
+  50%, 74.9% {
+    background-color: #3b78e7;
+  }
+  75%, 100% {
+    background-color: #fdba2c;
+  }
+}
+@-webkit-keyframes preloader-front {
+  0% {
+    width: 0;
+    background-color: #da4733;
+  }
+  24.9% {
+    width: 50%;
+    background-color: #da4733;
+  }
+  25% {
+    width: 0;
+    background-color: #3b78e7;
+  }
+  49.9% {
+    width: 50%;
+    background-color: #3b78e7;
+  }
+  50% {
+    width: 0;
+    background-color: #fdba2c;
+  }
+  74.9% {
+    width: 50%;
+    background-color: #fdba2c;
+  }
+  75% {
+    width: 0%;
+    background-color: #159756;
+  }
+  100% {
+    width: 50%;
+    background-color: #159756;
+  }
+}
+@keyframes preloader-front {
+  0% {
+    width: 0;
+    background-color: #da4733;
+  }
+  24.9% {
+    width: 50%;
+    background-color: #da4733;
+  }
+  25% {
+    width: 0;
+    background-color: #3b78e7;
+  }
+  49.9% {
+    width: 50%;
+    background-color: #3b78e7;
+  }
+  50% {
+    width: 0;
+    background-color: #fdba2c;
+  }
+  74.9% {
+    width: 50%;
+    background-color: #fdba2c;
+  }
+  75% {
+    width: 0%;
+    background-color: #159756;
+  }
+  100% {
+    width: 50%;
+    background-color: #159756;
+  }
+}
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

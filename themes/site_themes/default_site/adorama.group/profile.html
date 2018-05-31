@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>                        
+<!--        <meta http-equiv="refresh" content="0; url={site_url}upload#instagram"/>-->
+
+        {meta}
+            {css}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/instagram.css"/>
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/colorbox.css"/>
+        <style>
+            .page{
+                min-height: calc(100vh - 138px);
+            }
+            
+            form label > input{
+                visibility: visible;
+            }
+        </style>
+        {exp:minimee:js queue="head_js"}
+            <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-1.11.3.min.js"></script>
+            <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/jquery.validate.min.js"></script>            
+        {/exp:minimee:js}
+        {exp:minimee:display js="head_js"}
+</head>
+<body class="no-header-top">
+{embed='assets/header'}
+
+<!-- end of Header -->
+
+<!-- Account -->
+<div id="account" class="page">
+    <section class="wrapper container">
+    	<div id="subject" class="row">
+			
+			{exp:brilliant_retail:show_message}
+			
+    		{exp:brilliant_retail:customer_profile}
+	        
+	        {form_open}
+	   		<div id="profile">
+            	<div class="header">
+                    	<h2>Profile</h2>
+                    </tr>
+                </div>
+                <div class="body">
+                    <div class="col-md-1">
+                        <img src="{theme}/images/profile-pic.jpg" alt="" />\
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <h5><strong>General Info</strong></h5><br />
+                        <div class="col-md-6">
+                            <label>First Name*</label><br /><input class="txtinp form-control cus-field required" name="br_fname" value="{br_fname}" type="text" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name*</label><br /><input class="txtinp form-control cus-field required" name="br_lname" value="{br_lname}" type="text" />
+                        </div>
+                        
+                        
+                        <div>
+                            <h5><strong>Billing Address</strong></h5><br />
+                            <label>First Name*</label><br /><input class="txtinp required" name="br_billing_fname" value="{br_billing_fname}" type="text" />
+                            <label>Last Name*</label><br /><input class="txtinp required" name="br_billing_lname" value="{br_billing_lname}" type="text" />
+                            <label>Company</label><br /><input class="txtinp" name="br_billing_company" value="{br_billing_company}" type="text" />
+                            <label>Country</label><br />
+                                {exp:brilliant_retail:countries name="br_billing_country" id="br_billing_country" class="listinp required" value="{br_billing_country}"}
+
+                            <label>Address<br /><input class="txtinp txtinp_nospace" name="br_billing_address1" value="{br_billing_address1}" type="text" /></label><input class="txtinp" name="br_billing_address2" value="{br_billing_address2}" type="text" />
+                            <label>City<br /><input class="txtinp" name="br_billing_city" value="{br_billing_city}" type="text" /></label>
+                            <label>State<br />
+                                {exp:brilliant_retail:states name="br_billing_state" id="br_billing_state" class="listinp required" value="{br_billing_state}" country_select="br_billing_country"}
+                            </label>
+                            <label>Zip/Postal Code<br /><input class="txtinp" name="br_billing_zip" value="{br_billing_zip}" type="text" /></label>
+                            <strong>Additional Info</strong><br />
+                            <label>Bio<br /><textarea class="txtarea" name="bio">{bio}</textarea></label>
+                            <label>Interests</label><br /><textarea class="txtarea" name="interests">{interests}</textarea>
+
+                            <div class="btn">
+                                    <input class="inpbtn" name="" type="submit" value="Submit" />
+                            </div>
+                        </div>
+				        
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <label>
+                                Email<br />{email}<br />
+                        </label>
+                        <label>Phone</label><br /><input class="txtinp form-control cus-field " name="br_phone" value="{br_phone}" type="text" />
+                        <strong>Shipping Address</strong><br />
+                        <label>First Name*</label><br /><input class="txtinp required" name="br_shipping_fname" value="{br_shipping_fname}" type="text" />
+                        <label>Last Name*</label><br /><input class="txtinp required" name="br_shipping_lname" value="{br_shipping_lname}" type="text" />
+                        <label>Company</label><br /><input class="txtinp" name="br_shipping_company" value="{br_shipping_company}" type="text" />
+                        <label>Country<br />
+                            {exp:brilliant_retail:countries name="br_shipping_country" id="br_shipping_country" class="listinp required" value="{br_shipping_country}"}
+                        </label>
+                        <label>Address</label><br /><input class="txtinp txtinp_nospace" name="br_shipping_address1" value="{br_shipping_address1}" type="text" />
+                        <input class="txtinp" name="br_shipping_address2" value="{br_shipping_address2}" type="text" />
+                        <label>City</label><br /><input class="txtinp" name="br_shipping_city" value="{br_shipping_city}" type="text" />
+                        <label>State<br />
+                            {exp:brilliant_retail:states name="br_shipping_state" id="br_shipping_state" class="listinp required" value="{br_shipping_state}" country_select="br_shipping_country"}
+                        </label>
+                        <label>Zip/Postal Code<br /><input class="txtinp" name="br_shipping_zip" value="{br_shipping_zip}" type="text" /></label>
+                        <strong>Chat</strong><br />
+                        <label>AIM</label><br /><input class="txtinp" name="aol_im" value="{aol_im}" type="text" />
+                        <label>Yahoo</label><br /><input class="txtinp" name="yahoo_im" value="{yahoo_im}" type="text" />
+                        <label>MSN</label><br /><input class="txtinp" name="msn_im" value="{msn_im}" type="text" />
+                        <label>icq</label><br /><input class="txtinp" name="icq" value="{icq}" type="text" />            
+                    </div>
+				        	
+
+                                
+                </div>
+            </div> <!-- profile -->
+            {form_close}
+		{/exp:brilliant_retail:customer_profile}
+        </div> <!-- subject -->
+        <div class="clearboth"><!-- --></div>
+    </section>    
+</div> 
+<!-- account -->
+<!-- end of Account Page -->
+{embed="assets/footer"}
+</body>
+</html>

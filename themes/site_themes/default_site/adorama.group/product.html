@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PrintShop Adorama</title>
+        {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/flexslider.css">
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+		<style>
+			.slider_desc > p {
+				display: block;
+			}
+			.slider_desc.show_desc > p {
+				display: none;
+			}
+			.slider_desc > .desc2 {
+				display: none;
+			}
+			.slider_desc.show_desc > .desc2 {
+				display: block;
+			}
+			.item img {
+				width: 100%;
+				height: auto !important;
+			}
+		</style>
+    </head> 
+    <body>
+{embed=assets/header}
+<div class="page product"> 
+    <section>
+        <div class="banner nothome">
+		{exp:brilliant_retail:product url_title="{segment_2}"}            
+			{if no_results}<div class="wrapper slider_desc" style="text-align:center;padding:20px;"><h2>The product you requested is not available. </h2></div>
+			{/if}        
+			
+			<div class="slider" >
+				<div class="photoprint {exp:text:lowercase}{category_title}{/exp:text:lowercase} type{type_id}">
+                <div>
+                    <div class="slider_img">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                              <!-- Wrapper for slides -->
+                              <div class="carousel-inner" role="listbox">
+							  {images}
+								  {if exclude == "0"}
+								  <div class="item">
+								  <img src='/media/{filenm}' class="img-responsive" title="{title}" />
+								  </div>
+								  {/if}
+							  {/images}
+							</div>
+					</div>
+						
+				     </div>					
+                    <div class="slider_desc">                        
+                        <div class="slider_head" >
+                            <h1>{title}</h1><a href="javascript:$('.slider_desc').toggleClass('show_desc');" class="detail">Product details+</a>
+                        </div>							
+							{if lang == "bahasa"}
+							<p>
+								{detail_id}
+							</p>
+							{if:else}
+							<p>
+								{detail}
+							</p>
+							{/if}
+                        <div class="slider_info">									
+
+						<div class="product-options">
+							{configurable}			                    		
+								 {configurable_select}
+							{/configurable}	
+							</div>
+
+
+							<!--div class="product-options">
+							{options}			                    	
+								{option_input}								
+							{/options}
+							</div-->
+                            <div class="pricing" data-base_price="{price}">
+                                <p>Start from {price_html}</p>
+                            </div>
+                            <button class='btn btn-circle' >
+							 {if type_id == 1}Buy Now
+							 {if:else}Let's Create
+							 {/if}
+							</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {exp:session_variables:set name='product_id' value="{product_id}"}
+        <input name="sku" type="hidden" value=""/>
+		{/exp:brilliant_retail:product}                
+        </div>
+    </section>
+	<div class="box-shadow-form">
+        {embed=assets/recommend}
+        {embed=assets/recommend1}
+        {embed=assets/subscribe}
+	</div>
+</div>
+        
+{embed=assets/footer}
+{js}
+<script type="text/javascript" src="{theme_url}js/flexslider.min.js"></script>
+<script type="text/javascript" src="{theme_url}js/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+	$('.carousel-inner .item:first-child()').addClass('active')
+        $('.photoprint').slick({
+            infinite: false,
+            arrows:false,
+            dots:true,
+            slidesToShow: 1,
+            appendDots: '.slider_nav_container'
+        });
+    });
+</script>
+</body>
+</html>

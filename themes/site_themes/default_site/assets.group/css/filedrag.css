@@ -1,0 +1,32 @@
+/*
+Styles for HTML5 File Drag & Drop demonstration
+Featured on SitePoint.com
+Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
+*/
+#filedrag
+{
+}
+
+#filedrag.hover
+{
+    background: url(/themes/site_themes/default_site/assets.group/images/drop_bg.png) no-repeat;
+    background-size: 100%;
+/*    background-position-y: 50%;*/
+    opacity: 1;
+}
+#filedrag {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 900;
+    
+}
+section.no-upload {
+    height: calc(100vh - 162px );
+    position: relative;
+}
+section.maincontent.upload-more {
+    height: calc( 100vh - 156px);
+    background: white;
+    overflow-y: auto;
+}

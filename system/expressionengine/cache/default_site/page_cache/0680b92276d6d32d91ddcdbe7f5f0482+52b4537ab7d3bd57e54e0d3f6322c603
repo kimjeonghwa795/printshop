@@ -1,0 +1,101 @@
+a:3:{s:4:"time";i:1527673562;s:3:"ttl";i:0;s:4:"data";s:4700:"{!-- ra:000000003063a28e000056514d9ca0ca --}<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+         {meta}
+                
+                {css}
+        
+        {f4acc930e16260a7c8fcfd443f232ba1fb6b238e}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            .page{overflow: hidden}
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+        <div class="page border">
+	<section class="min-height">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />                                        
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="var" value="border" />
+                                        <input type="hidden" name="next" value="/modern/quantity" />
+                                            
+					<div class="title-cont storyline">Select border style</div>
+					<div class="border-style">
+                                            <div class="qty-options">
+                                                <label class="qty-item" id="qty1"  for='opt10'>
+                                                    <input type='radio' name="border"  value="10" required id='opt10'/>
+                                                    <input type='radio' name="label"  value="10 x 10 cm" id='opt10'/>
+                                                    <div class="box-border">
+                                                            <div class="border-item"></div>
+                                                    </div>
+                                                    <div class="qty-price">
+                                                            <label class="lbl-size">10 x 10 cm</label>
+                                                    </div>                                                    
+                                                </label>
+                                            
+                                                <label class="qty-item" id="qty2" for='opt12'>
+                                                    <input type='radio' name="border" value="12" required id='opt12'/>
+                                                    <input type='radio' name="label"  value="10 x 12 cm" id='opt12'/>
+                                                    <div class="box-border itm2">
+                                                            <div class="border-item itm2-border"></div>
+                                                    </div>
+                                                    <div class="qty-price">
+                                                            <label class="lbl-size">10 x 12 cm</label>
+                                                    </div>                                                
+                                                </label>
+                                            </div>
+					</div>
+					<div class="button-back marg">
+						<button class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+                                        </div>
+                                        </form>
+				</div>
+			</div>
+		</div>
+	</section>
+        <div class="alert"><div>Please select one above</div></div>
+
+{js}
+<script>
+	$(document).ready(function(){
+		$('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 2000);
+			e.preventDefault();
+		});
+	});
+
+	$('.qty-item').click(function(){		
+		$('.qty-item').removeClass('active');
+                $(this).addClass('active');
+                $('.border-style').addClass('active');
+	});
+        $('button.btn').click(function(){
+            if(!$('.qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){$('.alert').removeClass('active');}, 1500);
+
+            }else{$(this).submit();}
+        })
+        $('input:radio').change(function(e){$(this).siblings('input:radio').prop('checked',$(this).prop('checked'));});
+</script>
+</body>
+</html>";}

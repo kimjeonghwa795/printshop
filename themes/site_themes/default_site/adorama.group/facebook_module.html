@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+ 	{meta}
+        {css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+</head>
+<body>
+	{embed=assets/header}
+<div class="page">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+					<div class="title-cont bold f42">Connect your account</div>
+					<div class="text-center"><i class="fa fa-facebook"></i></div>
+					<div class="text-center">
+						<p>To get started make your order you'll have to connect with your facebook account</p>
+					</div>
+					<div class="button-back marg">
+						<a href="#" class="btn btn-circle pad-hop">Connect</a>
+					</div>
+					<div class="text-center">
+						<p class="label-media">Metadata taken from your facebook post such as hashtag, location and date will be printed on the back</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+{js}
+<script>
+// $(document).ready(function() {
+//     $('.carousel').carousel({
+//       interval: 6000
+//     })
+//   });
+
+function equalGrids(){
+	equalGrid = $('section .photoitem').width();
+	$('section .photoitem').height(equalGrid);
+	/*for footer stay on bottom*/
+	defContentHeight = $(window).innerHeight() - 110;
+	if ($('footer').siblings('section').height() < defContentHeight){
+		$('footer').addClass('stayBottom');
+	}
+	else if($('footer').siblings('section').height() > defContentHeight){
+		$('footer').removeClass('stayBottom');
+	}
+}
+
+$(window).on('resize',equalGrids);
+	
+$(document).ready(function(){
+$('#bs-example-navbar-collapse-1').append("<div class='pageof pull-right' style='padding-top:12px'><span id='count-selected'>0/<span id='count-max'></span></span><a class='back-btn' href='/upload#gallery'><img style='width: 22px;margin-left: 8px;margin-top: -6px;' src='/images/e-icon.png' /><div class='tooltips right-tooltip'><div class='top-tooltip'></div><span>Review the photos you select using this button</span></div></div></a>");
+total_selection();
+    
+        $('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 2000);
+			e.preventDefault();
+		});
+		equalGrids();
+});
+</script>
+</body>
+</html>

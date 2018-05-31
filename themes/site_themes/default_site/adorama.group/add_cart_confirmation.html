@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{site_name}</title>
+
+ {meta}
+
+{exp:minimee:css queue="head_css"}        
+        {css}
+{/exp:minimee:css}
+{exp:minimee:display css="head_css"}
+{exp:minimee:css queue="head_css"}        
+    <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/tablet.css">
+{/exp:minimee:css}
+{exp:minimee:display css="head_css"}
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{exp:minimee:js queue="head_js"}
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+{/exp:minimee:js}
+{exp:minimee:display js="head_js"}
+<link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+<style>
+    .img-cont.story.paddbottom {
+        padding-top: 16px;
+    }
+</style>
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page cart-confirm">
+        <section class="">
+            <div class="container">
+                <div class="row">
+                    <div class="content sucess">
+                            <div class="title-cont bold f42">This item has been added to your cart</div>
+                            <img src="{theme_url}images/shop.png" class="img-responsive img-centered">
+                            <div class="button-back marg">
+                                    <a href="#" class="btn btn-circle pad-hop">Proceed to Payment</a>
+                            </div>
+                            <label class="text-center disblock"><a href="/" class="text1">Continue shopping</a></label>
+                    </div>
+                </div>
+            </div>
+	</section>
+    </div>
+    {embed=assets/footer}
+    {exp:minimee:js queue="foot_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"}
+</body>
+</html>
+

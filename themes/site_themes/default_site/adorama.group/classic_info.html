@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PrintShop Adorama</title>
+        {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        {exp:minimee:css queue="head_css"}        
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/flexslider.css">
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+    </head>
+    <body>
+{embed=assets/header}
+    <div class="page photoprint-info">   
+        <section>
+            <div class="banner nothome">
+                <div class="slider" >
+                    <div class="photoprint">
+                        <div>
+                            <div class="slider_img"> <img class="img-responsive" alt="alt"  src="{theme_url}images/assets/home/classic-print.png"> </div>
+                            <div class="slider_desc">
+                                <div class="slider_head">
+                                    <h1>Classic Prints</h1>
+                                    <a href="#" class="detail">Product details+</a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident necessitatibus, expedita, odit et quisquam consequatur, quis delectus, obcaecati commodi eveniet omnis repudiandae autem! Reiciendis tempora ut in, aut consequuntur autem.</p>
+                                <div class="slider_info">
+                                    <div class="pricing">Start from IDR 20.000</div>
+                                    <a class="btn btn-circle " href="/index.php?ACT=77&product_id=7&XID={XID_HASH}">Let's Create</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider_nav_container"></div>
+                </div> 
+            </div>
+        </section>
+        <div class="box-shadow-form">
+        {embed=assets/recommend}
+        {embed=assets/recommend1}
+        </div>
+        {embed=assets/subscribe}   
+</div>
+{embed=assets/footer}
+{js}
+<script type="text/javascript" src="{theme_url}js/flexslider.min.js"></script>
+<script type="text/javascript" src="{theme_url}js/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.photoprint').slick({
+            infinite: false,
+            arrows:false,
+            dots:true,
+            slidesToShow: 1,
+            appendDots: '.slider_nav_container'
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+        {meta}
+        {exp:minimee:css queue="head_css"}                    
+            <link rel="stylesheet" href="{theme_url}css/jquery.fluidbox.css">
+            <link rel="stylesheet" href="{theme_url}css/cropper.min.css">
+            <link rel="stylesheet" href="{theme_url}css/upload.css">
+            {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <style>            
+            .page section.container:visible ~ section.container,.page section.container.active ~ section.container {
+                display: none !important;
+            }
+            a#submitbutton {
+                display: block !important;
+                max-width: 150px;
+                margin: 0 auto;
+            }
+            li.fb-back a {
+                background: #F9C62E;
+                color: white;
+                padding: 26px;
+                font-size: 20px;
+                font-family: gotham-book;
+            }
+            li.fb-back a label {
+                text-align: left !important;
+                margin-top: 10px;
+            }
+            .layout.layout_1 {min-height: calc(100vh - 265px); }
+            #filedrag.hover .btn {display: none};
+            
+            section.container .album li div.descr {margin-top: -15px !important;height: 30px}
+            section.container .album li label {text-align: center;text-overflow: ellipsis;overflow:hidden; width: 100%;white-space: nowrap}
+            section.container .album li label.name {font-weight: bold ;text-align: center;text-overflow: ellipsis;overflow:hidden; width: 100%;white-space: nowrap}
+            section.container .album li label.photo-count {font-weight: normal;width: 100%;white-space: nowrap;text-align: center;color: grey}
+            .pageof {section .photoitem > .overlay;padding: 15px;font-size: 22px;}
+            li.tmpl.inprogress .photoitem > .overlay a {
+                display: none;
+            }
+            li.tmpl.inprogress .photoitem > .overlay {
+                display: block;
+                background-color: rgba(250, 206, 61,0.7);
+                z-index: 100;
+            }
+            section li.tmpl.inprogress .count{
+                color: transparent;
+                z-index : 20;
+            }
+            section li.tmpl.inprogress .count:before {
+                z-index : 30;
+                position: absolute;
+                top:0;left:0;
+                height: 100%;
+                width: 100%;                
+                content: attr(data-progress);
+                color: #fff;
+            }
+            section li.tmpl.completed .count:before{
+                content:'';
+                
+            }
+            section li.tmpl.completed .photoitem > .overlay {
+                display: block;
+                background-color: #40d088;
+                opacity: 1;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+                width: 100% !important;
+            }
+            section li.tmpl .photoitem > .overlay .done{
+                display: none;
+                color:#fff;                
+                width: 100%;
+                height: 50%;
+                top:25%;
+                position: absolute;
+            }
+            section li.tmpl.failed .photoitem > .overlay {
+                background-color: red;
+                width: 100% !important;
+                opacity: 1;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+            }
+            section li.tmpl.completed .photoitem > .overlay .done i:before{
+                content: "\f00c";
+                font-size:4em;                
+            }
+            section li.tmpl.failed .photoitem > .overlay .done i:before{
+                content: "\f00d";
+                font-size:4em;                
+            }
+            
+            section li.tmpl.completed .photoitem > .overlay .done,section li.tmpl.failed .photoitem > .overlay .done{
+                display: block;
+            }
+        </style>
+        
+        {exp:minimee:js queue="head_js"}
+            {head_js}
+        {/exp:minimee:js}
+        {exp:minimee:display js="head_js"}
+</head>
+<body class="no-header-top {exp:session_variables:get name='layout_id'} upload computer" >
+	{embed=assets/header}
+<div class="page upload">
+	<section class="container upload-more" id="gallery" style="display: none">
+		<div class="">
+                        <div class="row" style="position: relative">
+                            <form id="selectform" action="/index.php" method="POST">
+                                        <input type="hidden" name="ACT" value="83" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="owner_id" id="session_id" value="{exp:session_variables:get name='layout' key='owner_id'}"/>                            
+                                        <input type="hidden" name="sku" value="{exp:session_variables:get name='layout' key='sku'}" />
+                                        <input type="hidden" name="layout_id" value="{exp:session_variables:get name='layout' key='layout_id'}" />
+                                        <input type="hidden" name="item_id" value="{exp:session_variables:get name='layout' key='item_id'}" />
+                                        <input type="hidden" name="maxFiles" value="{exp:session_variables:get name='layout' key='max_selected'}" />
+                                                                
+                                <div style="right: 0;min-width: 300px;" class="options">
+                                    <h2 style="display: inline-block;">Upload and Select your files                                        
+                                    </h2>
+                                </div>                                
+                                        <div class="spacer clearfix" style="clear: both;"></div>
+                                <div role="presentation" class="layout layout_1">
+                                        <ul id="files" class="pg files col-xs-12" data-page="1" data-max_item="1" >
+                                        </ul>
+                                        <div class="spacer clearfix" style="clear: both;"></div>
+                                    </div>    
+                                
+                            </form>
+                        </div>                        			
+		</div>
+           
+	</section>
+        <section class="container no-upload" id="upload" >
+                <div id="filedrag">
+                    <div class="text-center">
+                        <a href="#" id="cancelupload" class="btn btn-circle invert" style="position: absolute;bottom:16px; left: calc(50% - 74px)" >Cancel</a>
+                    </div>
+                </div>
+                <div class="container active" id="upload-container" style="height: 100%">
+                    <div class="row">                        
+                        <form id="fileupload" action="#" method="POST" enctype="multipart/form-data">
+                            <fieldset>
+                                <input type="hidden" name="ACT" value="26" />
+                                <input type="hidden" name="XID" value="{XID_HASH}" />                                
+<!--                                <input type="hidden" name="source" value="{exp:session_variables:get name='upload' key='source'}" />                                -->
+                                <input type="hidden" name="page" value="0" />                                                                
+                                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000000" />                                
+                                <input type="hidden" id="filecanvas"  name="filecanvas" style="position:absolute;opacity: 0">
+                                <input type="hidden" id="filename"  name="filename" style="position:absolute;opacity: 0">
+                                <input type="file" id="fileselect"  name="file[]" string="Add File!" multiple="false" accept="image/*" style="position:absolute;opacity: 0">
+                                <div class="content sucess"  >
+                                    <div class="title-cont storyline bold black f42">Upload Your Files</div>
+                                    <div class="text-center"><img src="{theme_url}images/upload-icon.png"></div>
+                                    <div class="text-center">
+                                        <p>Maximum file size is 10MB each. Minimum file size is 3000px x 3000px</p>
+                                        <a href="#" id="submitbutton" class="btn btn-circle invert" style="">Upload</a>
+                                        <p id="messages"></p>
+                                    </div>                                    
+                                                    
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+        </section>
+
+</div>
+{embed=assets/upload_footer}
+{cropper_modal}	
+{image_template}
+{exp:minimee:js queue="foot_js"}
+    {upload_js}    
+    <script src="{theme_url}js/spinLoader.js"></script>
+    <script src="{theme_url}js/md5-min.js"></script>
+    <script src="{theme_url}js/js.cookie.js"></script>
+    <script src="{theme_url}js/upload.js"></script>    
+{/exp:minimee:js}
+{exp:minimee:display js="foot_js"}
+<script>    
+function getParameterByName(name, data) {
+    var match = RegExp('[?#&]' + name + '=([^&]*)')
+                    .exec(data);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+$(document).ready(function(){
+var maxSize = 5485760;
+var maxWidth = 5000;
+var maxHeight = 5000;
+var minWidth = 1000;
+var minHeight = 1000;    
+
+$('#bs-example-navbar-collapse-1').append("<div class='pageof pull-right' style='padding-top:12px'><span id='count-selected'>0/<span id='count-max'></span></span><a href='#gallery'><img style='width: 22px;margin-left: 8px;margin-top: -6px;' src='/images/e-icon.png' /><div class='tooltips right-tooltip'><div class='top-tooltip'></div><span>Review the photos you select using this button</span></div></div></a>");
+load_selection();
+    
+        function load_more(p,$source){           
+            if ( isNaN(p) ){
+                $source = p;
+                p = parseInt($('[name=page]').val());
+            }                        
+            $source =  $source ? $source : 'upload';
+            $source =  ($source != 'gallery') ? $source : 'upload';
+            var $id;
+            
+            var $token  = $('[name='+$source+'_token]').val() ;
+            var selecteds = JSON.parse(Cookies.get('exp_selections')) || {};
+
+            $.get('/',{ACT:31,source: $source ,id : $id  ,XID:$('[name=XID]').val(), page: p + 1 , token: $token },function(res){                
+                var gallery = 'gallery';
+                for(var i in res.files ){
+                    var file = res.files[i];                    
+                    if ( $('li[data-id='+file.id+']').length ) continue;
+                    file.count =  selecteds[file.id];
+                    var newImg = (tmpl('template-upload',file));
+                    $('#'+ gallery +' .files').append(newImg);            
+                }
+
+                if (res.files.length > 0 ){
+                    $('html,body').animate({scrollTop: $('.upload-more').offset().top}, 500); 
+                    $('section.container').removeClass('active');
+                                        
+                    $('[name=page]').val( res.page );                                        
+                }else{
+                    $('section.container').removeClass('active');
+                    $('#'+$source).addClass('active');
+                } 
+                $('#gallery').addClass('active').show();
+            });
+        }
+        
+          
+        $('.page').bind('scroll',function(e){
+            var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
+            var divTotalHeight = $(this)[0].scrollHeight;        
+            if (scrollPosition == divTotalHeight){load_more();}
+        });        
+        $(window).scroll(function() {
+            if($(window).scrollTop() + $(window).height() > $(document).height() - 56) {
+            load_more();
+            }
+        });
+        
+        $('.pageof a').click(function(){
+            load_more('upload');
+        });
+        
+        
+       window.onhashchange = function(){
+           if (document.getElementById(location.hash.substr(1))){
+               $('section.container').removeClass('active');
+               $(location.hash).addClass('active').show();
+           }
+       };
+       if (location.hash) {
+           $('section.container').removeClass('active');
+           $(location.hash).addClass('active').show();
+       } 
+       var fileSelect = document.querySelector('#fileselect');
+       var fileDrag = document.querySelector('#filedrag');
+       
+       function renderFile(file){
+           if (typeof(file) != 'object') return;
+           file.id = hex_md5(file.lastModified + file.name);
+           file.meta = JSON.stringify({});                      
+           file.fn = file.id + file.name.substr( file.name.lastIndexOf('.'));           
+           var newLI = (tmpl('template-upload',file));           
+           newLI = $(newLI).appendTo('#files');
+           var newImg = newLI.find('.preview img').attr('src',URL.createObjectURL(file) );
+           var valid = false;
+           var FR = new FileReader();           
+		   
+		   var image_error = function(msg){
+			 return newLI.addClass('error').find('.count').text(msg).css('font-size','1em');			
+		   };
+		   
+           FR.onload = function(e) { 
+               var testImg = new Image();			   
+               testImg.src =  e.target.result;			   
+			   testImg.onload = function () {
+					console.log(this.width,this.height);
+					console.log(this.naturalWidth,this.naturalHeight);
+					if ( file.size > maxSize ) return image_error('File too big');
+					if (this.naturalWidth < minWidth) return image_error('image too small');
+					if (this.naturalHeight < minHeight) return image_error('Image too small');
+					if (this.naturalWidth > maxWidth) return image_error('image too big');
+					if (this.naturalHeight > maxHeight) return image_error('Image too small');
+					newLI.addClass('need-upload').click();
+			   };               
+               newImg.attr('src',e.target.result);               
+           }; 
+           FR.readAsDataURL(file);
+           
+           
+        }
+        function fileDragHover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.target.className = (e.type == "dragover" ? "hover" : "");
+	}
+       
+        function fileSelectHandler(e){           
+           fileDragHover(e);
+           var files = e.target.files || e.dataTransfer.files;
+           for (var f in files){
+               renderFile(files[f]);
+           }
+           
+        }
+       
+        fileSelect.addEventListener('change',fileSelectHandler,false);
+        fileDrag.addEventListener('click',function(){fileSelect.click();}, false);
+       
+        var xhr = new XMLHttpRequest();
+        if (xhr.upload) {
+            fileDrag.addEventListener("drop", fileSelectHandler, false);
+            fileDrag.addEventListener("dragover", fileDragHover, false);
+            fileDrag.addEventListener("dragleave", fileDragHover, false);
+        }
+        document.querySelector('#files').addEventListener('DOMNodeInserted',function(e){
+           $('#gallery').addClass('active').show();
+           $('#upload').removeClass('active').hide();           
+        });
+       
+       
+});
+</script>
+</body>
+</html>

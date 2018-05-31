@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>{site_name}</title>
+
+         {meta}
+            {css}
+        <style>
+            section.maincontent {
+                height: calc(100vh - 120px);
+                overflow: auto;
+            }
+            .checkout a{color: #FF5445 !important}
+            .btn-circle:hover .checkout a {
+                color: white !important;
+            }
+            .btn-circle:hover{
+                background: #FF5445 !important;
+            }
+            section.maincontent {
+                height: calc(100vh - 138px);
+            }
+            a.btn.btn-circle {
+                color: #FF5445;
+            }
+            a.btn.btn-circle:hover {
+                color: white !important;
+            }
+            @media (max-width: 414px){
+/*                .shop-cart {
+                    text-align: center;
+                }
+                .shop-cart .info {
+                    text-align: center;
+                    margin: 24px 0;
+                    color: gray;
+                    font-family: gotham-medium;
+                }
+                .shop-cart #br_alert {
+                    padding: 30px 0 0;
+                }*/
+                .shop-cart .totals {
+                    padding: 13px 0;
+                }
+                .shop-cart .totals .total {
+                    text-align: left;
+                    margin: 10px 0;
+                }
+                .shop-cart .totals .total label {
+                    float: right;
+                }
+                .page {
+                    min-height: calc(100vh - 146px !Important);
+                }
+                footer .padd.clearfix div{width: auto !Important;padding-left: 0;}
+                section.maincontent {
+                    height: calc(100vh - 146px) !important;
+                }
+                a#sh-footer {
+                    font-size: 14px !Important;
+                }
+                footer .col-md-8.col-xs-6.align-center {
+                    float: right;
+                }
+                footer .padd.clearfix a, footer .padd.clearfix button {
+                    font-size: 14px !important;
+                }
+            }
+
+        </style>
+        {head_js}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+</head>
+<body>
+    {embed=assets/header}
+    <div class="page cart">
+        <section class="maincontent">
+            <div class="container">
+                <div class="row">
+                    <div class="shop-cart">
+                        <h1>Shopping Cart</h1>
+                        {exp:brilliant_retail:show_message}
+                        {if {exp:brilliant_retail:cart_items} == 0}
+                            <div id="br_alert">Your shopping cart is currently empty.</div>
+                        {if:else}
+                        {exp:brilliant_retail:cart form="yes" form_class="cart_form"}        
+                            <ul class="carts">
+                                {items}
+                                <li class="cart-item">
+                                <div class="cart">
+                                    <div class="product-img" style="width: initial;">
+                                        {if "{image_thumb}" ^= '/'}
+                                        <img src="{image_thumb}" style="height: 130px;width: 130px;"/>                                    
+                                        {if:else}
+                                        <img src="/media/{image_thumb}" style="height: 130px;width: 130px;"/>                                    
+                                        {/if}
+                                    </div>
+                                    <div class="product">
+                                        <h5><a >{title}</a></h5>
+                                        <ul>
+                                            {options}
+                                        </ul>
+                                    </div>
+                                    <div class="desc" data-price="{base}" data-discount="{discount}" data-qty="{quantity}">
+                                        <div class="cost">{subtotal}</div>
+                                        <div class="qty">Qty <input id="qty{hash}" type="number" name="qty[{hash}]" value="{quantity}" min="1" max="99"/></div>
+                                        <div class="act">
+                                            <!--label  for="qty{hash}" class="btn btn-circle invert">Edit</label-->
+                                            <a  href="{remove_link}" class="btn btn-circle invert">Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </li>
+                                {/items}
+                            </ul>
+                        <div class="totals">
+                            <div class="total">Total : <label>{exp:brilliant_retail:cart_total}</label> </div>
+
+                            <!--<button name="continue" type="submit" class="btn btn-circle no-style">Update</button>-->                            
+                            <!--<span class="btn btn-circle" style="    background: transparent;border: 2px solid #FF5445;color: #FF5445 !important;margin-top: 6px;">
+                            {exp:brilliant_retail:checkout_buttons}    
+                            </span>-->     
+                            <a href="http://printshop.co.id/checkout" class="btn btn-circle" style="background: transparent;border: 2px solid #FF5445;margin-top: 6px;">Checkout</a>
+                            <div class="continue"><a href="{exp:brilliant_retail:path src='/'}">Continue shopping</a></div>
+                        </div>
+                        {/exp:brilliant_retail:cart}
+                        {/if}
+
+                        <div class="info">
+                            Please note that shipping will calculated at the end of proccess
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        {embed=assets/footer}
+        {js}
+<script>
+$(document).ready(function(){
+    
+   $('.qty input').on('change',function(e){
+       var $line = $(this).closest('.desc');
+       var qty = this.value;
+       var subt = ($line.data('price') - $line.data('discount') ) * qty;
+       $('.cost',$line).html('Rp ' + subt.toFixed(0).replace(".", ",") .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).data('qty',qty);     
+       
+       $.post($('.shop-cart form').attr('action'),$('.shop-cart form').serialize(),function(res){
+           console.log(res);
+       });
+       
+       calculateTotal();
+   });         
+   
+   var calculateTotal = function(){
+       var total = $('.cart-item .desc').toArray().reduce(function(a,line,i){
+           return a + ($(line).data('price') - $(line).data('discount') ) * $('input',line).val();           
+       },0);
+       
+       total.toFixed(0) // always two decimal digits
+       .replace(".", ",") // replace decimal point character with ,
+       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") ;
+       $('.totals .total label').html('Rp ' + total.toFixed(0).replace(".", ",") .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+   }
+   
+});
+</script>    
+<script>
+function equalGrids(){
+	equalGrid = $('section .photoitem').width();
+	$('section .photoitem').height(equalGrid);
+	$('section .photoitem > .overlay > span').css('line-height',equalGrid +'px');
+	/*for footer stay on bottom*/
+	defContentHeight = $(window).innerHeight() - 110;
+	if ($('footer').siblings('section').height() < defContentHeight){
+		$('footer').addClass('stayBottom');
+	}
+	else if($('footer').siblings('section').height() > defContentHeight){
+		$('footer').removeClass('stayBottom');
+	}
+}
+
+$(window).on('resize',equalGrids);
+	$(document).ready(function(){
+		$('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 1000);
+			e.preventDefault();
+		});
+		equalGrids();
+	});
+</script>
+    </body>
+</html>

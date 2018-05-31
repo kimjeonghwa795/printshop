@@ -1,0 +1,34 @@
+ $(document).ready(function() {
+     $('.carousel').carousel({
+       interval: 6000
+     });
+     $('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			 $('html, body').animate({
+                                    scrollTop: $(document).height()
+                            }, 2000);
+			e.preventDefault();
+        });
+     setTimeout('$(".header-top").hide("fadeUp")',5000);
+});
+
+function equalGrids(){
+	equalGrid = $('section .photoitem').width();
+	$('section .photoitem').height(equalGrid);
+	/*for footer stay on bottom*/
+	defContentHeight = $(window).innerHeight() - 110;
+	if ($('footer').siblings('section').height() < defContentHeight){
+		$('footer').addClass('stayBottom');
+	}
+	else if($('footer').siblings('section').height() > defContentHeight){
+		$('footer').removeClass('stayBottom');
+	}
+}
+//$('.datepicker').datepicker();
+//$(window).on('resize',equalGrids);
+		

@@ -1,0 +1,73 @@
+<header>    
+    <div class="header-top {flash_class}">{flash_message}
+        <!--<span class="header-close" style="position:absolute;right: 10px;" onclick="$(this).parent().hide();"><i class="fa fa-times"></i></span>-->
+    </div>
+    <div class="header-menu">
+            <nav class="navbar navbar-default navbar-white">
+                    <div class="container">
+                            <div class="navbar-header">
+                                    <a class="navbar-brand logo" href="{site_url}"><img src="{theme_url}/images/svg/logowhite.svg" class="img-responsive logo"></a>                                    
+                                    <div class="navbar-title">
+                                        <span >{exp:session_variables:get name='layout' key="layout_id"}</span>
+                                        <a href="#" id="left-tooltip">
+                                            <img style="width: 20px;margin-left: 16px;" src="{theme_url}/images/q-icon.png" />
+                                            <div class="tooltips left-tooltip"><div class="top-tooltip"></div><span>{exp:session_variables:get name='layout' key="instruction"}</span></div>
+                                        </a>
+                                    </div>
+                            </div>
+                            <div class="collapse navbar-collapse cbm-push" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav pull-right usermenu">
+                                            <li><a class="hvr-bounce-to-bottom" href="/products">Shop All</a></li>
+                                            <li><a class="hvr-bounce-to-bottom" href="/about">About</a></li>
+                                            <li class="logins" id="usermenu">                                                
+                                                  <a class="hvr-bounce-to-bottom" href="{path='/login'}">Log-in</a>
+                                                  <div class="nav-menu member-menu" >                                                      
+                                                    Not a member? <a href="{path='/register'}">Register</a>.<br>                                                    
+                                                  </div>
+                                            </li>
+                                            <li id="cartmenu">
+                                                <a class="hvr-bounce-to-bottom" href="{exp:brilliant_retail:path src='cart'}">Cart </a>                                                
+                                            </li>
+                                    </ul>
+                            </div>
+
+
+                            <div class="collapse-overlay"></div>
+                    </div>
+            </nav>
+	    <nav class="navbar navbar-default navbar-white mobile">
+                    <div class="container">
+                            <div class="navbar-header">
+                                    <a class="navbar-brand logo" href="{site_url}"><img src="{theme_url}/images/svg/logowhite.svg" class="img-responsive logo"></a>                                    
+                                    <div class="navbar-title">
+                                        <span >{exp:session_variables:get name='layout' key="layout_id"}</span>
+                                        <a href="#" id="left-tooltip">
+                                            <img style="width: 20px;margin-left: 16px;" src="{theme_url}/images/q-icon.png" />
+                                            <div class="tooltips left-tooltip"><div class="top-tooltip"></div><span>Please select 12 photo to be printed on your square set</span></div>
+                                        </a>
+                                    </div>
+                            </div>
+                            <div class="collapse navbar-collapse cbm-push" id="bs-example-navbar-collapse-1">
+                                <i class="fa fa-bars nav-button" aria-hidden="true"></i>
+                                    <ul class="nav navbar-nav pull-right usermenu nav-toggle hide">
+                                            <li><a class="hvr-bounce-to-bottom" href="/products">Shop All</a></li>
+                                            <li><a class="hvr-bounce-to-bottom" href="/about">About</a></li>
+                                            <li class="logins" id="usermenu">                                                
+                                                  <a class="hvr-bounce-to-bottom" href="{path='/login'}">Log-in</a>
+                                                  <div class="nav-menu member-menu" >                                                      
+                                                    Not a member? <a href="{path='/register'}">Register</a>.<br>                                                    
+                                                  </div>
+                                            </li>
+                                            <li id="cartmenu">
+                                                <a class="hvr-bounce-to-bottom" href="{exp:brilliant_retail:path src='cart'}">Cart </a>                                                
+                                            </li>
+                                    </ul>
+                            </div>
+
+
+                            <div class="collapse-overlay"></div>
+                    </div>
+            </nav>
+
+    </div>
+</header>

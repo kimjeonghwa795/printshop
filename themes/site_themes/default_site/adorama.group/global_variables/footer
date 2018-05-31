@@ -1,0 +1,28 @@
+<footer>
+    <div class="bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="padd clearfix">
+                    <div class="footer-toggle">
+                        <div class="col-md-4 col-xs-12">
+                            <ul class="mnu1 pull-right">
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/payment">Confirm Payment</a></li>
+                                <li><a href="/privacy">Privacy & Term</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8 col-xs-12">
+                            <ul class="mnu2">
+                                <li><a href="/faq">Frequently Asked Questions</a></li>
+                                <li><a href="/order_and_shipping">Shipping Information</a></li>
+                                <li><a href="/photoprint_info">Randomizer</a></li>
+                            </ul>
+                        </div>	
+                    </div>
+                    <div class="col-md-4 col-xs-12"><span class="lbl-footer pull-right">&copy Copyright 2015 Adorama</span></div>
+                    <div class="col-md-8 col-xs-12 align-center"><a href="#" id="sh-foot" class="left up">Show Footer <i class="fa fa-caret-down careD"></i></a></div>						
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

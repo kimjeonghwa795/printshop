@@ -1,0 +1,34 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+require_once( __DIR__ . '/config.php');
+
+class Gmaps {
+
+    var $table ;
+    var $fields;
+    
+    function __construct() {
+        @session_start();
+        $this->ee =  & get_instance();                
+        $this->db =  & get_instance()->db;                
+    }
+    
+    function map(){        
+        $center = $this->EE->TMPL->fetch_param('center');
+        $address = $this->EE->TMPL->fetch_param('address');
+        $size = $this->EE->TMPL->fetch_param('size');
+        $id = $this->EE->TMPL->fetch_param('id') ;
+        if ($id) {
+            $id = 'gmaps';
+        }
+        
+        $class = '';
+        $style = '';
+        $script = '';
+        $map_html = "";
+        $map_script = "";
+        
+        
+        return $map_html . $map_script;
+    }
+    
+}

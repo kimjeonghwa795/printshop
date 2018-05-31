@@ -1,0 +1,17 @@
+<script id="template-upload" type="text/x-tmpl" data-template-src="{site_url}themes/site_themes/material/tmpl/upload.html">   
+    <li class="col-md-2 col-sm-2 col-xs-6 tmpl upload ready"  data-file="{%=o.fn%}" data-id="{%=o.id%}" data-meta="{%=o.meta%}">        
+        <div class="photoitem" >
+            <span data-count="0" class="count">{%=o.count? o.count + 'x' : ''%}</span>            
+            <div class="overlay">
+                <a class="act-btn delete" href=""><i class="fa fa-minus"></i></a>
+                <a class="act-btn edit" href="{%=o.name%}" onclick="return false;"><i class="fa fa-pencil"/></a>
+                <div class="done"><i class="fa" style="display:block"></i><span></span></div>
+            </div>
+            <a class="preview" data-gallery>
+                <input type="checkbox" name="selections[{%=o.id%}]" value="{%=o.count%}"  {%=(o.count)?'checked':''%}" style="width:0;height:0;opacity:0" class="select"/>
+                <input type="checkbox" name="metas[{%=o.id%}]" value='{%=o.meta%}'  {%=(o.count)?'checked':''%}" style="width:0;height:0;opacity:0" class="meta"/>
+                <img src="{%=o.url%}" data-file="{%=o.name%}" data-id="{%=o.id%}" data-meta="{%=o.meta%}"/>            
+            </a>
+        </div>
+    </li>
+</script>

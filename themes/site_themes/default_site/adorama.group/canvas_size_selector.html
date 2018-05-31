@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+         {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">        
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            .page{overflow: hidden;}
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+        <div class="page canvas">
+	<section class="min-height">
+		<div class="container">
+			<div class="row" id="size">
+                            <div class="row" id="size">
+				<div class="content sucess select-size">
+                                    <div class="title-cont storyline">Select a Format</div>
+                                    <div class="border-style">
+                                        <div class="qty-options">
+                                                <a href="#square">
+                                                <label class="qty-item" id="qty1">                                                                
+                                                        <div class="qty-number box-round box-cus-width"></div>
+                                                        <div class="qty-price">
+                                                                <label class="lbl-size">Square</label>
+                                                        </div>
+                                                </label>
+                                                </a>
+                                                <a href="#classic">
+                                                <label class="qty-item" id="qty2">
+                                                    <div class="qty-number box-round box-cus-width" style="width: 130px !important;"></div>
+                                                    <div class="qty-price">
+                                                        <label class="lbl-size">Classic</label>
+                                                    </div>
+                                                </label>
+                                                </a>
+                                        </div>	
+                                    </div>
+                                    <div class="button-back marg">
+                                        <a class="btn btn-circle invert size-next" style="padding:10px 45px">Next</a>
+                                    </div>
+                            </div>
+                                
+                            <div class="row select " id="square" style="display: none">
+                            <div class="content sucess">
+                                <form action="/" method="POST">
+                                    <input type="hidden" name="XID" value="{XID_HASH}" />
+                                    <input type="hidden" name="ACT" value="95" />
+                                    <input type="hidden" name="layout_id" value="{segment_1}" />                                    
+                                    <input type="hidden" name="var" value="{segment_2}" />
+                                    <input type="hidden" name="next" value="/instagram" />
+                                    <div class="title-cont storyline">Select a Size</div>
+                                    <div class="border-style">
+                                        <div class="qty-options">
+                                            <label class="">
+                                                <input type='radio' name="size"  value="20"/>
+												<input type='radio' name="label"  value="Small, 20cm x 20cm" />
+                                                <input type='radio' name="sku"   value="cv2000" />
+                                                <div class="qty-item">
+                                                        <div class="qty-number box-round" style="width: 85px;height: 85px;">S</div>
+                                                        <div class="detail-size">
+                                                                <label class="lbl-size">Small</label>
+                                                                <label class="lbl-size">20cm x 20cm</label>
+                                                        </div>
+                                                        <label>IDR 85.000</label>
+                                                </div>
+                                            </label>
+                                            <label class="">
+                                                <input type='radio' name="size"  value="30" required/>
+                                                <input type='radio' name="label"  value="Medium, 30cm x 30cm" />
+                                                <input type='radio' name="sku"   value="cv3000" />
+                                                <div class="qty-item">
+                                                        <div class="qty-number box-round" >M</div>
+                                                        <div class="detail-size">
+                                                                <label class="lbl-size">Medium</label>
+                                                                <label class="lbl-size">30cm x 30cm</label>
+                                                        </div>
+                                                        <label>IDR 136.000</label>
+                                                </div>
+                                            </label>
+                                            <label class="">
+                                                <input type='radio' name="size"  value="40" required/>
+                                                <input type='radio' name="label"  value="Large, 40cm x 40cm" />
+                                                <input type='radio' name="sku"   value="cv4000" />
+                                                <div class="qty-item">
+                                                        <div class="qty-number box-round" style="width: 110px;height: 110px;">L</div>
+                                                        <div class="detail-size">
+                                                                <label class="lbl-size">Large</label>
+                                                                <label class="lbl-size">40cm x 40cm</label>
+                                                        </div>
+                                                        <label>IDR 195.000 </label>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="button-back marg">
+                                        <a href="#" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+                                        <button class="btn btn-circle invert" style="padding:10px 45px;margin-left:0px;">Next</button>
+                                    </div>
+
+                                </form>    
+                            </div>
+                            </div>
+                                
+                            <div class="row select " id="classic" style="display: none">
+                            <div class="content sucess">
+                                <form action="/" method="POST">
+                                    <input type="hidden" name="XID" value="{XID_HASH}" />
+                                    <input type="hidden" name="ACT" value="95" />
+                                    <input type="hidden" name="layout_id" value="{segment_1}" />
+                                    <input type="hidden" name="var" value="{segment_2}" />
+                                    <input type="hidden" name="next" value="/instagram" />
+                                    <div class="title-cont storyline">Select a Size</div>
+                                    <div class="border-style">
+                                        <div class="qty-options">
+                                            <label class="">
+                                                <input type='radio' name="size"  value="23" required/>
+                                                <input type='radio' name="label"  value="Medium, 20cm x 30cm" required/>
+                                                <input type='radio' name="sku"   value="cv2300" />
+												
+                                                <div class="qty-item">
+                                                        <div class="qty-number box-round" style="width: 110px;height: 80px;">M</div>
+                                                        <div class="detail-size">
+                                                                <label class="lbl-size">Medium</label>
+                                                                <label class="lbl-size">20cm x 30cm</label>
+                                                        </div>
+                                                        <label>IDR 107.000</label>
+                                                </div>
+                                            </label>
+                                            <label class="">
+                                                <input type='radio' name="size"  value="46" required/>
+                                                <input type='radio' name="label" value="Large, 40cm x 60cm" required/>
+                                                <input type='radio' name="sku"   value="cv4600" />
+                                                <div class="qty-item">
+                                                        <div class="qty-number box-round" style="width: 130px;">L</div>
+                                                        <div class="detail-size">
+                                                                <label class="lbl-size">Large</label>
+                                                                <label class="lbl-size">40cm x 60cm</label>
+                                                        </div>
+                                                        <label>IDR 282.000 </label>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="button-back marg">
+                                        <a href="#" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+                                        <button class="btn btn-circle invert" style="padding:10px 45px;margin-left:0px;">Next</button>
+                                    </div>
+
+                                </form>    
+                            </div>
+                            </div>
+                    </div>
+		</div>
+	</section>
+            <div class="alert"><div>Please select one above</div></div>
+{js}
+<script>
+$(document).ready(function(){
+	
+	$('.qty-item').click(function(){
+            $('.qty-item').removeClass('active');
+            $(this).addClass('active');		
+	});
+	$('input:radio').change(function(e){            
+		$(this).siblings('input:radio').prop('checked',$(this).prop('checked'));            
+	});
+        $('.border-style a').click(function(){
+            $('a.size-next').attr('href',this.href);
+        });
+//        window.onhashchange = function(){
+//           
+//        };
+        $(".size-next").click(function(){
+            if(!$('.qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+
+            }else{
+                if (document.getElementById(location.hash.substr(1))){
+                    $('.content.select-size').hide();               
+                    $(location.hash).addClass('active').show();
+                }else{
+                    $('.content.select-size').show();
+                    $('.row.select').hide();
+                }
+            }
+        });
+        $(document).on('click', '.row.select.active button.btn', function() {
+            if(!$('.row.select.active .qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+
+            }else{
+                $(this).submit();
+            }
+        })
+        $(document).on("click",".row.select.active .back-btns",function() {
+            location.reload();
+            removeHash();
+        });
+        
+});
+</script>
+</body>
+</html>

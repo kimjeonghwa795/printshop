@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+         {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            label {
+                cursor: default;
+            }
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            body{position: relative}
+            @-webkit-keyframes silde_to_top {
+                0% {
+                    opacity: 0;
+                    bottom: 0;
+                }
+                100% {
+                    opacity: 1;
+                    bottom: 91px;
+                }
+            }
+            @-webkit-keyframes silde_to_down {
+                0% {
+                    opacity: 1;
+                    bottom: 91px;
+                }
+                100% {
+                    opacity: 0;
+                    bottom: 0;
+                }
+            }
+            .alert {
+                text-align: center;
+                position: absolute;
+                width: 100%;
+                color: white;
+                bottom: 39px;
+                font-size: 14px;
+                font-family: gotham-book;
+                margin: 0;
+                padding: 0;
+                opacity: 0;
+                -webkit-animation-name: silde_to_down;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-timing-function: ease;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-direction: normal;
+                -webkit-animation-delay: 0;
+                -webkit-animation-play-state: running;
+                -webkit-animation-fill-mode: forwards;
+            }
+            .alert.active{
+                -webkit-animation-name: silde_to_top;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-timing-function: ease;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-direction: normal;
+                -webkit-animation-delay: 0;
+                -webkit-animation-play-state: running;
+                -webkit-animation-fill-mode: forwards;
+            }
+            .alert div {
+                background: #F6422E;
+                padding: 16px 32px;
+                padding-left: 16px;
+                width: 215px;
+                margin: auto;
+                
+                -webkit-animation-name: silde_to_top;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-timing-function: ease;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-direction: normal;
+                -webkit-animation-delay: 0;
+                -webkit-animation-play-state: running;
+                -webkit-animation-fill-mode: forwards;
+            }
+            .alert.active div {
+                background: #F6422E;
+                padding: 16px 32px;
+                padding-left: 16px;
+                width: 215px;
+                margin: auto;
+                opacity: 1;
+            }
+            footer {
+                position: relative;
+                z-index: 1;
+            }
+        </style>
+</head>
+<body class="no-header-top"> 
+	{embed=assets/header}
+        <div class="page background-select {exp:session_variables get='layout' key='layout_id'/}">
+	<section class="min-height">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+                                    <form id="backgroundForm" action="/" method="POST">
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="var" value="background" />
+                                        <input type="hidden" name="next" value="/cart" />
+                                        <input type="hidden" name="add_to_cart" value="true" />
+                                        
+					<div class="title black">Select your back print</div>
+                                        <div class="border-style col-md-4 col-xs-12 pull-left">
+                                            <div class="back-print">
+                                                <div class="overlay bg-info"> 
+                                                    <span>Some people says less is more. If you agree with it, this plain white background might be the perfect-o choice for you. Just the photos on the front with clean background on the back. Absolutely minimal and simply delicate.</span>
+                                                    <div class="end-border"></div>
+                                                </div>
+                                                <label class="back-item black" id="plain-black">                                                    
+                                                    <div class="box-border">
+                                                            <div class="border-item"></div>
+                                                    </div>                                              
+                                                </label>
+                                            
+                                                <label class="back-item" id="plain-white">                                                    
+                                                    <div class="box-border">
+                                                            <div class="border-item"></div>
+                                                    </div>                                                  
+                                                </label>
+                                            </div>
+                                            <div class="bg-footer bg-btn">
+                                                <div class="text">
+                                                    <span>Plain White</span>
+                                                    <a href="#" class="question-mark">
+                                                        <img class="first" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question.png" />
+                                                        <img class="second hide" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question-selected.png" />
+                                                    </a>
+                                                </div>
+                                                
+                                                <input type="radio"  name="background"  value="pp" id="select-plain" class="hide select" />
+												<input type="radio"  name="label"       value="Plain White" id="select-plain" class="hide select" />
+                                                <label for="select-plain" class="btn btn-circle invert" style="padding:10px 45px" >Select</label>
+                                            </div>
+										</div>
+                                        <div class="border-style col-md-4 col-xs-12">
+                                            <div class="back-print">
+                                                <div class="overlay bg-info"> 
+                                                    <span>Welcome to Printshop's Geometry World! These four tiny worlds are ready to be printed on the back of your photos plus the photo caption (max 120 characters), location tag, number of likes and username*. Are you ready for a little adventure?</span>
+                                                    <div class="end-border"></div>
+                                                    <span class="note">*These features work only on Instagram photos.</span>
+                                                </div>
+                                                <label class="back-item black" id="geo-black">                                                    
+                                                    <div class="box-border">
+                                                            <div class="border-item"></div>
+                                                    </div>                                              
+                                                </label>
+                                            
+                                                <label class="back-item background" id="geo-green">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <img src="{theme_url}images/bg-green.png" />
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                                <label class="back-item background" id="geo-red">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <img src="{theme_url}images/bg-red.png" />
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                                <label class="back-item background" id="geo-blue">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <img src="{theme_url}images/bg-blue.png" />
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                            </div>
+                                            <div class="bg-footer bg-btn">
+                                                <div class="text">
+                                                    <span>Geometry World</span>
+                                                    <a href="#" class="question-mark">
+                                                        <img class="first" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question.png" />
+                                                        <img class="second hide" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question-selected.png" />
+                                                    </a>
+                                                </div>
+                                                
+                                                <input type="radio" name="background"  value="pg" id="select-geo" class="hide select" />
+												<input type='radio' name="label"       value="Geometry World" id='select-geo' class="hide select" />
+                                                <label for="select-geo" class="btn btn-circle invert" style="padding:10px 45px" >Select</label>
+                                            </div>
+										</div>
+                                        <div class="border-style col-md-4 col-xs-12">
+                                            <div class="back-print">
+                                                <div class="overlay bg-info"> 
+                                                    <span>Happy colours are for the cheerful heart! Introducing the happy colour series for the back of your photos plus the photo caption (max 120 characters), location tag, number of likes and username*. Get ready for some smiley faces!</span>
+                                                    <div class="end-border"></div>
+                                                    <span class="note">*These features work only on Instagram photos.</span>
+                                                </div>
+                                                <label class="back-item black" id="color-black">
+                                                    <input type='radio' name="color"  value="black"/>
+                                                    <div class="box-border">
+                                                            <div class="border-item"></div>
+                                                    </div>                                              
+                                                </label>
+                                            
+                                                <label class="back-item background" id="color-yellow">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <div class="bg bg-blue"></div>
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                                <label class="back-item background" id="color-red">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <div class="bg bg-red"></div>
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                                <label class="back-item background" id="color-yellow">                                                    
+                                                    <div class="box-border">
+                                                        <div class="border-item">
+                                                            <div class="bg bg-yellow"></div>
+                                                        </div>
+                                                    </div>                                                  
+                                                </label>
+                                            </div>
+                                            <div class="bg-footer bg-btn">
+                                                <div class="text">
+                                                    <span>Happy Colors</span>
+                                                    <a href="#" class="question-mark">
+                                                        <img class="first" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question.png" />
+                                                        <img class="second hide" style="width: 20px;margin-left: 16px;" src="{theme_url}/images/question-selected.png" />
+                                                    </a>
+                                                </div>
+                                                
+                                                <input type="radio" name="background"  value="ph"  id="select-happy" class="hide select" />
+												<input type='radio' name="label"       value="Happy Colors" id='select-happy' class="hide select" />
+                                                <label for="select-happy" class="btn btn-circle invert" style="padding:10px 45px" >Select</label>
+                                            </div>
+										</div>
+					
+                                        </form>
+				</div>
+			</div>
+		</div>
+	</section>
+        </div>
+        <footer>
+            <div class="bg-black">
+              <div class="container">
+                <div class="row">
+                  <div class="clearfix">
+                    <div class="col-md-6 col-xs-12"><a href="/arrange" class="lbl-footer pull-right" style="float: left !important;font-size: 28px;font-weight: bold;"><i class="fa fa-arrow-left" style="margin-right: 20px;"></i>Review your Photos</a></div>
+                    <div class="col-md-6 col-xs-12"><button class="lbl-footer pull-right submit_button" style="float: right !important;font-size: 28px;font-weight: bold;color:#face3d">Add to Cart<i class="fa fa-arrow-right" style="margin-left: 20px;"></i></button></div>                                        
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+        <div class="alert"><div>Please select one above</div></div>
+{js} 
+<script>
+	$(document).ready(function(){
+		
+                $('input.select').on('change', function() {
+                    $('input.select').not(this).prop('checked', false);
+					$(this).siblings('input:radio').prop('checked',$(this).prop('checked'));            
+                 });
+				 
+                $('a.question-mark').on('click',function(){
+                    $(this).toggleClass('active');
+                    $(this).parents('.border-style').find('.bg-info').toggleClass('show');
+                })
+                $('.submit_button').on('click',function(){
+                    if ($('input.select:checked').length === 0) {
+                        $('.alert').addClass('active');
+                        setTimeout(function(){$('.alert').removeClass('active')}, 2500);
+                    }else{
+                        $('#backgroundForm').submit();
+                    }
+                });
+	});	
+</script>
+</body>
+</html>

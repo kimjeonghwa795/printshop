@@ -1,0 +1,23 @@
+<section>
+    <div class="bg-white rec1">
+        <div class="container">
+            <div class="row">
+                <div class="title-cont" style="font-size:22px;">You might also like this!</div>
+                <div class="share-box clearfix">
+                    <div class="col-md-12 col-centered clearfix">
+                        {exp:brilliant_retail:product_related product_id="{exp:session_variables:get name='product_id'}" parse="inward"}
+                        {related_products}
+                        <div class="col-md-3 col-xs-6" >
+                            <a href="{exp:brilliant_retail:path src='product/{related_url}'}">
+                                <img src="/media/{related_thumb}" class="img-responsive">                                                        
+                                <div class="title-cont bold black ">{related_title}</div>
+                            </a>
+                        </div>
+                        {/related_products}
+                        {/exp:brilliant_retail:product_related}     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

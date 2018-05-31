@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+        {meta}
+        {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">     
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            html, .page{overflow: hidden}
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+	<section class="page photobooks">
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+                                    <form action="/" method="POST">
+                                        <input type="hidden" name="ACT" value="95" />
+                                        <input type="hidden" name="XID" value="{XID_HASH}" />
+                                        <input type="hidden" name="var" value="size" />
+                                        <input type="hidden" name="next" value="/instagram" />
+
+					<div class="title-cont storyline">Select a Size</div>
+					<div class="border-style">
+						<div class="qty-options">
+							<label class="qty-item" id="qty1">
+                                                            <input type='radio' name="size"  value="10" required/>
+								<div class="border-indside"></div>
+								<div class="qty-number box-round box-cus-width">S</div>
+								<div class="qty-price">
+									<label class="lbl-size">Small</label>
+									<label class="lbl-size">10cm x 10cm</label>
+									<label class="lbl-size">10 Pages</label>
+								</div>
+								<label>IDR  265.000 
+</label>
+                                                        </label>
+							<label class="qty-item" id="qty2">
+                                                            <input type='radio' name="size"  value="15" required/>
+								<div class="border-indside"></div>
+								<div class="qty-number box-round box-cus-width">M</div>
+								<div class="qty-price">
+									<label class="lbl-size">Medium</label>
+									<label class="lbl-size">15cm x 15cm</label>
+									<label class="lbl-size">10 Pages</label>
+								</div>
+								<label>IDR  374.000 
+</label>
+							</label>
+						</div>
+					</div>
+					<div class="button-back marg">
+						<button href="photoprint_quantity.html" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+                                    </form>
+				</div>
+			</div>
+		</div>
+	</section>
+        <div class="alert"><div>Please select one above</div></div>
+        {js}
+        <script>
+        $('.qty-item').click(function(){
+            $(this).addClass('active');
+            $('.qty-item').not($(this)).removeClass('active');
+	});
+        $('button.btn').click(function(){
+            if(!$('.qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+
+            }else{
+                $(this).submit();
+            }
+        })
+        </script>
+</body>
+</html>

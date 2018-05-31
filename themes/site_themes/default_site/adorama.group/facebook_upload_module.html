@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrintShop Adorama</title>
+    {meta}
+    {exp:minimee:css queue="head_css"}        
+        <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/instagram.css">
+        <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/colorbox.css">
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/jquery.fluidbox.css">
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/cropper.min.css">
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/upload.css">
+        {css}
+    {/exp:minimee:css}
+    {exp:minimee:display css="head_css"}
+      <style>
+          .pageof {
+                padding: 15px;
+                font-size: 22px;
+            }
+        input[type=checkbox]:checked + label .overlay{display: block;}
+         .instagram-post .photoitem.active {
+            position: fixed;
+            left:0;
+            top:0;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 10000;
+        }
+        .instagram-post .photoitem.active .overlay{
+            position: fixed;
+            left:0;
+            top:0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 11000;
+            display: block;
+        }
+        .instagram-post .photoitem.active img{
+            z-index: 200000;
+            height:  100%;
+            width: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+        </style>
+        {exp:minimee:js queue="head_js"}
+            {head_js}
+        {/exp:minimee:js}
+        {exp:minimee:display js="head_js"}
+</head>
+<body class="no-header-top upload facebook">
+	{embed=assets/header}
+<form id="selectform" action="/index.php" method="POST">
+    <input type="hidden" name="ACT" value="83" />
+    <input type="hidden" name="XID" value="{XID_HASH}" />
+    <input type="hidden" name="owner_id" id="session_id" value="{exp:session_variables:get name='layout' key='owner_id'}"/>    
+    <input type="hidden" name="sku" value="{exp:session_variables:get name='layout' key='sku'}" />
+    <input type="hidden" name="layout_id" value="{exp:session_variables:get name='layout_id'}" />
+    <input type="hidden" name="source" value="{segment_1}" />    
+    <input type="hidden" name="item_id" value="{exp:session_variables:get name='layout' key='item_id'}" />
+    <input type="hidden" name="maxFiles" value="{exp:session_variables:get name='layout' key='max_selected'}" />        
+        <div class="page upload facebook">
+        <section class="container facebook" id="facebook">
+            <div class="row layout" >     
+                {if !segment_2}
+                <div class="album-title col-md-12">
+                    <h4>Select your album</h4>
+                </div>
+                <ul class="facebook-post album files col-xs-12">
+                    {exp:simplee_facebook:album  limit="18" }
+                        <li class="col-md-2 col-sm-2 col-xs-6 "  data-file="{id}" data-id="{id}">        
+                            <div class="photoitem" >                                
+                                <a class="preview" data-gallery href='/facebook/{id}#facebook'>
+                                    <input type="checkbox" name="selections[{id}]" value="0" style="width:0;height:0;opacity:0"/>
+                                    <img src="{image}" data-file="{id}" data-id="{id}"/>            
+                                </a>
+                            </div>                            
+                            <div class='descr'>
+                                <label class="name">{name}</label>
+                                <label class="photo-count">{count} photos</label>
+                            </div>
+                        </li>                    
+                    {/exp:simplee_facebook:album}
+                </ul>
+                {if:else}                
+                <div class="album-title col-md-12">
+                    <h4>Select your image</h4>
+                </div>
+                
+                <ul class="facebook-post album files col-xs-12">
+                    <li class="col-md-2 col-sm-2 col-xs-6 fb-back">        
+                            <div class="photoitem" >
+                                <a class="preview back-btn" href="/facebook">
+                                    <i class="fa fa fa-arrow-left"></i>
+                                    <label>Back <br />to album</label>
+                                </a>
+                            </div>
+                        </li>                    
+                    {exp:simplee_facebook:photos  limit="23" id="{segment_2}" }
+                        <li class="col-md-2 col-sm-2 col-xs-6 tmpl upload"  data-file="{file}" data-id="{id}">        
+                            <div class="photoitem" >
+                                <span data-count="0" class="count"></span>
+                                <div class="add-animate">                
+                                    <i class="fa fa-plus"></i>
+                                    <a class="act-btn delete" href="">-</a>
+                                </div>
+                                <div class="overlay">                
+                                    <a class="act-btn delete" href=""><i class="fa fa-minus"></i></a>
+                                    <a class="act-btn edit" href="{id}" onclick="return false;"><i class="fa fa-pencil"></i></a>
+                                </div>						
+                                <a class="preview" data-gallery>
+                                    <input type="checkbox" name="selections[{id}]" value="0" style="width:0;height:0;opacity:0" class="select"/>
+                                    <input type="checkbox" name="metas[{id}]" value='{metadata}' style="width:0;height:0;opacity:0;display:none" class="meta"/>
+                                    <img src="{image}" data-file="{file}" data-id="{id}"/>            
+                                </a>
+                            </div>
+                        </li>                    
+                    {/exp:simplee_facebook:photos}
+                </ul>
+                {/if}                                
+                <div class="spacer clearfix" style="clear: both;"></div>
+            </div>
+        </section>            
+        </div>        
+{embed=assets/upload_footer}    
+<input type="hidden" name="next_id" />
+<input type="hidden" name="maxFiles" value="{exp:session_variables:get name='layout' key='max_selected'}" />
+</form>        
+{image_template}
+{cropper_modal}
+{upload_js}
+    <script src="{theme_url}js/spinLoader.js"></script>
+    <script src="{theme_url}js/js.cookie.js"></script>
+    <script src="{theme_url}js/upload.js"></script>    
+<script>
+$(document).ready(function(){
+$('#bs-example-navbar-collapse-1').append("<div class='pageof pull-right' style='padding-top:12px'><span id='count-selected'>0/<span id='count-max'></span></span><a href='#gallery'><img style='width: 22px;margin-left: 8px;margin-top: -6px;' src='/images/e-icon.png' /><div class='tooltips right-tooltip'><div class='top-tooltip'></div><span>Review the photos you select using this button</span></div></div></a>");
+load_selection();
+    
+    window.resizeTo(window.screen.width,window.screen.height);
+    setTimeout(function(){$('.header-top').slideUp();},10000);
+    
+//    $('button[name=search').click(function(){        
+//        document.location.href = '/facebook/' + $('input[name=hash]').val();;
+//    });
+//    
+//    $('button[name=save').click(function(){        
+//        if ( $('input:checked').length < 1) return alert('You dont make any selection yet');
+//        
+//        $('#save-form').submit();
+//        if(window.opener){
+//            window.opener.location.reload();
+//            window.close();
+//        }
+//    });
+    
+    
+    var loading = false;
+    function load_more(e){                
+        if ( ! $('input[name=next_id]').val() ) return $('.more-btn').hide();
+        var next_url = location.href.replace(location.hash,'') + '?next_id='+$('input[name=next_id]').val();        
+        if ( loading ) return false;
+        loading = true;
+        def = $.get(next_url,function(res){                                     
+            $(res).appendTo('.facebook-post');
+            loading = false;
+            return;            
+        });
+        return false;
+    }    
+    $('.more-btn').on('click',load_more);
+    $('.page').bind('scroll',function(e){
+        var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
+        var divTotalHeight = $(this)[0].scrollHeight;        
+        if (scrollPosition >= 0.8*divTotalHeight){load_more(e);}
+    });
+    
+   
+   
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{site_name}</title>
+
+ {meta}
+
+{exp:minimee:css queue="head_css"}        
+        {css}
+{/exp:minimee:css}
+{exp:minimee:display css="head_css"}
+{exp:minimee:css queue="head_css"}        
+    <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/tablet.css">
+{/exp:minimee:css}
+{exp:minimee:display css="head_css"}
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{exp:minimee:js queue="head_js"}
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/vendor/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/site_themes/default_site/assets.group/js/bootstrap.min.js"></script>
+{/exp:minimee:js}
+{exp:minimee:display js="head_js"}
+<link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+<style>
+    .img-cont.story.paddbottom {
+        padding-top: 16px;
+    }
+</style>
+</head>
+<body>
+	{embed=assets/header}
+        <div class="page about">
+        <section class="bg-green">
+            <div class="container">
+                <div class="row">
+                    <div class="title-cont story storyline"><span style="font-size:30px;">Our story so far</span><br><br><span class="black sub-title">It was...</span> <br>
+                        <p class="lbl">Adorama started out as a small family owned photographic lab in 1991 in Kemang, South Jakarta. Providing film processing and photographic prints to the people around the area. We have always catered for professional and amateur photographers over the years and by pushing ourselves to have a better product and service. We have garnered a lot of loyal customers that have been printing with us since the start.</p>
+                        <p class="lbl padd-top">In 2001 Adorama was the first lab in Jakarta to install a digital photographic printer due to the increasing demand of digital photography. And furthermore in 2008 we also heavily invested in professional printing equipment that is the HP Indigo and ZBE Chromira to expand our printing capabilities into digital offset printing and large format printing.</p>
+                    </div>
+                </div>
+            </div>
+	</section>
+        <section>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story paddbottom">
+                        <img src="{theme_url}images/svg/Aboutus1.svg" class="img-responsive" />
+                    </div>
+                    <div class="title-cont storyline black"><span class="black sub-title">And then... </span><br>
+                        <p class="lbl">In 2012-2013 Adorama started to expand its retail storefront by opening locations in the premiere shopping malls such as Plaza Indonesia, Plaza Senayan and Mall Taman Anggrek. And recently in May 2015 we opened our 7th store in Grand Indonesia. These help connect with a wider audience of people.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-pink">
+                <div class="container">
+                    <div class="title-cont story storyline black"><span class="black sub-title">So today... </span><br>
+                        <p class="lbl">Our purpose with Adorama Print Shop is to create a platform for people to easily print their memories in a easy, fast and practical way. We understand that it is not so easy to get to our stores due to distance, traffic and being busy with life and work, so we hope that Adorama Print Shop will help you share your memories easily and in a fun and interesting way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="img-cont story" style="padding-top: 16px;padding-bottom: 85px;">
+                        <img src="{theme_url}images/svg/Aboutus2.svg" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+	</section>
+    </div>
+    {embed=assets/footer}
+    {exp:minimee:js queue="foot_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"}
+</body>
+</html>

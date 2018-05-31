@@ -1,0 +1,817 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 Jan 16, 11:14:59
+    Author     : Vardion
+*/
+
+
+/*414*/
+@media (max-width: 414px){ 
+    body.no-header-top .page.size {
+        min-height: calc(100vh - 64px);
+    }
+    .m50 {
+        width: 100% !important;
+        float: none !important;
+    }
+    .m0{padding : 0 !important;}
+    section.billing .field-cont {
+        margin-bottom: 0;
+    }
+    .page.blog {
+        padding: 40px 16px !important;
+    }
+    .shop-cart .carts .product-img {
+        height: 135px;
+        margin-right: 8px;
+    }
+    .shop-cart .carts .product-img img {
+        height: 115px !important;
+        width: 115px !important;
+    }
+    .shop-cart .product h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .page.cart section .btn-circle.no-style {
+        width: 95px;
+        padding: 8px 16px;
+        padding-left: 14px;
+        margin: 8px 0;
+    }
+    .shop-cart .cart .product ul > li {
+        font-size: 12px;    
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 115px;
+        white-space: nowrap;
+        
+    }
+    .shop-cart .carts .cart-item .cart .product li label {
+        display: none;
+    }
+    li.fb-back a {
+        padding: 26px;
+        }
+    footer .foot_upload a span {
+        display: none !important;
+    }
+    footer .foot_upload a i {
+        display: block !important;
+    }
+    .page.about .title-cont.story {
+        padding-bottom: 120px;
+    }   
+    .page.about .container {
+        width: Calc(100vw - 48px) !important;
+        margin-top: 42px;
+    }
+    .upload .content.sucess .button-back.marg {
+        background: transparent !important;
+        position: relative !important;
+    }
+    .page.magnets .marg btn-circle:hover, .page.canvas .marg btn-circle:hover, .page.photobooks .marg btn-circle:hover, .page.border .marg .btn-circle:hover {
+        background: transparent;
+        color: #fac730;
+    }
+
+    .button-back.marg {
+        background: #242424;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0 !important;
+        padding: 18px;
+        left: 0px;
+        
+    }
+    .button-back.marg a, .button-back.marg button {
+        border: none;
+        background: transparent;
+        color: #fac730;
+        font-size: 24px;
+        margin-top: 6px;
+        padding-top: 0 !important;
+        margin-left: 0;
+        padding: 0px 8px !Important;
+        float: left;
+    }
+    .button-back.marg a:last-child, .button-back.marg button:last-child{
+        float: right !important;
+    }
+    marg.mobile.footer-button button {
+        margin-top: 6px !important;
+    }
+    footer .padd.clearfix div{width: auto !Important;padding-left: 0;}
+    a#sh-footer {
+        font-size: 14px !Important;
+    }
+    footer .col-md-8.col-xs-6.align-center {
+        float: right;
+    }
+    footer .padd.clearfix a, footer .padd.clearfix button {
+        font-size: 14px !important;
+    }
+    .payment-success .sub-title {
+        width: calc(100vw - 25%);
+        margin: auto;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .payment-success .row .title-cont label {
+        font-size: 26px !important;
+        font-family: gotham-book;
+        margin: 30px 0 0;
+    }
+    .payment-success .row .img-mintop {
+        max-width: 150px;
+        margin: 35px auto !Important;
+    }
+    #checkoutform section.secure .btn-circle.no-style {
+        background: transparent;
+        border-radius: 20px;
+        padding: 8px 79px;
+        margin-left: 10px;
+        border: 2px solid #000;
+        color: #000;
+        font-weight: 600;
+        min-width: calc(100vw - 48px);
+        margin: 8px auto;
+    }
+    #checkoutform .place-order .col-md-6 {
+        padding: 0;
+    }
+    #checkoutform .place-order .col-md-12 {
+        border: none !important;
+        padding: 0;
+    }
+    #checkoutform .bg-grey, #checkoutform .bg-white {
+        padding: 0;
+    }
+    #checkoutform section.secure {
+        padding: 0 16px;
+    }
+    #checkoutform section#shipping_address_section .bg-white {
+        padding: 0;
+    }
+    #checkoutform .billing .bg-white {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .checkout .pay .container {
+        padding-top: 72px !important;
+        padding-bottom: 32px !Important;
+    }
+    #checkoutform .form-review input {
+        font-size: 20px;
+        font-weight: normal;
+        font-family: gotham-book;
+        padding-left: 0;
+        width: 301px;
+    }
+    section .form-review {
+        padding-bottom: 0;
+        width: calc(100vw - 32px);
+    }
+    #checkoutform input{font-family: gotham-book;} 
+    #cropper-modal .modal-header{
+        top: -30px !important;
+        position: absolute !important;
+        right: 80px !important;
+    }
+    #cropper-modal .modal-dialog {
+        top: Calc(100vh - 0%) !Important;
+    }
+    header .header-menu .navbar-nav{
+        padding-right: 0 !important;
+    }
+    .cart .row{padding: 15px 16px !important;}
+    .arrange .files li .overlay a span {
+        top: 75px !important;
+        font-size: 32px !important;
+        left: 32px !important;
+    }
+    #upload .layout_1 .tmpl {
+        height: 180px !important;
+        width: 180px !important;
+    }
+    #usermenu{display: none}
+    .mobile{display: block !important;}
+    .upload footer .row {
+        padding-top: 16px;
+        padding-bottom: 5px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .upload .pageof {
+        padding: 0 16px;
+    }
+    .upload header .header-menu .navbar-nav{display: none !important;}
+    header .navbar-header {
+        float: left !important;
+    }
+    header .header-menu .navbar-default .navbar-nav>li:nth-child(3)>a {
+/*        display: none !important;*/
+    }
+    header .header-menu .navbar-nav.nav-toggle li {
+    display: block;
+    }
+    header .navbar-default .navbar-collapse .nav-button {
+        font-size: 28px !important;
+    }
+    header .header-menu .navbar-nav.nav-toggle {
+        position: fixed;
+        right: 0;
+        background: white;
+        width: 50vw;
+        padding: 16px !important;
+        height: 100%;
+        text-align: left;
+        transition: all 0.5s ease;
+        top: 0;
+    }
+    header .header-menu .navbar-nav.nav-toggle.hide {
+        right: -50vw;
+        transition: all 0.5s ease; 
+    }
+    header .navbar-default .navbar-collapse {
+        border: none !important;
+        padding: 16px !important;
+        max-width: 100%;
+        float: right;
+        width: auto;
+    }
+    header .navbar-default .navbar-collapse ul .nav-button {
+        text-align: right;
+    }
+    header .header-top + .header-menu .navbar-nav.nav-toggle {
+        top: 38px;
+    }
+    .home header .header-menu .navbar-default.navbar-white .navbar-nav > li > a {
+        color: black !important;
+    }
+    .home header .header-menu .navbar-nav.nav-toggle li a {
+        color: black !important;
+    }
+    .upload .content.sucess .text-center img{
+        margin-top: 35px;
+    }
+    a[href="#gallery"]:hover .tooltips {
+        right: -20px;
+    }
+    .right-tooltip .top-tooltip {
+        right: 20px;
+    }
+    .upload .header-menu .navbar-header{float: left;}
+    .upload .header-menu div#bs-example-navbar-collapse-1 {
+        position: relative;
+        right: 0;
+        float: right;
+        width: 118px;
+        background: white;
+    }
+    .photoprint .slider_img {
+        display: block;
+        width: 100%;
+    }
+    .photoprint .slider_desc {
+        display: block;
+        width: 100%;
+        padding: 16px;
+    }
+    .slider_nav_container {
+        display: block;
+        width: 100%;
+    }
+    .spine div input {
+        transform: none !important;
+        transform-origin: none !important;
+        margin-left: 0;
+    }
+    .home .page section:nth-child(2) .row {
+        padding: 0;
+    }
+    section .feature {
+        padding-bottom: 0;
+    }
+    .photoprint .slider_desc {
+        width: 100%;
+        padding: 22px 16px;
+    }
+    .photoprint .slider_img {
+        width: 100%;
+    }
+    
+    .mobile{display: block !Important;}
+
+    section .feature .box1 img{
+        height: auto;
+    }
+    section .feature .box2{
+        height: 250px;
+    }
+    section .feature .box2 img {
+        height: 100%;
+    }
+    .tour .btn {
+        font-size: 14px !important;
+        margin-top: -8px !important;
+        height: 40px !important;
+        line-height: 12px !important;
+        margin: 0px 0 !important;
+        margin-left: 16px !important;
+        display: inline-block;
+    }
+    .carousel-inner>.item {
+        height: calc(100vh + 66px - 71px);
+    }
+    .carousel-inner>.item>img {
+        height: 100%;
+    }
+    body{font-family: gotham-book;}
+    .home header .header-menu .logo, header .header-menu .logo {
+        width: 87px;
+    }
+    .mobile.header-item a {
+        color: black;
+        font-size: 16px;
+        font-family: gotham-book;
+        margin: 18px 6px;
+    }
+    .mobile.header-item.usermenu li {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+    }
+    .mobile.header-item.usermenu li.logins{display: none;}
+    .home .mobile.header-item a {color: white;text-shadow: 0 2px 4px #656565;}
+    header .header-top {
+        font-size: 15px;
+        font-family: gotham-book;
+    }
+    footer .lbl-footer {
+        float: left;
+        text-align: center;
+        display: block;
+        margin-right: 0px !important;
+        font-size: 14px;
+        margin: 6px 0;
+    }
+    a#sh-footer {
+        cursor: pointer;
+        font-size: 14px;
+        font-family: gotham-book;
+        line-height: 32px;
+    }
+    section .form-subscribe .sub-field {
+        width: 55%;
+        font-size: 16px;
+        padding-left: 0;
+    }
+    footer .padd ul li {
+        line-height: 1.5;
+    }
+    footer .padd a {
+        letter-spacing: 0.8px;
+        font-size: 14px;
+        font-family: gotham-book;
+    }
+    footer .padd ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    section .tour {
+       font-size: 14px !important;
+       padding: 16px 6px !important;
+    }
+    .emailus .title-cont {
+        font-size: 15px !Important;
+    }
+    .emailus .title-cont .lbl {
+        font-size: 14px !Important;
+        padding: 0 26px;
+    }
+    section .feature .col-md-12.col-centered {
+        padding: 0;
+    }
+    .products section .feature .box1{
+        margin-bottom: 0 !important;
+        padding: 0px 16px !important;
+        margin: 16px auto !important;
+    }
+    .home section .feature .box1 {
+        min-height: 250px !important;
+        margin: auto !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    header .header-menu .navbar-default .navbar-nav>li>a {
+        padding: 8px 8px !important;
+    }
+    header .header-menu .navbar-default.navbar-default.navbar-white {
+    	display: none;
+    }  
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .shop-cart .cart {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    section .form-contact .contact-cont {
+        width: 218px;
+    }
+    .carousel-inner>.item>img {
+        width: auto;
+        height: 100%;
+    } 
+}
+@media (min-width: 750px){
+    .photoprint .slider_img img {
+        width: 100%;
+    }
+}
+@media (max-width: 991px) {
+    section .banner{
+        min-height: auto;
+    }
+    .shop-cart .cart{
+        width: 100%;
+    }
+    .spine{
+        display: block;
+    }
+    .logo-cont{
+        float: none;
+    }
+    .spine div{
+        width: 100%;
+        height: auto;
+        display: block;
+        padding: 9px 10px;
+    }
+    .review-book{
+        width: 100%;
+        display: block;
+    }
+    .spine .btn{
+        margin-bottom: 10px;
+    }
+    .spine div span{
+        position: static;
+        transform: rotate(0deg);
+        margin-left: 0px;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    section .content .desc1{
+        max-width: 49%;
+    }
+    section .frm_cont_login .side_cont{
+        margin-left: 0px;
+    }
+    .map{
+        width: 100% !important;
+    }
+    .map img{
+        margin: 0 auto;
+    }
+    section .feature .box1 {
+        float: none;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        max-height: auto;
+    }
+    section .feature .box2 {
+        width: 100%;
+        min-height: auto;
+    }
+    section .share-box .share-item {
+        width: 133px;
+        min-height: auto;
+    }
+    section .text-center > p.label-media {
+        margin-bottom: 25px;
+    }
+    section .content .resize {
+        top: 169px !important;
+    }
+    /*section .button-back {
+        margin-top: 168px;
+    }*/
+    section .img-mintop {
+        margin-top: -135px;
+    }
+    section .frm_cont_login .frm_login{
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+    section .frm_cont_login .log_content{
+        max-width: 100%;   
+    }
+}
+
+@media (max-width: 768px) {
+
+    
+    section .img-cont.story:first-child {
+        margin-top: -165px;
+    }
+    section .title-cont p.lbl {
+        text-align: left;
+    }
+    section .form-contact .contact-cont #date {
+        background-size: 6px 11px;
+    }
+    section .form-subscribe .sub-field {
+        width: 55%;
+        font-size: 18px;
+    }
+    .form-subscribe form span button {
+        margin-top: -6px;
+        font-size: 14pt;
+    }
+    section .form-contact .contact-cont {
+        float: none !important;
+        width: 100%;
+        margin-right: 0px !important;
+    }
+    section .form-contact .lbl-required {
+        top: 0;
+        right: 0;
+    }
+    
+    section .min-wid {
+        width: 100%;
+    }
+    section .desc-img {
+        font-size: 20px;
+    }
+    section .title-cont {
+        margin: 0;
+        font-size: 24px !important;
+    }
+    .page.upload section .text-center > p {
+        font-size: 12pt !important;
+    }
+    section .content .lbl-finished {
+        font-size: 15px;
+    }
+    section .content .map {
+        display: none;
+    }
+    section .content {
+        padding: 10px;
+    }
+    section .img-fix {
+        left: 0 !important;
+        top: 130px !important;
+    }
+    section .box-margleft {
+        margin-left: 0px;
+    }
+    .f42 {
+        font-size: 30px !important;
+    }
+    .f25 {
+        font-size: 16px !important;
+    }
+    section .photoitem .overlay span > a.white {
+        font-size: 17px;
+    }
+    footer .lbl-footer {
+        float: none !important;
+        text-align: center;
+        display: block;
+        margin-right: 0px !important;
+    }
+    footer .padd .mnu1 {
+        float: none !important;
+        margin-right: 0px !important;
+    }
+    footer .align-center {
+        text-align: center;
+    }
+    footer .left {
+        margin-left: 0px !important;
+    }
+    
+    section .form-review .sub-button {
+        margin-top: 10px;
+    }
+    .navbar-collapse{
+        display: inline-block;
+        visibility: visible;
+    }
+    header .header-menu .navbar-nav{
+        width: 515px;
+        display: inline-block !important;
+        text-align: right;
+        padding-right: 25px;
+    }
+    header .header-menu .navbar-nav li {
+        display: inline-block;
+    }
+    section .title-cont .lbl{text-align: center;}
+    section .form-contact {width: calc(100% - 32px);}
+    .page.contact section .btn-circle.invert{float: left;margin: 0;}
+    .page.border,.page.magnets,.page.photo {height: calc(100vh - 66px);}
+    .page.arrange .btn-circle.invert{margin: 48px 32px;}
+    .label-media{display: none;}
+    section .feature label {
+        top: 40%;
+        font-size: 34px;
+        font-family: gotham-medium;
+        font-weight: normal;
+    }
+    section.reccomended .container{
+        padding: 30px 15px;
+    }
+    section.reccomended .title-cont .lbl {
+        font-size: 14px;
+        margin: 4px 0 30px 0;
+    }
+    section .sosmed .fa-cos {
+        font-size: 28pt;
+        margin-top: 0px;
+        width: 65px;
+        height: 65px;
+        padding-top: 13px;
+    }
+    section.box-shadow-form.emailus {
+        background: white !important;
+    }
+    .emailus .title-cont {
+        font-size: 18px ;
+    }
+    .emailus .title-cont .lbl {
+        font-size: 16px ;
+        padding: 0 26px;
+    }
+    section .form-subscribe {
+        margin-left: 50px;
+        margin-top: 25px;
+    }
+    section .tour { 
+/*        font-size: 16px !important;
+        padding: 16px 6px !important;*/
+    }
+    section .tour a {
+/*        margin-left: 8px !Important;
+        height: 45px;
+        width: 76px;
+        padding: 11px 6px !important;*/
+    }
+    section .title-cont.black.f30 {
+        margin: 30px;
+    }
+    .photoprint .slider_info {
+        margin-top: 40px;
+    }
+    .slider_head .detail {
+        margin-top: 25px;
+        float: right;
+    }
+    .slider_desc p {
+        padding: 20px 20px 0px 0px;
+    }
+    .photoprint .slider_desc {
+        padding: 24px 18px;
+    }
+    .share-box.clearfix .col-md-3 {
+        height: 245px;
+    }
+    section .rec1 .title-cont {
+        margin: 16px;
+    }
+    .slider_head h1 {
+        font-size: 20px;
+    }
+    .slider_desc p {
+        margin-top: 0;
+        width: 100%;
+        font-size: 14px;
+        padding-right: 0;
+    }
+    .photoprint .slider_info .pricing {
+        font-size: 12pt;
+    }
+    section .form-subscribe {
+        margin-left: 60px;
+    }
+    .content.sucess {
+        margin-top: 0;
+    }
+    section .title-cont.storyline {
+        margin-top: 0;
+    }
+    section.min-height {
+        min-height: 0;
+    }
+    .marg.mobile.footer-button{
+        z-index: 100;
+    }
+    .page.border section.min-height {
+        min-height: 512px;
+    }
+
+}
+@media (max-width: 750px) {
+    .page.magnets .marg, .page.canvas .marg, .page.photobooks .marg, .page.border .marg{display: block !Important}
+    /*.page.magnets .mobile, .page.canvas .mobile ,.page.photobooks .mobile, .page.border .mobile{display: block !Important;}*/
+    section.maincontent.upload-more {
+        /*height: calc( 100vh - 66px) !important;*/
+        background: white;
+        overflow-y: auto;
+    }
+    .emailus .form-subscribe .input-group{
+        padding-left: 16px;
+        padding-top: 16px;
+    }
+    .rec1 .title-cont.bold.black{
+        font-size: 18px !Important;
+        margin-bottom: 16px;
+    }
+    section .share-box .share-item {
+        width: 45%;
+    }
+    header .header-top{font-size: 12px;}
+    .carousel-inner>.item{
+        height: 350px;
+    }
+
+    .carousel-inner>.item>img{
+        height: auto;
+        width: auto;
+        max-width: inherit;
+    } 
+    .banner .carousel-inner>.item>img {
+        height: 100% !important; 
+    }  
+
+    footer .foot_upload ul li {
+        display: inline-block;
+        text-align: center;
+        width: 40px;
+        float:left;
+        margin-right: 10px;
+        text-overflow: ellipsis;        
+    }
+    
+    footer .foot_upload ul li a, footer .foot_upload ul li span {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    .payment .desc {
+        width: 100%;
+    }
+    .logo-cont img {
+        margin: 0 5px;
+    }
+    
+    #selectform div h2 {display: none  !important}
+    section .form-review .input-group{ margin-top: 16px;}
+    .marg.mobile.footer-button {
+        background: #242424;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0 !important;
+        padding: 18px;
+        left: 0px;
+    }
+    .marg.mobile.footer-button button {
+        border: none;
+        background: transparent;
+        color: #fac730;
+        font-size: 24px;
+        margin-top: 6px;
+    }
+    .page.upload {
+        min-height: calc(100vh - 138px) !important;
+    }
+    .page.upload #filedrag #cancelupload {
+        margin: 0;
+    }
+    .magnets section .qty-options .qty-item {
+        padding: 6px 12px !important;
+    }
+}
+
+@media (max-width: 1000px){
+    footer {
+        position: relative !important;
+    }
+}

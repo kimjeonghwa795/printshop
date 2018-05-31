@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+
+         {meta}
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/{theme_url}css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/style.css">
+            <link rel="stylesheet" type="text/css" href="/themes/site_themes/default_site/assets.group/css/font-awesome/css/font-awesome.min.css">
+                {exp:minimee:css queue="head_css"}        
+            {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        {css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+	{embed=assets/header}
+<div class="page">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="content sucess">
+					<div class="title-cont bold f42">Thank you for your message! <label class="lbl f25">Your message has been sucessfully send to us. Our respinse team will reply your question soon!</label></div>
+					<img src="{theme_url}images/contact-success.png" class="img-responsive img-fix">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="button-back">
+						<a href="#" class="btn btn-circle pad-hop">Back to Shop</a>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</section>
+		</div>
+	{embed=assets/footer}
+    {js}
+<script>
+// $(document).ready(function() {
+//     $('.carousel').carousel({
+//       interval: 6000
+//     })
+//   });
+	
+	$(document).ready(function(){
+		$('#sh-foot').click(function(e){
+			$('.footer-toggle').slideToggle();
+			
+			if($(this).hasClass('up')){
+				$(this).html('Hide Footer <i class="fa fa-caret-up careD"></i>').removeClass('up');
+			}else{
+				$(this).html('Show Footer <i class="fa fa-caret-down careD"></i>').addClass('up');
+			}
+			$('html, body').animate({
+	           scrollTop: $(document).height()
+	        }, 2000);
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>

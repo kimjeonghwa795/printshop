@@ -1,0 +1,208 @@
+country,state,city,zip_code,from_price,to_price,from_weight,to_weight,rate,label
+ID,,,,100000,,,,0,Free Standard Shipping
+ID,DKI,,,100000,,,,9000,Express Shipping
+ID,AC,Banda Aceh,,,100000,,,29500 ,Standard Shipping
+ID,AC,ACEH BARAT ,,,100000,,,53000,Standard Shipping
+ID,AC,ACEH BARAT DAYA ,,,100000,,,61000,Standard Shipping
+ID,AC,ACEH BESAR,,,100000,,,55500,Standard Shipping
+ID,AC,ACEH JAYA ,,,100000,,,59000,Standard Shipping
+ID,AC,ACEH SELATAN,,,100000,,,62500,Standard Shipping
+ID,AC,ACEH SELATAN,,,100000,,,62500,Standard Shipping
+ID,AC,ACEH TAMIANG,,,100000,,,62500,Standard Shipping
+ID,AC,ACEH TENGGARA ,,,100000,,,62500,Standard Shipping
+ID,AC,ACEH TENGAH,,,100000,,,48500,Standard Shipping
+ID,AC,ACEH TIMUR,,,100000,,,59000,Standard Shipping
+ID,AC,ACEH UTARA,,,100000,,,55500,Standard Shipping
+ID,AC,BENER MERIAH,,,100000,,,59000,Standard Shipping
+ID,AC,BIREUEN ,,,100000,,,41500,Standard Shipping
+ID,AC,GAYO LUES,,,100000,,,53500,Standard Shipping
+ID,AC,NAGAN RAYA,,,100000,,,51000,Standard Shipping
+ID,AC,PIDIE,,,100000,,,53000,Standard Shipping
+ID,AC,PIDIE JAYA ,,,100000,,,49500,Standard Shipping
+ID,AC,SIMEULEU ,,,100000,,,63500,Standard Shipping
+ID,AC,LANGSA ,,,100000,,,44000,Standard Shipping
+ID,AC,LHOKSEUMAWE ,,,100000,,,43000,Standard Shipping
+ID,AC,SABANG ,,,100000,,,43000,Standard Shipping
+ID,AC,SUBULUSSALAM ,,,100000,,,43000,Standard Shipping
+ID,SU,Medan,,,100000,,,29500,Express Shipping
+ID,RI,Pekanbaru,,,100000,,,25500,Express Shipping
+ID,RI,Kabupaten Kampar,,,100000,,,39000,Express Shipping
+ID,KR,Batam,,,100000,,,27500,Express Shipping
+ID,SB,Padang,,,100000,,,26500,Express Shipping
+ID,JA,Jambi,,,100000,,,24500,Express Shipping
+ID,SS,Palembang,,,100000,,,24500,Express Shipping
+ID,BB,Pangkal Pinang,,,100000,,,25500,Express Shipping
+ID,BB,Kabupaten Bangka,,,100000,,,26500,Express Shipping
+ID,BB,Kabupaten Bangka Tengah,,,100000,,,39000,Express Shipping
+ID,BB,Kabupaten Belitung Timur,,,100000,,,36000,Express Shipping
+ID,BK,Bengkulu,,,100000,,,24500,Express Shipping
+ID,BA,Bandar Lampung,,,100000,,,23500,Express Shipping
+ID,BA,Cilegon,,,100000,,,17500,Express Shipping
+ID,BA,Kabupaten Lebak,,,100000,,,20000,Express Shipping
+ID,BA,Kabupaten Pandeglang,,,100000,,,20000,Express Shipping
+ID,BA,Kabupaten Serang,,,100000,,,18500,Express Shipping
+ID,BA,Serang,,,100000,,,18500,Express Shipping
+ID,BA,Tangerang,,,100000,,,16500,Express Shipping
+ID,BA,Kabupaten Tangerang,,,100000,,,18500,Express Shipping
+ID,DKI,Jakarta Barat,,,100000,,,13000,Express Shipping
+ID,DKI,Jakarta Selatan,,,100000,,,13000,Express Shipping
+ID,DKI,Jakarta Pusat,,,100000,,,13000,Express Shipping
+ID,DKI,Jakarta Utara,,,100000,,,13000,Express Shipping
+ID,DKI,Jakarta Timur,,,100000,,,13000,Express Shipping
+ID,JB,Bandung,,,100000,,,21000,Express Shipping
+ID,JB,Kabupaten Bandung ,,,100000,,,23500,Express Shipping
+ID,JB,Kabupaten Bandung Barat,,,100000,,,23500,Express Shipping
+ID,JB,Kabupaten Purwakarta,,,100000,,,14000,Express Shipping
+ID,JB,Kabupaten Subang,,,100000,,,14000,Express Shipping
+ID,JB,Bekasi,,,100000,,,16500,Express Shipping
+ID,JB,Kabupaten Bekasi,,,100000,,,18500,Express Shipping
+ID,JB,Kabupaten Karawang,,,100000,,,18500,Express Shipping
+ID,JB,Bogor,,,100000,,,16500,Express Shipping
+ID,JB,Kabupaten Bogor,,,100000,,,20000,Express Shipping
+ID,JB,Kabupaten Ciamis ,,,100000,,,23500,Express Shipping
+ID,JB,Kabupaten Cianjur,,,100000,,,22000,Express Shipping
+ID,JB,Cimahi,,,100000,,,22000,Express Shipping
+ID,JB,Cirebon,,,100000,,,18500,Express Shipping
+ID,JB,Kabupaten Cirebon,,,100000,,,20000,Express Shipping
+ID,JB,Kabupaten Indramayu ,,,100000,,,24500,Express Shipping
+ID,JB,Kabupaten Kuningan,,,100000,,,24500,Express Shipping
+ID,JB,Kabupaten Majalengka,,,100000,,,24500,Express Shipping
+ID,JB,Depok,,,100000,,,16500,Express Shipping
+ID,JB,Kabupaten Garut,,,100000,,,22000,Express Shipping
+ID,JB,Kabupaten Sumedang,,,100000,,,23500,Express Shipping
+ID,JB,Tasikmalaya,,,100000,,,23500,Express Shipping
+ID,JB,Sukabumi,,,100000,,,17500,Express Shipping
+ID,JB,Kabupaten Sukabumi,,,100000,,,14000,Express Shipping
+ID,JT,Kabupaten Sragen,,,100000,,,24500,Express Shipping
+ID,JT,Kab. Sukoharjo,,,100000,,,24500,Express Shipping
+ID,JT,Kab. Wonogiri,,,100000,,,24500,Express Shipping
+ID,JT,Solo,,,100000,,,21000,Express Shipping
+ID,JT,Kabupaten Boyolali,,,100000,,,24500,Express Shipping
+ID,JT,Kabupaten Karanganyar,,,100000,,,25500,Express Shipping
+ID,JT,Kabupaten Klaten,,,100000,,,23500,Express Shipping
+ID,JT,Kabupaten Kendal,,,100000,,,24500,Express Shipping
+ID,JT,Kabupaten Kudus ,,,100000,,,26500,Express Shipping
+ID,JT,Magelang,,,100000,,,23500,Express Shipping
+ID,JT,Salatiga,,,100000,,,23500,Express Shipping
+ID,JT,Semarang,,,100000,,,24500,Express Shipping
+ID,JT,Kabupaten Semarang ,,,100000,,,24500,Express Shipping
+ID,DIY,Kabupaten Bantul ,,,100000,,,23500,Express Shipping
+ID,DIY,Kabupaten Gunung Kidul,,,100000,,,23500,Express Shipping
+ID,DIY,Kabupaten Kulon Progo,,,100000,,,18500,Express Shipping
+ID,DIY,Kabupaten Sleman ,,,100000,,,23500,Express Shipping
+ID,DIY,Yogyakarta,,,100000,,,23500,Express Shipping
+ID,JI,Kabupaten Gresik ,,,100000,,,25500,Express Shipping
+ID,JI,Kabupaten Jombang ,,,100000,,,25500,Express Shipping
+ID,JI,Kediri,,,100000,,,22000,Express Shipping
+ID,JI,Kabupaten  Lamongan ,,,100000,,,28000,Express Shipping
+ID,JI,Malang,,,100000,,,25500,Express Shipping
+ID,JI,Kabupaten Malang,,,100000,,,28000,Express Shipping
+ID,JI,Mojokerto,,,100000,,,25500,Express Shipping
+ID,JI,Kabupaten Mojokerto,,,100000,,,25500,Express Shipping
+ID,JI,Probolinggo,,,100000,,,26500,Express Shipping
+ID,JI,Surabaya,,,100000,,,22000,Express Shipping
+ID,JI,Kabupaten Sidoarjo,,,100000,,,22000,Express Shipping
+ID,JI,Kabupaten Tuban,,,100000,,,26500,Express Shipping
+ID,BA,Kabupaten Badung,,,100000,,,26500,Express Shipping
+ID,BA,Denpasar,,,100000,,,23500,Express Shipping
+ID,KB,Pontianak,,,100000,,,23500,Express Shipping
+ID,KB,Kabupaten Pontianak,,,100000,,,43000,Express Shipping
+ID,KB,Kabupaten Kubu Raya,,,100000,,,41500,Express Shipping
+ID,KS,Banjarmasin,,,100000,,,34000,Express Shipping
+ID,KT,Palangkaraya,,,100000,,,30000,Express Shipping
+ID,KI,Balikpapan,,,100000,,,30000,Express Shipping
+ID,KI,Samarinda,,,100000,,,39000,Express Shipping
+ID,GO,Gorontalo,,,100000,,,41500,Express Shipping
+ID,SL,Makasar,,,100000,,,35500,Express Shipping
+ID,NTB,Mataram,,,100000,,,27500,Express Shipping
+ID,SU,Medan,,,100000,,,23500,Standard Shipping
+ID,RI,Pekanbaru,,,100000,,,21000,Standard Shipping
+ID,RI,Kabupaten Kampar,,,100000,,,36500,Standard Shipping
+ID,KR,Batam,,,100000,,,20500,Standard Shipping
+ID,SB,Padang,,,100000,,,26500,Standard Shipping
+ID,JA,Jambi,,,100000,,,24500,Standard Shipping
+ID,SS,Palembang,,,100000,,,24500,Standard Shipping
+ID,BB,Pangkal Pinang,,,100000,,,25500,Standard Shipping
+ID,BB,Kabupaten Bangka,,,100000,,,26500,Standard Shipping
+ID,BB,Kabupaten Bangka Tengah,,,100000,,,39000,Standard Shipping
+ID,BB,Kabupaten Belitung Timur,,,100000,,,36000,Standard Shipping
+ID,BK,Bengkulu,,,100000,,,24500,Standard Shipping
+ID,BA,Bandar Lampung,,,100000,,,23500,Standard Shipping
+ID,BA,Cilegon,,,100000,,,17500,Standard Shipping
+ID,BA,Kabupaten Lebak,,,100000,,,20000,Standard Shipping
+ID,BA,Kabupaten Pandeglang,,,100000,,,20000,Standard Shipping
+ID,BA,Kabupaten Serang,,,100000,,,18500,Standard Shipping
+ID,BA,Serang,,,100000,,,18500,Standard Shipping
+ID,BA,Tangerang,,,100000,,,16500,Standard Shipping
+ID,BA,Kabupaten Tangerang,,,100000,,,18500,Standard Shipping
+ID,DKI,Jakarta Barat,,,100000,,,13000,Standard Shipping
+ID,DKI,Jakarta Selatan,,,100000,,,13000,Standard Shipping
+ID,DKI,Jakarta Pusat,,,100000,,,13000,Standard Shipping
+ID,DKI,Jakarta Utara,,,100000,,,13000,Standard Shipping
+ID,DKI,Jakarta Timur,,,100000,,,13000,Standard Shipping
+ID,JB,Bandung,,,100000,,,21000,Standard Shipping
+ID,JB,Kabupaten Bandung ,,,100000,,,23500,Standard Shipping
+ID,JB,Kabupaten Bandung Barat,,,100000,,,23500,Standard Shipping
+ID,JB,Kabupaten Purwakarta,,,100000,,,14000,Standard Shipping
+ID,JB,Kabupaten Subang,,,100000,,,14000,Standard Shipping
+ID,JB,Bekasi,,,100000,,,16500,Standard Shipping
+ID,JB,Kabupaten Bekasi,,,100000,,,18500,Standard Shipping
+ID,JB,Kabupaten Karawang,,,100000,,,18500,Standard Shipping
+ID,JB,Bogor,,,100000,,,16500,Standard Shipping
+ID,JB,Kabupaten Bogor,,,100000,,,20000,Standard Shipping
+ID,JB,Kabupaten Ciamis ,,,100000,,,23500,Standard Shipping
+ID,JB,Kabupaten Cianjur,,,100000,,,22000,Standard Shipping
+ID,JB,Cimahi,,,100000,,,22000,Standard Shipping
+ID,JB,Cirebon,,,100000,,,18500,Standard Shipping
+ID,JB,Kabupaten Cirebon,,,100000,,,20000,Standard Shipping
+ID,JB,Kabupaten Indramayu ,,,100000,,,24500,Standard Shipping
+ID,JB,Kabupaten Kuningan,,,100000,,,24500,Standard Shipping
+ID,JB,Kabupaten Majalengka,,,100000,,,24500,Standard Shipping
+ID,JB,Depok,,,100000,,,16500,Standard Shipping
+ID,JB,Kabupaten Garut,,,100000,,,22000,Standard Shipping
+ID,JB,Kabupaten Sumedang,,,100000,,,23500,Standard Shipping
+ID,JB,Tasikmalaya,,,100000,,,23500,Standard Shipping
+ID,JB,Sukabumi,,,100000,,,17500,Standard Shipping
+ID,JB,Kabupaten Sukabumi,,,100000,,,14000,Standard Shipping
+ID,JT,Kabupaten Sragen,,,100000,,,24500,Standard Shipping
+ID,JT,Kab. Sukoharjo,,,100000,,,24500,Standard Shipping
+ID,JT,Kab. Wonogiri,,,100000,,,24500,Standard Shipping
+ID,JT,Solo,,,100000,,,21000,Standard Shipping
+ID,JT,Kabupaten Boyolali,,,100000,,,24500,Standard Shipping
+ID,JT,Kabupaten Karanganyar,,,100000,,,25500,Standard Shipping
+ID,JT,Kabupaten Klaten,,,100000,,,23500,Standard Shipping
+ID,JT,Kabupaten Kendal,,,100000,,,24500,Standard Shipping
+ID,JT,Kabupaten Kudus ,,,100000,,,26500,Standard Shipping
+ID,JT,Magelang,,,100000,,,23500,Standard Shipping
+ID,JT,Salatiga,,,100000,,,23500,Standard Shipping
+ID,JT,Semarang,,,100000,,,24500,Standard Shipping
+ID,JT,Kabupaten Semarang ,,,100000,,,24500,Standard Shipping
+ID,DIY,Kabupaten Bantul ,,,100000,,,23500,Standard Shipping
+ID,DIY,Kabupaten Gunung Kidul,,,100000,,,23500,Standard Shipping
+ID,DIY,Kabupaten Kulon Progo,,,100000,,,18500,Standard Shipping
+ID,DIY,Kabupaten Sleman ,,,100000,,,23500,Standard Shipping
+ID,DIY,Yogyakarta,,,100000,,,23500,Standard Shipping
+ID,JI,Kabupaten Gresik ,,,100000,,,25500,Standard Shipping
+ID,JI,Kabupaten Jombang ,,,100000,,,25500,Standard Shipping
+ID,JI,Kediri,,,100000,,,22000,Standard Shipping
+ID,JI,Kabupaten  Lamongan ,,,100000,,,28000,Standard Shipping
+ID,JI,Malang,,,100000,,,25500,Standard Shipping
+ID,JI,Kabupaten Malang,,,100000,,,28000,Standard Shipping
+ID,JI,Mojokerto,,,100000,,,25500,Standard Shipping
+ID,JI,Kabupaten Mojokerto,,,100000,,,25500,Standard Shipping
+ID,JI,Probolinggo,,,100000,,,26500,Standard Shipping
+ID,JI,Surabaya,,,100000,,,22000,Standard Shipping
+ID,JI,Kabupaten Sidoarjo,,,100000,,,22000,Standard Shipping
+ID,JI,Kabupaten Tuban,,,100000,,,26500,Standard Shipping
+ID,BA,Kabupaten Badung,,,100000,,,26500,Standard Shipping
+ID,BA,Denpasar,,,100000,,,23500,Standard Shipping
+ID,KB,Pontianak,,,100000,,,23500,Standard Shipping
+ID,KB,Kabupaten Pontianak,,,100000,,,43000,Standard Shipping
+ID,KB,Kabupaten Kubu Raya,,,100000,,,41500,Standard Shipping
+ID,KS,Banjarmasin,,,100000,,,34000,Standard Shipping
+ID,KT,Palangkaraya,,,100000,,,30000,Standard Shipping
+ID,KI,Balikpapan,,,100000,,,30000,Standard Shipping
+ID,KI,Samarinda,,,100000,,,39000,Standard Shipping
+ID,GO,Gorontalo,,,100000,,,41500,Standard Shipping
+ID,SL,Makasar,,,100000,,,35500,Standard Shipping
+ID,NTB,Mataram,,,100000,,,27500,Standard Shipping

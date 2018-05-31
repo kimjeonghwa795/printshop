@@ -1,0 +1,34 @@
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+
+         {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    {embed=assets/header}
+    <div class="page about">        
+        <section>
+            <div class="bg-white">
+                <div class="container" style="height: calc(100vh - 138px);">
+                    <div style="margin-top:10px;text-align: center;">
+                    <video src="/media/adorama_flow.mp4" autoplay='true' width="800" height="600"/>
+                    </div>
+                </div>
+            </div>
+	</section>
+    </div>
+    {embed=assets/footer}
+    {exp:minimee:js queue="foot_js"}
+        {js}
+    {/exp:minimee:js}
+    {exp:minimee:display js="foot_js"}
+</body>
+</html>

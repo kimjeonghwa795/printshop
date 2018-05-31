@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PrintShop Adorama</title>
+        {meta}
+		{css}
+        <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css">
+        <style>
+            .hidden{display: none;}
+            @media (max-width: 414px){
+                .button-back.marg {
+                    display: block !important;
+                }
+                .button-back.marg button{
+                    margin-left: 0;
+                }
+            }
+        </style>
+        <style>
+            header .header-menu .navbar-title {
+                display: inline-block;
+            }
+            .btn:focus{
+                color: #FF5445 !important;
+            }
+            html{overflow: hidden}
+        </style>
+</head>
+<body class="no-header-top">
+	{embed=assets/header}
+<div class="page border">
+	<section class="min-height">
+		<div class="container {exp:session_variables:get name='layout' key='sku'}" >
+			<div class="row">
+				<div class="content sucess" id="small">
+				<form action="/" method="POST">
+					<input type="hidden" name="XID" value="{XID_HASH}" />
+					<input type="hidden" name="ACT" value="95" />
+					<input type="hidden" name="var" value="quantity" />
+					<input type="hidden" name="next" value="/instagram" />
+					<div class="title-cont storyline">Select a quantity</div>
+					<div class="border-style">
+						<div class="qty-options">                                                
+                        {exp:query  sql="SELECT pc.sku, CAST( substring(pc.sku,5,2) as UNSIGNED ) as qty, title, pp.price + pc.adjust as price 
+                                        FROM  exp_br_product pr 
+                                        INNER JOIN exp_br_product_configurable pc ON pr.product_id = pc.product_id 
+                                        INNER JOIN exp_br_product_price pp on pr.product_id = pp.product_id 
+                                        WHERE concat(substr(pc.sku,1,4), '00') LIKE  ? ORDER BY sku " 
+                                    params="{segment:sku}" }
+                        	<label class="qty-item" id="qty{count}">                             
+                             {if count > 1}<div class="border1"></div>{/if}   
+                             {if count > 2}<div class="border2"></div>{/if}   
+                             {if count > 3}<div class="border3"></div>{/if}   
+							<input type='radio' name="quantity" value="{qty}"/>
+								<div class="qty-number box-round">{qty}</div>
+								<div class="qty-price"> 
+                                    <label class="lbl-size">IDR {exp:text:number symbol=""}{price}{/exp:text:number}</label>
+								</div>						
+                            </label>
+						{/exp:query}                       
+                        <!--
+							<label class="qty-item" id="qty1">
+							<input type='radio' name="quantity" value="8"/>
+								<div class="qty-number box-round">8</div>
+								<div class="qty-price"> 
+									<label class="lbl-size">IDR 65.120</label>
+								</div>						
+							</label>
+                            
+                            
+							<label class="qty-item" id="qty2">
+								<div class="border1"></div>
+								<input type='radio' name="quantity" style="display:none" value="16"/>
+								<div class="qty-number box-round">16</div>
+								<div class="qty-price">
+									<label class="lbl-size">IDR 126.720</label>
+								</div>
+	
+							</label>
+							<label class="qty-item" id="qty3">
+								<div class="border1"></div>
+								<div class="border2"></div>                                                    
+								<input type='radio' name="quantity" style="display:none" value="24"/>
+								<div class="qty-number box-round">24</div>
+								<div class="qty-price">
+										<label class="lbl-size">IDR 184.800</label>
+								</div>
+							</label>
+							<label class="qty-item" id="qty4">
+								<div class="border1"></div>
+								<div class="border2"></div>                                                    
+								<div class="border3"></div>                                                    
+								<input type='radio' name="quantity" style="display:none" value="48"/>
+								<div class="qty-number box-round">48</div>
+								<div class="qty-price">
+										<label class="lbl-size">IDR 359.040</label>
+								</div>
+							</label>
+                            -->
+						</div>
+					</div>
+					<div class="button-back marg">
+						<a href="size" class="btn btn-circle invert back-btns" style="padding:10px 45px">Back</a>
+						<button type="submit" class="btn btn-circle invert" style="padding:10px 45px">Next</button>
+					</div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+</div>
+    <div class="alert"><div>Please select one above</div></div>
+{js}
+<script type="text/javascript">
+    $(document).ready(function(){        
+        var hash = window.location.hash
+        $(''+hash+'.content.sucess').removeClass('hidden');
+        $('button.btn').click(function(e){
+            if(!$('.qty-item').hasClass('active')){
+                $('.alert').addClass('active')
+                setTimeout(function(){ $('.alert').removeClass('active'); }, 1500);
+                 e.preventDefault(); // prevents default
+                return false;
+            }else{
+                $(this).submit();
+            }
+        })
+    })
+    
+    
+	$('.qty-item').click(function(){
+            $(this).addClass('active');
+            $('.qty-item').not($(this)).removeClass('active');
+	});
+</script>
+</body>
+</html>

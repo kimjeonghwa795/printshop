@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{site_name}</title>
+
+       {exp:minimee:css queue="head_css"}        
+                {css}
+        {/exp:minimee:css}
+        {exp:minimee:display css="head_css"}
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+         <link rel="stylesheet" type="text/css" href="{theme_url}css/tablet.css"> 
+        <style>
+            .gmaps {
+                width: 500px;
+                height: 500px;
+            }
+            header,footer{display: none !important}
+        </style>
+</head>
+<body style="background-color: #fff">
+{embed=assets/header}
+    <div class="page">
+	<section>
+            <div class="container" style="padding: 0;margin: 0">
+            <div class="row" >                
+                {exp:photoprint:layout_viewer file="{segment:layout_id}.php"}
+                {/exp:photoprint:layout_viewer}                
+            </div>            
+        </div>
+	</section>
+    </div>
+{embed=assets/footer}    
+</body>
+</html>

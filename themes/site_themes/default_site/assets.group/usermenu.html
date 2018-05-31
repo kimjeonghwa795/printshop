@@ -1,0 +1,33 @@
+<i class="fa fa-bars nav-button mobile" aria-hidden="true"></i>
+<li><a class="hvr-bounce-to-bottom" href="/products">Shop All</a></li>
+<li><a class="hvr-bounce-to-bottom" href="/about">About</a></li>
+<li class="logins" >                                                
+{if logged_in_member_id }
+	<a class="hvr-bounce-to-bottom member_name" href="{path='account/{member_id}'}" >{screen_name}</a>
+	<div class="nav-menu member-menu" >                                                      
+	  <a href="{path='logout'}">Log Out</a>
+	</div>
+	<style>.c-mail{display:none;}section.rev{max-height: 160px;}</style>
+                                                
+{if:else}
+    <a class="hvr-bounce-to-bottom" href="/login">Log-in</a>
+    <div class="nav-menu member-menu" >                                                      
+      Not a member? <a href="/register">Register</a>.<br>
+      <!--Have you <a href="{path='/forgot'}">forgotten your password</a>?-->
+    </div>
+{/if}
+</li>
+<li>
+    <a class="hvr-bounce-to-bottom" href="{exp:brilliant_retail:path src='cart'}">Cart 
+       {if {exp:brilliant_retail:cart_items} }(<span class="cart_total">{exp:brilliant_retail:cart_items}</span>){/if}
+    </a>
+
+    {if {exp:brilliant_retail:cart_items} }
+    <div class="nav-menu cart-menu">
+      <label>Total</label>
+      <span>{exp:brilliant_retail:cart_total}</span><br />
+      <a href="/cart">Review</a><br />
+      <a href="/checkout">Checkout</a>
+    </div>
+    {/if}
+<li>
